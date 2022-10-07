@@ -1,0 +1,252 @@
+@charset "utf-8";
+
+@font-face {
+    font-family:'whitneyBold';
+    src:url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/whitney-bold-adv-webfont.eot');
+    src:url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/whitney-bold-adv-webfont.eot?#iefix') format('embedded-opentype'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/whitney-bold-adv-webfont.woff2') format('woff2'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/whitney-bold-adv-webfont.woff') format('woff'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/whitney-bold-adv-webfont.ttf') format('truetype'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/whitney-bold-adv-webfont.svg#whitneybold') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face {
+    font-family:'whitneyBook';
+    src:url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/whitney-book-adv-webfont.eot');
+    src:url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/whitney-book-adv-webfont.eot?#iefix') format('embedded-opentype'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/whitney-book-adv-webfont.woff2') format('woff2'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/whitney-book-adv-webfont.woff') format('woff'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/whitney-book-adv-webfont.ttf') format('truetype'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/whitney-book-adv-webfont.svg#whitneybook') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face {
+    font-family:'whitneyMedium';
+    src:url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/whitney-medium-adv-webfont.eot');
+    src:url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/whitney-medium-adv-webfont.eot?#iefix') format('embedded-opentype'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/whitney-medium-adv-webfont.woff2') format('woff2'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/whitney-medium-adv-webfont.woff') format('woff'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/whitney-medium-adv-webfont.ttf') format('truetype'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/whitney-medium-adv-webfont.svg#whitneymedium') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face {
+    font-family:'whitneyLight';
+    src:url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/whitney-light-adv-webfont.eot');
+    src:url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/whitney-light-adv-webfont.eot?#iefix') format('embedded-opentype'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/whitney-light-adv-webfont.woff2') format('woff2'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/whitney-light-adv-webfont.woff') format('woff'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/whitney-light-adv-webfont.ttf') format('truetype'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/whitney-light-adv-webfont.svg#whitneylight') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face {
+    font-family:'whitneySemibold';
+    src:url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/whitney-semibld-adv-webfont.eot');
+    src:url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/whitney-semibld-adv-webfont.eot?#iefix') format('embedded-opentype'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/whitney-semibld-adv-webfont.woff2') format('woff2'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/whitney-semibld-adv-webfont.woff') format('woff'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/whitney-semibld-adv-webfont.ttf') format('truetype'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/whitney-semibld-adv-webfont.svg#whitneylight') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face {
+    font-family:'Montserrat';
+    src:url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/Montserrat-Regular.eot');
+    src:url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/Montserrat-Regular.eot?#iefix') format('embedded-opentype'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/Montserrat-Regular.woff2') format('woff2'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/Montserrat-Regular.woff') format('woff'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/Montserrat-Regular.ttf') format('truetype'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/Montserrat-Regular.svg#Montserrat') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face {
+    font-family:'MontserratSemibold';
+    src:url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/montserrat-semibold.eot');
+    src:url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/montserrat-semibold.eot?#iefix') format('embedded-opentype'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/montserrat-semibold.woff2') format('woff2'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/montserrat-semibold.woff') format('woff'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/montserrat-semibold.ttf') format('truetype'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/montserrat-semibold.svg#Montserrat') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face {
+    font-family:'MalgunSemilight';
+    src:url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/Malgun_gothic_semilight.eot');
+    src:url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/Malgun_gothic_semilight.eot?#iefix') format('embedded-opentype'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/Malgun_gothic_semilight.woff') format('woff'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/Malgun_gothic_semilight.ttf') format('truetype'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/Malgun_gothic_semilight.svg') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face {
+    font-family:'CatataOne';
+    src:url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/CantataOne-Regular.eot');
+    src:url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/CantataOne-Regular.eot?#iefix') format('embedded-opentype'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/CantataOne-Regular.woff') format('woff'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/CantataOne-Regular.ttf') format('truetype'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/CantataOne-Regular.svg') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face {
+    font-family:'Noto Sans KR';
+    src:url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/NotoSans-Regular.eot');
+    src:url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/NotoSans-Regular.eot?#iefix') format('embedded-opentype'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/NotoSans-Regular.woff2') format('woff2'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/NotoSans-Regular.woff') format('woff');
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face {
+    font-family:'DJBGetDigital';
+    src:url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/DJB_Get_Digital.eot');
+    src:url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/DJB_Get_Digital.eot?#iefix') format('embedded-opentype'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/DJB_Get_Digital.woff') format('woff'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/DJB_Get_Digital.ttf') format('truetype');
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face {
+    font-family:'GothamBold';
+    src:url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/GothamBold.eot');
+    src:url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/GothamBold.eot?#iefix') format('embedded-opentype'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/GothamBold.woff') format('woff'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/GothamBold.ttf') format('truetype');
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face {
+    font-family:'MontserratBold';
+    src:url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/montserrat-bold.eot');
+    src:url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/montserrat-bold.eot?#iefix') format('embedded-opentype'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/montserrat-bold.woff2') format('woff2'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/montserrat-bold.woff') format('woff'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/montserrat-bold.ttf') format('truetype'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/montserrat-bold.svg#MontserratBold') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face {
+    font-family:'NotoSansKRBlack';
+    src:url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/NotoSansKR-Black.eot');
+    src:url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/NotoSansKR-Black.eot?#iefix') format('embedded-opentype'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/NotoSansKR-Black.woff2') format('woff2'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/NotoSansKR-Black.woff') format('woff'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/NotoSansKR-Black.ttf') format('truetype'),
+        url('http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/NotoSansKR-Black.svg') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face { /*egift font 추가 1*/
+    font-family:'Apple SD Gothic Neo';
+    src:url("http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/AppleSDGothicNeoR.eot");
+    src:url("http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/AppleSDGothicNeoR.eot?#iefix") format("embedded-opentype"),
+        url("http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/AppleSDGothicNeoR.woff2") format("woff2"),
+        url("http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/AppleSDGothicNeoR.woff") format("woff"),
+        url("http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/AppleSDGothicNeoR.ttf") format("truetype");
+    font-weight:400;
+    font-style:normal;
+}
+
+@font-face { /*egift font 추가 2*/
+    font-family:'Apple SD Gothic Neo';
+    src:url("http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/AppleSDGothicNeoB.eot");
+    src:url("http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/AppleSDGothicNeoB.eot?#iefix") format("embedded-opentype"),
+        url("http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/AppleSDGothicNeoB.woff2") format("woff2"),
+        url("http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/AppleSDGothicNeoB.woff") format("woff"),
+        url("http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/AppleSDGothicNeoB.ttf") format("truetype");
+    font-weight:700;
+    font-style: normal;
+}
+
+@font-face { /*egift font 추가 3*/
+    font-family:'Apple SD Gothic Neo';
+    src:url("http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/AppleSDGothicNeoEB.eot");
+    src:url("http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/AppleSDGothicNeoEB.eot?#iefix") format("embedded-opentype"),
+        url("http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/AppleSDGothicNeoEB.woff2") format("woff2"),
+        url("http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/AppleSDGothicNeoEB.woff") format("woff"),
+        url("http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/AppleSDGothicNeoEB.ttf") format("truetype");
+    font-weight:800;
+    font-style:normal;
+}
+
+@font-face { /*매인개편 폰트 추가1 1903*/
+    font-family: 'AppleSDGothicNeoEB';
+    src:url("http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/AppleSDGothicNeoEB.eot");
+    src:url("http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/AppleSDGothicNeoEB.eot?#iefix") format("embedded-opentype"),
+        url("http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/AppleSDGothicNeoEB.woff2") format("woff2"),
+        url("http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/AppleSDGothicNeoEB.woff") format("woff"),
+        url("http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/AppleSDGothicNeoEB.ttf") format("truetype");
+    font-weight:800;
+    font-style:normal;
+}
+
+@font-face { /*매인개편 폰트 추가2 1903*/
+    font-family:'AppleSDGothicNeoM';
+    src:url("http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/AppleSDGothicNeoM.eot");
+    src:url("http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/AppleSDGothicNeoM.eot?#iefix") format("embedded-opentype"),
+        url("http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/AppleSDGothicNeoM.woff2") format("woff2"),
+        url("http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/AppleSDGothicNeoM.woff") format("woff"),
+        url("http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/AppleSDGothicNeoM.ttf") format("truetype");
+}
+
+@font-face {
+    font-family:'BodoniFLF_Roman';
+    src:url("http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/handsomemobile/css/fonts/BodoniFLF_Roman.ttf") format("truetype"),
+        url("http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/handsomemobile/css/fonts/BodoniFLF_Roman.woff2") format("woff2");
+    font-weight:300;
+    font-style:normal;
+}
+
+@font-face { /*select shop*/
+    font-family:'segoe_bold';
+    src:url("http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/segoe_bold.eot");
+    src:url("http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/segoe_bold.eot?#iefix") format("embedded-opentype"),
+        url("http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/segoe_bold.woff") format("woff"),
+        url("http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/segoe_bold.ttf") format("truetype");
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face {
+    font-family:'gotham_medium';
+    src:url("http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/handsomemobile/css/fonts/gotham_medium.eot");
+    src:url("http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/handsomemobile/css/fonts/gotham_medium.eot?#iefix") format("embedded-opentype"),
+        url("http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/handsomemobile/css/fonts/gotham_medium.woff") format("woff"),
+        url("http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/handsomemobile/css/fonts/gotham_medium.ttf") format("truetype");
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face {
+    font-family:'Chapaza';
+    src:url("http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/Chapaza.eot");
+    src:url("http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/Chapaza.eot?#iefix") format("embedded-opentype"),
+        url("http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/Chapaza.woff") format("woff"),
+        url("http://image.thehandsome.com/sys_master/hybrisMountedS3New/handsomestorefront/web/webroot/_ui/desktop/common/font/Chapaza.ttf") format("truetype");
+    font-weight:normal;
+    font-style:normal;
+}
