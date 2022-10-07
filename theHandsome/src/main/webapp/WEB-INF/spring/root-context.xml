@@ -48,7 +48,7 @@
 
 	<tx:annotation-driven />
 
-	<!-- mybatis 관련 Mapper패키지의 TimeMapper class 매핑 -->
+	<!-- mybatis 관련 Mapper패키지  매핑 -->
 	<mybatis-spring:scan
 		base-package="com.thehandsome.mapper" />
 	<context:component-scan
