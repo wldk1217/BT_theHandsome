@@ -8,7 +8,7 @@ import java.sql.Statement;
 
 public class test {
 
-	// 인내심 30초 이상 소요
+	// 인내심 30초 이상 소요됩니다..........
 	public static void main(String[] args) {
 		Connection con = null;
 		Statement stmt = null;
