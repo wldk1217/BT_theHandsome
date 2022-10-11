@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="../includes/header.jsp" %> 
+
+ <!-- 
+ /* 
+ * 작성자 : 고정민
+ * 
+ * 회원가입 페이지 (이메일 중복 확인 기능)
+ */
+  -->
 <script type="text/javascript">
 function checkId() {
 	var email = "";
@@ -249,4 +256,4 @@ $(document).ready(function(){
 		</div>
 	</form>
 	<!-- footerWrap -->
-<%@ include file="../includes/footer.jsp" %> 
+
