@@ -1,38 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page session="false"%>
+<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+
 <script>
  
-function loginClick(){
-	$("#loginForm").attr("action", "/member/login");
-    $("#loginForm").submit();
+function joinClick(){
+	location.href="member/joininfoform";
 }
  
 </script>
 <html>
 <head>
-	<title>Home</title>
+<title>Home</title>
 </head>
 <body>
-<h1>
-	Hello world!  
-</h1>
+	<h1>메인 페이지 입니다!</h1>
+	<button id='Join' type="button" onclick="joinClick()">회원가입</button>
 
-<P>    <button id='loginForm' type="button" onclick="loginClick()">
-                  로그인
-         </button> </P>
 </body>
 </html>
 
 
 <script type="text/javascript">
-	$(document)
-	.ready(
-		function() {
-					
-			//새글 등록 처리
-			$("#JoinBtn").on("click", function () {
-				self.location="/member/joininfoform";				
-			});
+	
 </script>
