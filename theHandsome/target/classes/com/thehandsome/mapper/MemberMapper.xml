@@ -4,15 +4,14 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  <!-- 
  /* 
- * 작성자 : 고정민
  * 
  * [회원 가입, 중복 확인, 로그인, 회원정보 변경, 회원 탈퇴] 쿼리
  */
   -->
-<mapper namespace="com.jmh.mapper.MemberMapper">
+<mapper namespace="com.thehandsome.mapper.MemberMapper">
 
 	<insert id="memberJoin">
-  		insert into member values(#{mid}, #{mpassword}, #{mname}, #{memail}, #{mtel}, #{mzipcode}, #{maddress1}, #{maddress2}, 'MEMBER', sysdate, 0, 1, #{mbirth})
+  		insert into member values(#{mid}, #{mpassword}, #{mname}, #{memail}, #{mtel}, #{mzipcode}, #{maddress1}, #{maddress2}, 'MEMBER', sysdate, 0, 1)
   	</insert>
   	
   	<select id="idCheck" parameterType="String" resultType="int">
@@ -20,7 +19,7 @@
   	</select>
   	
   	
-  	<select id="memberLogin" resultType="com.jmh.domain.MemberVO">
+  	<select id="memberLogin" resultType="com.thehandsome.domain.MemberVO">
   		select * from member where mid=#{mid} and mpassword=#{mpassword} and menabled=1
   	</select>
   	
