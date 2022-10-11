@@ -37,4 +37,4 @@ public class MemberJoinTest {
 		mapper.memberJoin(member);
 	}
 
-}//end class
+}//end class 
