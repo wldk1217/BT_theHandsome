@@ -2,7 +2,6 @@
 <%@ include file="../includes/header.jsp" %> 
  <!-- 
  /* 
- * 작성자 : 고정민
  * 
  * 로그인 페이지
  */
