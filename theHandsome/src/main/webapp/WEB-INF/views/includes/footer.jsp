@@ -20,14 +20,14 @@
    <title>THE HANDSOME.COM</title>
    <link rel="shortcut icon"
       href="http://cdn.thehandsome.com/_ui/desktop/common/images/common/thehandsome_ic_16x16.ico" />
-   <link rel="stylesheet" type="text/css" href="./resources/css/font_80.css" media="all" />
-   <link rel="stylesheet" type="text/css" href="./resources/css/common.css?20220929" media="all" />
-   <link rel="stylesheet" type="text/css" href="./resources/css/layout.css?20220826" media="all" />
-   <link rel="stylesheet" type="text/css" href="./resources/css/jquery-ui.min.css" media="all" />
-   <link rel="stylesheet" type="text/css" href="./resources/css/brand.css" media="all" />
-   <link rel="stylesheet" type="text/css" href="./resources/css/swiper.css" media="all" />
-   <link rel="stylesheet" type="text/css" href="./resources/css/main_201903.css" media="all" />
-   <link rel="stylesheet" type="text/css" href="./resources/css/footer.css?20220406" media="all" />
+   <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/font_80.css" media="all" />
+   <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common.css?20220929" media="all" />
+   <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/layout.css?20220826" media="all" />
+   <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/jquery-ui.min.css" media="all" />
+   <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/brand.css" media="all" />
+   <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/swiper.css" media="all" />
+   <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/main_201903.css" media="all" />
+   <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/footer.css?20220406" media="all" />
    <div id="footerWrap">
       <div id="topBtn">
          <a href="javascript:void(0);" class="viewTopArea"><img
