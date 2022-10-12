@@ -1,0 +1,94 @@
+@charset "utf-8";
+
+/* lookbook */
+.lookbook_list {margin-top:20px;}
+.lookbook_list .select{float:right;margin:0 42px 20px 0;min-width:150px;}
+.lookbook_list > ul{margin:0 auto;width:910px;}
+.lookbook_list > ul > li{float:left;margin:0 0 20px 10px;text-align: center}
+.lookbook_list > ul > li:first-child{margin-left: 0}
+.lookbook_list > ul > li a span{display: block;}
+.lookbook_list > ul > li a .title{font-family: "whitneyLight";letter-spacing: 1px}
+.lookbook_list > ul > li a .brand{margin-top:5px;letter-spacing: 1px;font-family:"whitneyBold","Malgun Gothic","���� ����";font-size:11px;color: #363636;}
+.lookbook_list > ul > li .img img{width:220px;height:295px;}
+
+.lookbook_view{padding:40px; width:910px;height:660px;}
+.lookbook_view .hidden_wrap{position: relative;overflow: hidden;width:910px;height:652px;}
+.lookbook_view ul{width:10000%;position: absolute;}
+.lookbook_view li{float:left;}
+.lookbook_view li img{width:910px;height:652px;}
+.lookbook_view .controls a{position:absolute;display:block;width:20px;height:33px;background: url("/_ui/desktop/common/images/main/items_list_controls.png") no-repeat;text-indent: -999em}
+.lookbook_view .controls .prev{top:47%;left:0;background-position: left top;z-index: 1}
+.lookbook_view .controls .next{top:47%;right:0;background-position: right top;z-index: 1}
+.lookbook_view .paging2{display:block;width:30px;background: url("/_ui/desktop/common/images/common/ico_utilmenu.png") -60px 13px no-repeat}
+
+.sel_paging{margin:10px 50px 0 0;float: right}
+.sel_paging >a,
+.sel_paging .sel,
+.sel_paging span{float:left;}
+.sel_paging .prev{display:inline-block;padding:0 10px;width:24px;height:20px;background: url("/_ui/desktop/common/images/common/ico_paging.png") -25px -1px no-repeat}
+.sel_paging .next{display:inline-block;padding:0 10px;width:24px;height:20px;background: url("/_ui/desktop/common/images/common/ico_paging.png") -32px -1px no-repeat}
+.sel_paging .sel dt a{display:block;padding-right:25px;display:block;background:url("/_ui/desktop/common/images/common/ico_utilmenu.png") right 9px no-repeat;color:#363636;}
+.sel_paging .sel dd{position: relative;}
+.sel_paging .sel dd ul{position: absolute;top:0;left:0;padding:10px;min-width:17px;border:1px solid #ebebeb;background: #fff;z-index: 9}
+.sel_paging .sel dd ul li{text-align: right}
+.sel_paging .sel dd li a:hover{text-decoration: underline;}
+
+.brand_info{width: 910px;margin:40px auto 0;}
+.brand_info .brand_img{position: relative;}
+.brand_info .brand_img img{width:910px;height:520px;}
+.brand_info .brand_txt{margin-top: 15px;}
+.brand_info .brand_txt .title{padding-bottom:10px;font-size: 28px;font-family: "whitneyLight";letter-spacing: 2px}
+.brand_info .brand_txt .s_title{margin: 5px 0 20px;font-size: 18px;font-family: "whitneyBook";letter-spacing: 2px}
+.brand_info .brand_txt .txt{line-height: 22px}
+
+.brand_store{width:910px;margin: 0 auto}
+.brand_store .tab_b li:first-child a{padding-left:5px;}
+.brand_store .sh_all_wrap{padding:70px 0;border:none;}
+.brand_store .sh_all_wrap input[type=text]{font-size:14px;color:#363636;}
+.store_list .btn_map{display:inline-block;width:20px;height:20px;background: url("/_ui/desktop/common/images/common/ico_arr.png") 50% 50% no-repeat;text-indent: -999em}
+.store_list{margin-top:15px;}
+.store_list thead th{background: #fff;border-bottom:1px solid #ebebeb;}
+.store_list .map{padding:0;width:910px;height:400px;}
+.store_list td{vertical-align: middle}
+.store_tab{position: relative;height:33px;margin-bottom:15px;border-bottom:1px solid #a3a3a3;}
+.store_tab .tab_a{position: absolute;top:0;left:0;margin-bottom: 0;}
+.store_tab .tab_a li{width:120px!important;}
+.store_tab .tab_a li a{padding:10px 0;}
+.store_tab .tab_a li a.active{border-bottom:1px solid #fff;}
+.store_tab .store_sel{position: absolute;top:-5px;right:0;}
+
+.brand_main{background-position:50% 120px;background-repeat:no-repeat;background-size: cover;}
+.brdm_cnts{margin:0 auto; min-height: 1473px; min-height: 1415px\9;}
+.brdm_cnts .brand_title{padding-top: 260px}
+.brdm_cnts .brand_title .title{font-size: 48px;line-height: 58px;color:#363636;font-family: "whitneyLight";letter-spacing: 2px}
+.brdm_cnts .brand_title .txt{font-size: 13px;line-height: 28px;color:#363636;}
+.brdm_cnts .evt_wrap{margin-top:60px;width:300px;}
+.brdm_cnts .evt_wrap .evt_box{display: block}
+.brdm_cnts .evt_wrap .evt_box span{display: block}
+.brdm_cnts .evt_wrap .evt_box .evt_title{font-size: 16px;color:#03020e;padding-bottom:10px;letter-spacing: 2px}
+.brdm_cnts .evt_wrap .evt_box .evt_txt{font-size: 30px;color:#03020e;line-height: 36px;letter-spacing: 2px}
+.brdm_cnts .evt_wrap li{padding:40px 0;background: url("/_ui/desktop/common/images/brand/brand_main_line.png") 0 0 no-repeat}
+.brdm_cnts .evt_wrap li:first-child{background: none}
+
+.new_item{position:relative;margin-top: 70px;width:204px;height:323px;background: #f9f7f8;text-align: center;}
+.new_item p{padding-top:15px;font-size: 16px;color:#363636}
+.new_item .flex-control-nav li a{background:url('/_ui/desktop/common/images/brand/ico_slider.png') no-repeat 0 -10px;}
+.new_item .flex-control-nav li a.flex-active{background:url('/_ui/desktop/common/images/brand/ico_slider.png') no-repeat 0 0;}
+.new_item img{width:170px;height:257px;}
+
+.item_push{margin-top:415px;width:150px;}
+.item_push li{padding:10px 0 30px;background: url("/_ui/desktop/common/images/brand/brand_main_line.png") 20px -259px no-repeat}
+.item_push li:first-child{background: none}
+.item_push li a,
+.item_push li a span{display: block;text-align: center;color:#363636;}
+.item_push li a .txt{line-height: 14px;font-size:11px;font-family: "whitneyBook";letter-spacing: 2px}
+.item_push li a img{width:135px;}
+
+
+/* width responsive */
+@media all and (max-width:1024px){
+	.brdm_cnts{width:995px;min-width:995px;}
+}
+@media all and (min-width: 1025px){
+	.brdm_cnts{width:auto;max-width:1215px;}
+}

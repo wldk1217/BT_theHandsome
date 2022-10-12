@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <!-- 
+ /* 
+ * 
+ * [회원 가입, 중복 확인, 로그인, 회원정보 변경, 회원 탈퇴] 쿼리
+ */
+  -->
+<mapper namespace="com.thehandsome.mapper.MemberMapper">
+
+	<insert id="memberJoin">
+  		insert into member values(#{mid}, #{mpassword}, #{mname}, #{memail}, #{mtel}, #{mzipcode}, #{maddress1}, #{maddress2}, 'MEMBER', sysdate, 0, 1)
+  	</insert>
+  	
+  	<select id="idCheck" parameterType="String" resultType="int">
+  		select count(mid) from member where mid=#{mid}
+  	</select>
+  	
+  	
+  	<select id="memberLogin" resultType="com.thehandsome.domain.MemberVO">
+  		select * from member where mid=#{mid} and mpassword=#{mpassword} and menabled=1
+  	</select>
+  	
+  	<update id="modifyInfo">
+  		update member set mpassword=#{mpassword}, mzipcode=#{mzipcode}, maddress1=#{maddress1}, maddress2=#{maddress2}, mtel=#{mtel} where mid=#{mid}
+  	</update>
+  	
+  	<update id="memberWithdrawal">
+  		update member set menabled=0 where mid=#{mid}
+  	</update>
+
+</mapper>
