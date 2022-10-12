@@ -1,11 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../includes/header.jsp" %> 
- <!-- 
- /* 
- * 
- * 로그인 페이지
- */
-  -->
 <script>
  
 function loginClick(){
@@ -14,7 +8,7 @@ function loginClick(){
 }
  
 </script>
-	<!-- 다국어 한국에서만 사용 -->
+<%@ include file="/WEB-INF/views/includes/header.jsp" %>
 	<input type="hidden" name="loginLayer" id="loginLayer" value="E" />
 	<div id="bodyWrap" class="login">
 		<h3 class="cnts_title">
@@ -23,7 +17,6 @@ function loginClick(){
 		<div class="sub_container">
 			<div id="handsomeCust" class="login_wrap box_type_1 renewal1904">
 				<div class="border_box1">
-					<!-- 추가 190417 -->
 					<div class="inner_box">
 						<div class="title_wrap">
 							<h4>회원</h4>
@@ -33,51 +26,28 @@ function loginClick(){
 							<form id="loginForm" name="loginForm" method='post'>
 								<input type="hidden" name="inputId" id="inputId" value="" />
 								<fieldset>
-									<legend>로그인 입력항목</legend>
-									<div class="login_section">
-									<%-- <%= (String)request.getAttribute("LoginFailMessage") %>
-										<c:if test="${LoginFailMessage!=null}"> -->
-											<p class="login_err_txt" id="hpErrMsg" style="margin-left: 0px;"> Error : <c:out value="${LoginFailMessage}"/> </p>
-										</c:if> --%>
-										<c:if test = "${result == 0 }">
-										<p class="login_err_txt" id="hpErrMsg" style="margin-left: 0px;">아이디 또는 비밀번호가 올바르지 않습니다. </p>
-										</c:if>
-										<div>
-											<div>
-												<input type="text" id="mid" name="mid"
-													placeholder="아이디 / 이메일을 입력하세요." title="아이디" value="" />
-											</div>
-											<div>
-												<input type="password" id="mpassword" name="mpassword"
-													placeholder="비밀번호를 입력하세요." title="비밀번호" />
-											</div>
-										</div>
-										<input type="button" class="btn_login" id="login_btn" value="로그인" onclick="loginClick()">
-										<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-										<div class="id_save">
-											<input type="checkbox" id="remember-me" name="remember-me" value="Y">
-											<label for="id_save">아이디 저장</label>
-										</div>
-									</div>
-								</fieldset>
-								<div class="login1905">
-									<div>
-										<a href="#;" id="otpShow" class="otp"
-											onclick="GA_Event('로그인', '로그인', 'OTP_인증번호_로그인');">OTP
-											인증번호 로그인</a>
-									</div>
-									<div>
-										<a href="/ko/member/nonMemberLogin"
-											onclick="GA_Event('로그인', '로그인', '비회원_주문조회');">비회원 주문조회</a>
-									</div>
-								</div>
+	                        <legend>로그인 입력항목</legend>
+	                        <div class="login_section">
+	                                
+	                            <p class="login_err_txt" id="hpErrMsg" style="margin-left:0px;"> </p>
+	                            <div>
+	                                <div>
+	                                    <input type="text" id="j_username" name="j_username" placeholder="아이디 / 이메일을 입력하세요." title="아이디" value=""/>
+	                                </div>
+	                                <div>
+	                                    <input type="password" id="j_password" name="j_password" placeholder="비밀번호를 입력하세요." title="비밀번호" />
+	                                </div>
+	                            </div>
+	                            <a href="javascript:void(0);" class="btn_login" id="login_btn">로그인</a>
+	                            <div class="id_save">
+	                               <input type="checkbox" id="id_save" name="id_save" value="Y"> <label for="id_save">아이디 저장</label>
+	                            </div>
+	                        </div>
+	                    </fieldset>
+								
 							</form>
 						</div>
-
-						
-
 						<div class="section_bottom">
-							<!-- 추가 190417 -->
 							<p>
 								<span class="bul_sty01">H.Point 통합회원 아이디 / 비밀번호를 잊으셨나요?</span> <a
 									href="https://www.h-point.co.kr/cu/config/findCustId.nhd?prtnrId=D080&chnnlId=1705"
