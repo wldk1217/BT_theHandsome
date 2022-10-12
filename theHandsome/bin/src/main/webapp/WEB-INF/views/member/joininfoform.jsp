@@ -1,6 +1,47 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page session="false"%>
+<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+<%@ include file="/WEB-INF/views/includes/header.jsp" %>
 
+<script type="text/javascript">
+function checkId() {
+	var email = "";
+	// 도메인과 합쳐서 이메일 값 저장
+	if($("#emailDomain").val() != "") {
+		email =$("#email").val()+"@"+$("#emailDomain").val();
+	} 
+	if($("#emailDomainSel").val() != ""){
+		email = $("#email").val()+"@"+$("#emailDomainSel").val();
+	}
 
+	$('input[name=mid]').attr('value',email);
+	$('input[name=memail]').attr('value',email);
+	$.ajax({
+        url:'/member/idCheck', //Controller에서 인식할 주소
+        type:'post', //POST 방식으로 전달
+        data:{mid:email},
+        async: false,
+        success:function(result){ //컨트롤러에서 넘어온 cnt값을 받는다 
+            if(result!="fail"){ //cnt가 1이 아니면(=0일 경우) -> 사용 가능한 아이디 
+                $('#id_ok').css("display", "inline-block");
+                $('#id_already').css("display","none");
+            } else { // cnt가 1일 경우 -> 이미 존재하는 아이디
+                $('#id_already').css("display","inline-block");
+            }
+        },
+        error:function(){
+            alert("에러입니다");
+        }
+    });
+}
+$(document).ready(function(){
+	$("#joinBtn").click(function() {
+		$("#memberJoinForm").attr("action", "/member/joininfoform");
+		$("#memberJoinForm").submit();	
+	})
+});
+</script>
 
 	<form id="memberJoinForm" name="memberJoinForm" method="POST">
 		<input type="hidden" name="emailDuplChk" id="emailDuplChk" value=""
@@ -20,18 +61,6 @@
 			<h3 class="cnts_title">
 				<span>회원가입</span>
 			</h3>
-			<!--//title-->
-			<!--join step-->
-			<div class="email_step">
-				<ul class="clearfix">
-					<li class="step01">step01 이메일인증</li>
-					<li class="step02">step02 회원약관동의</li>
-					<li class="step03 on">step03 회원정보 입력</li>
-					<li class="step04">step04 가입완료</li>
-				</ul>
-			</div>
-			<!--//join step-->
-			<!--sub container-->
 			<div class="sub_container">
 				<div class="join_title">
 					<p class="title">고객님의 회원정보를 입력해주세요.</p>
@@ -213,3 +242,4 @@
 	</form>
 	<!-- footerWrap -->
 
+<%@ include file="/WEB-INF/views/includes/footer.jsp" %>

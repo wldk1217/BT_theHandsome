@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -25,7 +26,7 @@ public class MemberController {
 	private MemberService service;
 
 	// 회원가입 뷰로 이동
-	@GetMapping("/joininfoform")
+	@RequestMapping(value = "/joininfoform", method = RequestMethod.GET)
 	public void joinGet() {
 		log.info("회원가입 페이지 진입");
 	}

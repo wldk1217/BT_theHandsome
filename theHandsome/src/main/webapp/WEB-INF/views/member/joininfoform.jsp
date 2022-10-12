@@ -1,12 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="../includes/header.jsp" %> 
- <!-- 
- /* 
- * 작성자 : 고정민
- * 
- * 회원가입 페이지 (이메일 중복 확인 기능)
- */
-  -->
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page session="false"%>
+<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+<%@ include file="/WEB-INF/views/includes/header.jsp" %>
+
 <script type="text/javascript">
 function checkId() {
 	var email = "";
@@ -64,18 +61,6 @@ $(document).ready(function(){
 			<h3 class="cnts_title">
 				<span>회원가입</span>
 			</h3>
-			<!--//title-->
-			<!--join step-->
-			<div class="email_step">
-				<ul class="clearfix">
-					<li class="step01">step01 이메일인증</li>
-					<li class="step02">step02 회원약관동의</li>
-					<li class="step03 on">step03 회원정보 입력</li>
-					<li class="step04">step04 가입완료</li>
-				</ul>
-			</div>
-			<!--//join step-->
-			<!--sub container-->
 			<div class="sub_container">
 				<div class="join_title">
 					<p class="title">고객님의 회원정보를 입력해주세요.</p>
@@ -256,4 +241,5 @@ $(document).ready(function(){
 		</div>
 	</form>
 	<!-- footerWrap -->
-<%@ include file="../includes/footer.jsp" %> 
+
+<%@ include file="/WEB-INF/views/includes/footer.jsp" %>
