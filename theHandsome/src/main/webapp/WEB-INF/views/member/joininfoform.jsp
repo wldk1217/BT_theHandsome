@@ -63,7 +63,7 @@ $(document).ready(function(){
 			</h3>
 			<div class="sub_container">
 				<div class="join_title">
-					<p class="title">고객님의 회원정보를 입력해주세요.</p>
+					<p class="title" style="margin-top:30px;">고객님의 회원정보를 입력해주세요.</p>
 				</div>
 				<fieldset>
 					<legend>회원정보입력</legend>
@@ -171,11 +171,6 @@ $(document).ready(function(){
 											for="maddress2">상세 주소</label></th>
 										<td><input type="text" style="width: 120px" id="maddress2"
 											name="maddress2" /></td>
-									</tr>
-									<tr>
-										<th scope="row"><strong class="reqd">*</strong><label
-											for="birth">생년월일</label></th>
-										<td><input type="text" id="mbirth" name="mbirth"> 예시)19981026</td>
 									</tr>
 								</tbody>
 							</table>
