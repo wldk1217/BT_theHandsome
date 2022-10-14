@@ -143,8 +143,8 @@
 
 
 						<div class="btnwrap">
-							<input type="button" value="취소" class="btn wt" id="cancleBtn" />
-							<input type="button" class="join_button" value="회원가입" class="btn gray mr0" />
+							<input type="button" value="취소" class="btn wt" id="cancleBtn" onClick="location.href='login'" />
+							<input type="button" id="join_button" value="회원가입" class="btn gray mr0" />
 						</div>
 					</div>
 				</fieldset>
@@ -202,7 +202,7 @@
 
 $(document).ready(function(){
 	//회원가입 버튼(회원가입 기능 작동)
-	$(".join_button").click(function(){
+	$("#join_button").click(function(){
 		$("#join_form").attr("action", "/member/join");
 		$("#join_form").submit();
 	});
