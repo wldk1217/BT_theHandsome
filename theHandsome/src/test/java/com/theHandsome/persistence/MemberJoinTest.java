@@ -8,7 +8,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.thehandsome.domain.MemberVO;
 import com.thehandsome.mapper.MemberMapper;
-import com.thehandsome.mapper.TimeMapper;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
@@ -29,7 +28,7 @@ public class MemberJoinTest {
 		member.setMpassword("pw01");
 		member.setMemail("test01@naver.com");
 		member.setMname("테스트");
-		member.setMtel("01011111111");
+		member.setMtel("01012341234");
 		member.setMzipcode("12200");
 		member.setMaddress1("테스트 주소1");
 		member.setMaddress2("테스트 주소2");
