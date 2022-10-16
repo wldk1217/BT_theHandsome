@@ -1,14 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ include file="/WEB-INF/views/includes/header.jsp"%>
-<script>
- 
-function loginClick(){
-	$("#loginForm").attr("action", "/member/login");
-    $("#loginForm").submit();
-}
- 
-</script>
+<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 <%@ include file="/WEB-INF/views/includes/header.jsp"%>
 <input type="hidden" name="loginLayer" id="loginLayer" value="E" />
 <div id="bodyWrap" class="login">
@@ -24,7 +16,7 @@ function loginClick(){
 					</div>
 					<div id="hpIPLogin">
 						<!-- 폼 끝 -->
-						<form id="loginForm" name="loginForm" method='post'>
+						<form id="loginForm" name="loginForm" method="POST" action="login">
 							<input type="hidden" name="inputId" id="inputId" value="" />
 							<fieldset>
 								<legend>로그인 입력항목</legend>
@@ -35,17 +27,19 @@ function loginClick(){
 									<div>
 										<div>
 											<input style="width: 400px; margin-top: 30px;" type="text"
-												id="j_username" name="j_username"
+												id="userid" name="userid"
 												placeholder="아이디 / 이메일을 입력하세요." title="아이디" value="" />
 										</div>
 										<div>
 											<input style="width: 400px; margin-top: 10px;" type="password"
-												id="j_password" name="j_password" placeholder="비밀번호를 입력하세요."
+												id="passwd" name="passwd" placeholder="비밀번호를 입력하세요."
 												title="비밀번호" />
 										</div>
 										<div>
-											<a onclick="href='joininfoform'" class="btn add_ss join"
-												style="margin-top: 10px; width:380px;">로그인</a>
+											<!-- <a onclick="/member/login" class="btn add_ss join" 
+												style="margin-top: 10px; width:380px;">로그인</a> -->
+												
+											<button type="submit" >로그인</button>
 										</div>
 									</div>
 
@@ -100,7 +94,7 @@ function loginClick(){
 						</p>
 					</div>
 					<div class="title_wrap hide" id="eg_block">
-						<a onclick="href='joininfoform'" class="btn add_ss join"
+						<a  href="/member/join" class="btn add_ss join"
 							style="width: 366px">간편회원 가입</a>
 						<p class="join_txt2 mt20">
 							<span>※ 간편회원은 e-Gift Card 구매 및 등록이 불가능합니다.<br>통합회원 가입

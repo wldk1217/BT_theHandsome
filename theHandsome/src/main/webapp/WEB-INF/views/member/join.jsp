@@ -1,49 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page session="false"%>
-<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 <%@ include file="/WEB-INF/views/includes/header.jsp" %>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
 
-<script type="text/javascript">
-function checkId() {
-	var email = "";
-	// 도메인과 합쳐서 이메일 값 저장
-	if($("#emailDomain").val() != "") {
-		email =$("#email").val()+"@"+$("#emailDomain").val();
-	} 
-	if($("#emailDomainSel").val() != ""){
-		email = $("#email").val()+"@"+$("#emailDomainSel").val();
-	}
 
-	$('input[name=mid]').attr('value',email);
-	$('input[name=memail]').attr('value',email);
-	$.ajax({
-        url:'/member/idCheck', //Controller에서 인식할 주소
-        type:'post', //POST 방식으로 전달
-        data:{mid:email},
-        async: false,
-        success:function(result){ //컨트롤러에서 넘어온 cnt값을 받는다 
-            if(result!="fail"){ //cnt가 1이 아니면(=0일 경우) -> 사용 가능한 아이디 
-                $('#id_ok').css("display", "inline-block");
-                $('#id_already').css("display","none");
-            } else { // cnt가 1일 경우 -> 이미 존재하는 아이디
-                $('#id_already').css("display","inline-block");
-            }
-        },
-        error:function(){
-            alert("에러입니다");
-        }
-    });
-}
-$(document).ready(function(){
-	$("#joinBtn").click(function() {
-		$("#memberJoinForm").attr("action", "/member/joininfoform");
-		$("#memberJoinForm").submit();	
-	})
-});
-</script>
-
-	<form id="memberJoinForm" name="memberJoinForm" method="POST">
+	<form id="join_form" method="post">
 		<input type="hidden" name="emailDuplChk" id="emailDuplChk" value=""
 			title="이메일 중복" /> <input type="hidden" name="pwTypeChk"
 			id="pwTypeChk" value="" title="비밀번호 형식" /> <input type="hidden"
@@ -178,9 +143,8 @@ $(document).ready(function(){
 
 
 						<div class="btnwrap">
-							<input type="button" value="취소" class="btn wt" id="cancleBtn" />
-							<input type="button" value="회원가입" class="btn gray mr0"
-								id="joinBtn" />
+							<input type="button" value="취소" class="btn wt" id="cancleBtn" onClick="location.href='login'" />
+							<input type="button" id="join_button" value="회원가입" class="btn gray mr0" />
 						</div>
 					</div>
 				</fieldset>
@@ -231,10 +195,19 @@ $(document).ready(function(){
 			</div>
 		</div>
 		<div>
-			<input type="hidden" name="CSRFToken"
-				value="d13178c1-d63b-4c82-97e9-3204689bb18e" />
 		</div>
 	</form>
 	<!-- footerWrap -->
+<script>
+
+$(document).ready(function(){
+	//회원가입 버튼(회원가입 기능 작동)
+	$("#join_button").click(function(){
+		$("#join_form").attr("action", "/member/join");
+		$("#join_form").submit();
+	});
+});
+
+</script>
 
 <%@ include file="/WEB-INF/views/includes/footer.jsp" %>
