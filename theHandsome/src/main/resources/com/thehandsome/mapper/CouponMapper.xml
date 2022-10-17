@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+ <!-- 
+ /* 
+ * 김민선 생성
+ * [쿠폰 생성, 쿠폰 삭제, 쿠폰 조회, 쿠폰 ] 쿼리
+ */
+  -->
+  
+  <mapper namespace="com.thehandsome.mapper.CouponMapper">
+
+	<insert id="makeCoupon">
+  		insert into coupon values(#{ccode}, #{eid}, #{mid}, #{cname}, sysdate, sysdate+7, 0)
+  	</insert>
+  	
+  	<select id="couponlist" parameterType="String" resultType="String">
+  		select * from coupon where mid=#{mid}
+  	</select>
+  	
+  	
+<!--   	<update id="modifyInfo">
+  		update member set mpassword=#{mpassword}, mzipcode=#{mzipcode}, maddress1=#{maddress1}, maddress2=#{maddress2}, mtel=#{mtel} where mid=#{mid}
+  	</update>
+  	
+  	<update id="memberWithdrawal">
+  		update member set menabled=0 where mid=#{mid}
+  	</update> -->
+
+</mapper>

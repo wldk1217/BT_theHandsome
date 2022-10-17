@@ -15,25 +15,19 @@ import lombok.extern.log4j.Log4j;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
 @Log4j
-public class MemberJoinTest {
+public class MemberLoginTest {
 	
-	@Autowired
+	@Setter(onMethod_ = @Autowired)
 	private MemberMapper mapper;
 	
 	@Test
-	public void memberJoin() throws Exception{
+	public void memberLogin() throws Exception{
 		MemberVO member = new MemberVO();
 		
 		member.setMid("test01");
 		member.setMpassword("pw01");
-		member.setMemail("test01@naver.com");
-		member.setMname("테스트");
-		member.setMtel("01012341234");
-		member.setMzipcode("12200");
-		member.setMaddress1("테스트 주소1");
-		member.setMaddress2("테스트 주소2");
-		
-		mapper.memberJoin(member);
+		mapper.memberLogin(member);
+		System.out.println("결과 값 : " + mapper.memberLogin(member));
 	}
-
-}//end class 
+	
+}//end class
