@@ -2,16 +2,3 @@ pom.properties
 .classpath
 MANIFEST.MF
 bin/
-theHandsome/bin/.settings/org.eclipse.wst.common.component
-theHandsome/bin/src/main/java/com/thehandsome/controller/MemberController.class
-theHandsome/bin/src/main/resources/com/thehandsome/mapper/MemberMapper.xml
-theHandsome/bin/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml
-theHandsome/bin/src/main/webapp/WEB-INF/spring/root-context.xml
-theHandsome/bin/src/main/webapp/WEB-INF/views/error.jsp
-theHandsome/bin/src/main/webapp/WEB-INF/views/member/joininfoform.jsp
-theHandsome/bin/src/main/webapp/WEB-INF/views/member/login.jsp
-theHandsome/bin/src/test/java/com/theHandsome/persistence/MemberJoinTest.class
-theHandsome/bin/target/classes/com/thehandsome/mapper/MemberMapper.xml
-theHandsome/target/classes/com/thehandsome/controller/MemberController.class
-theHandsome/target/test-classes/com/theHandsome/persistence/MemberJoinTest.class
-theHandsome/target/test-classes/com/theHandsome/persistence/MemberLoginTest.class
