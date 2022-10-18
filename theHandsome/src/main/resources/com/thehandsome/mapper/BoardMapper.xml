@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.thehandsome.mapper.BoardMapper">
+  
+  <select id = "getList" resultType="com.thehandsome.domain.BoardVO">
+  <![CDATA[
+  	select qid, mid, qtitle, qcontent, qdate from qna where qid > 0
+  ]]>
+  
+  </select>
+  
+  <insert id="insert">
+  		INSERT INTO qna(qid, mid, qtitle, qcontent, qdate)
+  		VALUES(qid_seq.nextval, #{mid}, #{qtitle}, #{qcontent}, #{qdate})
+  </insert>
+  
+  <select id = "read" resultType="com.thehandsome.domain.BoardVO">
+  		SELECT * FROM qna where qid = #{qid}
+  </select>
+  
+  <delete id="delete">
+  		DELETE FROM qna where qid = #{qid}
+  </delete>
+  
+  <update id = "update">
+  		UPDATE qna
+  		SET
+  		qtitle=#{qtitle}, 
+  		qcontent=#{qcontent},
+  		qdate=#{qdate}
+  		WHERE qid=#{qid}
+  </update>
+  </mapper>
