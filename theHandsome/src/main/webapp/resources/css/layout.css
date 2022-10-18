@@ -139,13 +139,13 @@ iframe.lnb{width:100%;height:100%}
 #headerWrap .gnbwarp .gnb_nav{float:left;margin-top:17px}
 #headerWrap .gnbwarp .gnb_nav > ul > li{float:left}
 #headerWrap .gnbwarp .gnb_nav > ul > li > a{position:relative;display: block;margin:14px 25px 28px;color:#363636}
-#headerWrap .gnbwarp .gnb_nav > ul > li > a .arr{display:none;position:absolute;bottom:-29px;left:50%;margin-left:-4px;width:9px;height:5px;background:url("/_ui/desktop/common/images/common/gnb_arr.gif") 0 0 no-repeat;text-indent: -999em}
+#headerWrap .gnbwarp .gnb_nav > ul > li > a .arr{display:none;position:absolute;bottom:-29px;left:50%;margin-left:-4px;width:9px;height:5px;background:url("/resources/images/common/common/gnb_arr.gif") 0 0 no-repeat;text-indent: -999em}
 #headerWrap .gnbwarp .gnb_nav > ul > li > a:hover,
 #headerWrap .gnbwarp .gnb_nav > ul > li > a.on{border-bottom:1px solid #363636}
 #headerWrap .gnbwarp .gnb_nav > ul > li > a:hover .arr,
 #headerWrap .gnbwarp .gnb_nav > ul > li > a.on .arr{display: block}
 #headerWrap .gnbwarp .gnb_nav > ul > li:first-child{margin-left: 0}
-#headerWrap .gnbwarp .gnb_nav > ul > li > .sub_back{position: absolute; top:120px; left:0; width:100%; height:0; background:url("/_ui/desktop/common/images/common/gnb_submenu_bg.png"); z-index: 8}
+#headerWrap .gnbwarp .gnb_nav > ul > li > .sub_back{position: absolute; top:120px; left:0; width:100%; height:0; background:url("/resources/images/common/gnb_submenu_bg.png"); z-index: 8}
 #headerWrap .gnbwarp .gnb_nav > ul.cate_banner > li > .sub_back{height:auto !important}
 #headerWrap .gnbwarp .gnb_nav .sub_menu{display:none; margin:0 auto;padding:25px 0;position: relative;min-height: 25px}/* 20150929 */
 #headerWrap .gnbwarp .gnb_nav .sub_menu > ul > li{float:left;margin-right:60px}
@@ -489,7 +489,7 @@ iframe.lnb{width:100%;height:100%}
 #headerWrap .gnbwarp .gnb_nav1803 ul.gnbul1 > li:first-child .gnbbr_txt{margin:0 0 25px 0;display:inline-block;}
 #headerWrap .gnbwarp .gnb_nav1803 ul.gnbul1 > li:first-child .br_button_wrap{display:inline-block;clear:both;}
 #headerWrap .gnbwarp .gnb_nav1803 ul.gnbul1 > li:first-child .btn_br_apply{background:#fff;border:1px solid #c1c1c1;padding:3px 20px;cursor:pointer;display:inline-block;clear:both;}
-#headerWrap .gnbwarp .gnb_nav1803 ul.gnbul1 > li:first-child .btn_br_apply:before{content:"";width:10px;height:10px;display:inline-block;padding-right:5px;background:url('/_ui/desktop/common/images/common/chk_aply_btn.png') no-repeat;}
+#headerWrap .gnbwarp .gnb_nav1803 ul.gnbul1 > li:first-child .btn_br_apply:before{content:"";width:10px;height:10px;display:inline-block;padding-right:5px;background:url('/resources/images/common/chk_aply_btn.png') no-repeat;}
 #headerWrap .gnbwarp .gnb_nav1803 ul.gnbul1 > li:first-child .btn_br_reset{background:#fff;border:1px solid #c1c1c1;padding:3px 20px;cursor:pointer;display:inline-block;}
 /*************************************201803 header - end****************************/
 /*201804 아울렛메인 gnb*/
