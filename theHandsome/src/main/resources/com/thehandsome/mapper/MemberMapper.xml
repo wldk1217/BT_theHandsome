@@ -6,24 +6,26 @@
 <mapper namespace="com.thehandsome.mapper.MemberMapper">
 
 	<insert id="memberJoin">
-		insert into member values(#{mid}, #{mpassword}, #{mname}, #{memail},
-		#{mtel}, #{mzipcode}, #{maddress1}, #{maddress2}, 'MEMBER', sysdate,
-		0, 1)
+		insert into member values (#{mid}, #{mpassword}, #{mname}, #{memail}, #{mtel}, #{mzipcode}, #{maddress1},#{maddress2},'member',sysdate,0,1)
 	</insert>
 
 	<select id="idCheck" parameterType="String" resultType="int">
-		select count(mid) from member where mid=#{mid}
+		select
+		count(mid) from member where mid=#{mid}
 	</select>
 
 
 	<select id="memberLogin"
 		resultType="com.thehandsome.domain.MemberVO">
-		select * from member where mid=#{mid} and mpassword=#{mpassword}
+		select * from member where mid=#{mid} and
+		mpassword=#{mpassword}
 	</select>
 
 	<update id="modifyInfo">
-		update member set mpassword=#{mpassword}, mzipcode=#{mzipcode},
-		maddress1=#{maddress1}, maddress2=#{maddress2}, mtel=#{mtel} where
+		update member set mpassword=#{mpassword},
+		mzipcode=#{mzipcode},
+		maddress1=#{maddress1}, maddress2=#{maddress2},
+		mtel=#{mtel} where
 		mid=#{mid}
 	</update>
 
@@ -32,3 +34,4 @@
 	</update>
 
 </mapper>
+

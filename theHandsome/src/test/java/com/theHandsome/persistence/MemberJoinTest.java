@@ -8,6 +8,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.thehandsome.domain.MemberVO;
 import com.thehandsome.mapper.MemberMapper;
+import com.thehandsome.service.MemberService;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
@@ -18,22 +19,24 @@ import lombok.extern.log4j.Log4j;
 public class MemberJoinTest {
 	
 	@Autowired
-	private MemberMapper mapper;
+	private MemberService service;
+	// private MemberMapper mapper;
+	
 	
 	@Test
 	public void memberJoin() throws Exception{
 		MemberVO member = new MemberVO();
 		
-		member.setMid("test01");
-		member.setMpassword("pw01");
-		member.setMemail("test01@naver.com");
-		member.setMname("테스트");
-		member.setMtel("01012341234");
+		member.setMid("test5");
+		member.setMpassword("pw03");
+		member.setMemail("test04@naver.com");
+		member.setMname("테스트5");
+		member.setMtel("0101234333");
 		member.setMzipcode("12200");
-		member.setMaddress1("테스트 주소1");
-		member.setMaddress2("테스트 주소2");
+		member.setMaddress1("테스트 주소3");
+		member.setMaddress2("테스트 주소3");
 		
-		mapper.memberJoin(member);
+		service.memberJoin(member);
 	}
 
 }//end class 

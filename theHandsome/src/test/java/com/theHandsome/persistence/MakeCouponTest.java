@@ -24,24 +24,13 @@ public class MakeCouponTest {
 	@Test
 	public void makeCoupon() throws Exception{
 		CouponVO coupon = new CouponVO();
-		
-		coupon.setCcode("ABC1234");
+		coupon.setCcode("ABC1236");
+		coupon.setEid(1);
+		coupon.setMid("test01");
 		coupon.setCname("ms coupon");
-		coupon.setEid(2);
-		coupon.setMid("Minseon's friend");
-		coupon.setCstate(0);
-	
+		
+	    mapper.makeCoupon(coupon);
 
-//		member.setMid("test01");
-//		member.setMpassword("pw01");
-//		member.setMemail("test01@naver.com");
-//		member.setMname("테스트");
-//		member.setMtel("01012341234");
-//		member.setMzipcode("12200");
-//		member.setMaddress1("테스트 주소1");
-//		member.setMaddress2("테스트 주소2");
-//		
-//		mapper.memberJoin(member);
 	}
 }
 

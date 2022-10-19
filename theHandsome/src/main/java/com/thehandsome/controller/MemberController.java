@@ -4,9 +4,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.thehandsome.domain.MemberVO;
 import com.thehandsome.service.MemberService;
@@ -25,35 +27,34 @@ public class MemberController {
 	@Autowired
 	private MemberService memberservice;
 
-	// 회원가입 페이지 이동
-	@RequestMapping(value = "join", method = RequestMethod.GET)
-	public void loginGET() {
+	// 로그인 페이지 이동
+		@RequestMapping(value = "login", method = RequestMethod.GET)
+		public void joinGET() {
 
+			logger.info("로그인 페이지 진입");
+
+		}
+		
+		
+	// 회원가입 페이지 이동
+	@GetMapping("/join")
+	public void loginGET() {
 		logger.info("회원가입 페이지 진입");
 
 	}
-
-	// 로그인 페이지 이동
-	@RequestMapping(value = "login", method = RequestMethod.GET)
-	public void joinGET() {
-
-		logger.info("로그인 페이지 진입");
-
-	}
-
+	
 	// 회원가입
-	@RequestMapping(value = "/join", method = RequestMethod.POST)
+	@PostMapping("/join")
 	public String joinPOST(MemberVO member) throws Exception {
 
-		log.info("join 진입");
-
+		log.info("join 진입 " + member);
 		// 회원가입 서비스 실행
 		memberservice.memberJoin(member);
-
-		log.info("join Service 성공");
-
-		return "redirect:/home";
+		// 로그인 페이지로 이동
+		return "redirect:/member/login";
 
 	}
+
+	
 
 }

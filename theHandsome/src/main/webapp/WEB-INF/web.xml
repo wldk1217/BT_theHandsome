@@ -8,7 +8,7 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
 			/WEB-INF/spring/root-context.xml
-			/WEB-INF/spring/security-context.xml
+	<!-- /WEB-INF/spring/security-context.xml -->		
 		</param-value><!-- security-context가 실행하도록 설정하는 부분 -->
 	</context-param>
 
@@ -54,7 +54,7 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 
-	<!-- 스프링 시큐리티 필터 설정 -->
+	<!-- 스프링 시큐리티 필터 설정 
 	<filter>
 		<filter-name>springSecurityFilterChain</filter-name>
 		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
@@ -63,6 +63,6 @@
 		<filter-name>springSecurityFilterChain</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-
+    -->
 
 </web-app>
