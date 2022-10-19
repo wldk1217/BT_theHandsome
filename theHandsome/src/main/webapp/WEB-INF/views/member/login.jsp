@@ -2,6 +2,36 @@
 	pageEncoding="UTF-8"%>
 <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 <%@ include file="/WEB-INF/views/common/header.jsp"%>
+<link rel="shortcut icon"
+	href="http://cdn.thehandsome.com/_ui/desktop/common/images/common/thehandsome_ic_16x16.ico" />
+<link rel="stylesheet" type="text/css"
+	href="../../../resources/css/font_80.css" media="all" />
+
+<link rel="stylesheet" type="text/css"
+	href="../../../resources/css/common.css" media="all" />
+<link rel="stylesheet" type="text/css"
+	href="../../../resources/css/layout.css" media="all" />
+<link rel="stylesheet" type="text/css"
+	href="../../../resources/css/popup.css" media="all" />
+<link rel="stylesheet" type="text/css"
+	href="../../../resources/css/jquery-ui.min.css" media="all" />
+
+<link rel="stylesheet" type="text/css"
+	href="../../../resources/css/brand.css" media="all" />
+<link rel="stylesheet" type="text/css"
+	href="../../../resources/css/swiper.css" media="all" />
+<link rel="stylesheet" type="text/css"
+	href="../../../resources/css/main_201903.css" media="all" />
+<link rel="stylesheet" type="text/css"
+	href="../../../resources/css/footer.css" media="all" />
+<style type="text/css" media="print">
+@IMPORT url("../../../resources/blueprint/print.css");
+</style>
+<script type="text/javascript"
+	src="../../../resources/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript"
+	src="../../../resources/js/jquery.vticker.js"></script>
+
 <input type="hidden" name="loginLayer" id="loginLayer" value="E" />
 <div id="bodyWrap" class="login">
 	<h3 class="cnts_title">
@@ -16,36 +46,34 @@
 					</div>
 					<div id="hpIPLogin">
 						<!-- 폼 끝 -->
-						<form id="loginForm" name="loginForm" method="POST" action="login">
-							<input type="hidden" name="inputId" id="inputId" value="" />
+						<form id="login_form" method="post">
+							<input type="hidden" name="inputId" id="inputId" value="">
 							<fieldset>
 								<legend>로그인 입력항목</legend>
 								<div class="login_section">
-
 									<p class="login_err_txt" id="hpErrMsg"
 										style="margin-left: 0px;"></p>
 									<div>
 										<div>
-											<input style="width: 400px; margin-top: 30px;" type="text"
-												id="userid" name="userid"
-												placeholder="아이디 / 이메일을 입력하세요." title="아이디" value="" />
+											<input class="id_input" name="mid" type="text"
+												id="j_username" placeholder="아이디 입력하세요." title="아이디"
+												value="">
 										</div>
 										<div>
-											<input style="width: 400px; margin-top: 10px;" type="password"
-												id="passwd" name="passwd" placeholder="비밀번호를 입력하세요."
-												title="비밀번호" />
-										</div>
-										<div>
-											<!-- <a onclick="/member/login" class="btn add_ss join" 
-												style="margin-top: 10px; width:380px;">로그인</a> -->
-												
-											<button type="submit" >로그인</button>
+											<input class="pw_iput" name="mpassword" type="password"
+												id="j_password" placeholder="비밀번호를 입력하세요." title="비밀번호">
 										</div>
 									</div>
-
+									<c:if test="${result == 0 }">
+										<div class="login_warn">사용자 ID 또는 비밀번호를 잘못 입력하셨습니다.</div>
+									</c:if>
+									<div class="login_button_wrap">
+										<input type="button" class="login_button" value="로그인">
+									</div>
 									<div class="id_save">
-										<input type="checkbox" id="id_save" name="id_save" value="Y">
-										<label for="id_save">아이디 저장</label>
+										<input class="pw_iput" name="mpassword" type="checkbox"
+											id="id_save" value="Y"><label for="id_save">아이디
+											저장</label>
 									</div>
 								</div>
 							</fieldset>
@@ -54,7 +82,8 @@
 					</div>
 					<div class="section_bottom">
 						<p>
-							<span class="bul_sty01" style="margin-bottom:30px;">H.Point 통합회원 아이디 / 비밀번호를 잊으셨나요?</span> <a
+							<span class="bul_sty01" style="margin-bottom: 30px;">H.Point
+								통합회원 아이디 / 비밀번호를 잊으셨나요?</span> <a
 								href="https://www.h-point.co.kr/cu/config/findCustId.nhd?prtnrId=D080&chnnlId=1705"
 								target="_blank" class="btn add_ss">통합회원 아이디 찾기</a> <a
 								href="https://www.h-point.co.kr/cu/config/findCustPwd.nhd"
@@ -79,8 +108,9 @@
 							온라인 멤버십 ‘THE 클럽’의 혜택을 받으실 수 있습니다
 						</p>
 					</div>
-					<a href="https://www.h-point.co.kr/cu/join/start.nhd" id="hpoinJoinBtn"
-						class="btn add_ss join" style="margin-bottom: 40px; width: 366px;">통합회원 가입</a>
+					<a href="https://www.h-point.co.kr/cu/join/start.nhd"
+						id="hpoinJoinBtn" class="btn add_ss join"
+						style="margin-bottom: 40px; width: 366px;">통합회원 가입</a>
 					<div class="title_wrap">
 						<h4 class="tlt_typ1">더한섬닷컴 간편회원 가입</h4>
 						<p class="txt" style="line-height: 1.5;">
@@ -94,7 +124,7 @@
 						</p>
 					</div>
 					<div class="title_wrap hide" id="eg_block">
-						<a  href="/member/join" class="btn add_ss join"
+						<a href="/member/join" class="btn add_ss join"
 							style="width: 366px">간편회원 가입</a>
 						<p class="join_txt2 mt20">
 							<span>※ 간편회원은 e-Gift Card 구매 및 등록이 불가능합니다.<br>통합회원 가입
@@ -109,5 +139,13 @@
 	</div>
 	<!--//sub_container-->
 </div>
+<script>
+	/* 로그인 버튼 클릭 메서드 */
+	$(".login_button").click(function() {
+		/* 로그인 메서드 서버 요청 */
+		$("#login_form").attr("action", "/member/login");
+		$("#login_form").submit();
+	});
+</script>
 
 <%@ include file="/WEB-INF/views/common/footer.jsp"%>
