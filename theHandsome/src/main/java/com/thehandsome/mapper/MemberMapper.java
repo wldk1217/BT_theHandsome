@@ -9,7 +9,7 @@ public interface MemberMapper {
 
 	public void memberJoin(MemberVO member); // 회원 가입
 	
-	public int idCheck(String mid); // 아이디 중복 확인
+	// public int idCheck(String mid); // 아이디 중복 확인
 	
 	public MemberVO memberLogin(MemberVO member); // 로그인
 	

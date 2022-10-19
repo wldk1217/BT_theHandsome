@@ -3456,7 +3456,7 @@ deg
 						<li><a href="/ko/magazine/exhibitions"
 							onclick="GA_Event('공통','GNB','기획전');"> 기획전 <!-- 기획전 -->
 						</a></li>
-						<li><a href="/ko/magazine/events"
+						<li><a href="/event/event"
 							onclick="GA_Event('공통','GNB','이벤트');">이벤트</a></li>
 						<!-- THE 매거진 수정 200330 -->
 						<li><a href="/ko/magazine/submain" class="magazine1803"

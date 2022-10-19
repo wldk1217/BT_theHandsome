@@ -21,16 +21,17 @@ public class MemberServiceImpl implements MemberService {
 	// 회원가입
 	@Override
 	public void memberJoin(MemberVO member) throws Exception {
+		log.info("register.." + member);
 		mapper.memberJoin(member);
 	}
 	
-	// 아이디 중복체크
-	@Override
-	public int idCheck(String mid) {
-        int cnt = mapper.idCheck(mid);
-        return cnt;
-    }
-	
+//	// 아이디 중복체크
+//	@Override
+//	public int idCheck(String mid) {
+//        int cnt = mapper.idCheck(mid);
+//        return cnt;
+//    }
+//	
 	// 로그인
 	@Override
 	public MemberVO memberLogin(MemberVO member) throws Exception {
