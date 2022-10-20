@@ -595,11 +595,31 @@ transform
 
 
 
+
+
+
+
+
+
+
+
+
+
 :
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -610,8 +630,28 @@ rotate
 
 
 
+
+
+
+
+
+
+
+
+
+
 (9
 deg
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -627,11 +667,31 @@ transform
 
 
 
+
+
+
+
+
+
+
+
+
+
 :
 
 
 
+
+
+
+
+
  
+
+
+
+
+
 
 
 
@@ -642,8 +702,28 @@ rotate
 
 
 
+
+
+
+
+
+
+
+
+
+
 (-1
 deg
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1229,7 +1309,24 @@ deg
 // End Google Tag Manager -->
 </script>
 
-
+<!-- Groobee -->
+<script type="text/javascript">
+	(function(a, i, u, e, o) {
+		a[u] = a[u] || function() {
+			(a[u].q = a[u].q || []).push(arguments)
+		};
+	})(window, document, "groobee");
+	groobee("serviceKey", "446b3d48b07e41f68624bf7f3457f33d");
+	groobee("siteType", "custom");
+</script>
+<script charset="utf-8"
+	src="//static.groobee.io/dist/g2/groobee.init.min.js"></script>
+<!-- End of Groobee -->
+<meta property="groobee:member_id" content="" />
+<meta property="groobee:member_grade" content="" />
+<meta property="groobee:member_gender" content="" />
+<meta property="groobee:member_type" content="" />
+<meta property="groobee:member_age" content="" />
 <script>
 	// 검색 결과 페이지
 	if (window.location.pathname.indexOf("/hssearch/searchCount") > -1) {
@@ -2699,9 +2796,19 @@ deg
 					<!--// 201705 search_box_wrap -->
 					<div class="util_menu" style="display: block;">
 						<ul class="clearfix">
+							<%
+								if (session.getAttribute("member") == null) {
+							%>
 							<li><a href="member/login"
-								onclick="GA_Event('공통','헤더_메뉴','로그인')"> 로그인 <!-- 로그인 -->
-							</a></li>
+								onclick="GA_Event('공통','헤더_메뉴','로그인')"> 로그인</a></li>
+							<%
+								} else {
+							%>
+							<li><a href="member/logout"
+								onclick="GA_Event('공통','헤더_메뉴','로그아웃')"> 로그아웃</a></li>
+							<%
+								}
+							%>
 							<li class="header_dropmemu mypage"><a href="/ko/mypage"
 								class="btn" onclick="GA_Event('공통','헤더_메뉴','마이페이지')">마이페이지</a>
 								<div class="list">
@@ -3456,7 +3563,7 @@ deg
 						<li><a href="/ko/magazine/exhibitions"
 							onclick="GA_Event('공통','GNB','기획전');"> 기획전 <!-- 기획전 -->
 						</a></li>
-						<li><a href="/event/event"
+						<li><a href="/ko/magazine/events"
 							onclick="GA_Event('공통','GNB','이벤트');">이벤트</a></li>
 						<!-- THE 매거진 수정 200330 -->
 						<li><a href="/ko/magazine/submain" class="magazine1803"
