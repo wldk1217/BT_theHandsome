@@ -10,6 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.thehandsome.domain.MemberVO;
@@ -28,7 +30,6 @@ public class MemberController {
 
 	@Autowired
 	private MemberService memberservice;
-
 	// 로그인 뷰로 이동
 	@GetMapping("/login")
 	public void loginGet() {
@@ -67,14 +68,14 @@ public class MemberController {
 		return "redirect:/"; // 로그아웃 후 메인페이지로 이동
 	}
 		
-		
+
 	// 회원가입 페이지 이동
 	@GetMapping("/join")
 	public void loginGET() {
 		logger.info("회원가입 페이지 진입");
 
 	}
-	
+
 	// 회원가입
 	@PostMapping("/join")
 	public String joinPOST(MemberVO member) throws Exception {
@@ -87,6 +88,22 @@ public class MemberController {
 
 	}
 
-	
+	// 회원가입아이디 중복체크
+	@ResponseBody
+	@PostMapping("/idCheck")
+	public String idCheck(@RequestParam("id") String id) {
+		int cnt = memberservice.idCheck(id);
+		logger.info("controller " + cnt);
+		if (cnt == 0 ) {
+			//cnt가 1이 아니면(=0일 경우) -> 사용 가능한 아이디 
+			String result = "possible";
+			return result;
+			
+		} else { 
+			String result = "impossible";
+			return result;
+		} 
+		
+	}
 
 }
