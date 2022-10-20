@@ -1,17 +1,25 @@
 package com.thehandsome.domain;
 
 import lombok.Data;
+import oracle.sql.DATE;
 
 @Data
 public class ProductVO {
-	private String pid; // »óÇ° Ç°¹ø
-	private int bno; // ºê·£µå ¹øÈ£
-	private String clarge; // Ä«Å×°í¸® ´ëºĞ·ù
-	private String cmedium; // Ä«Å×°í¸® ÁßºĞ·ù
-	private String csmall; // Ä«Å×°í¸® ¼ÒºĞ·ù
-	private int pno; // »óÇ° ¹øÈ£
-	private String pname; // »óÇ° ÀÌ¸§
-	private int pprice; // »óÇ° °¡°İ
-	private String pdetail; // »óÇ° »ó¼¼Á¤º¸
-	private int ptotalamount; // »óÇ° ¼ö·®
+	private String pid; // ï¿½ï¿½Ç° Ç°ï¿½ï¿½
+	private String bname; // ë¸Œëœë“œ ì´ë¦„
+	private String clarge; // Ä«ï¿½×°ï¿½ ï¿½ï¿½Ğ·ï¿½
+	private String cmedium; // Ä«ï¿½×°ï¿½ ï¿½ßºĞ·ï¿½
+	private String csmall; // Ä«ï¿½×°ï¿½ ï¿½ÒºĞ·ï¿½
+	private String pname; // ï¿½ï¿½Ç° ï¿½Ì¸ï¿½
+	private int pprice; // ï¿½ï¿½Ç° ï¿½ï¿½ï¿½ï¿½
+	private String pdetail; // ï¿½ï¿½Ç° ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	private String pinfo;
+	private String pitem;
+	private String pmaterial;
+	private String pcolor;
+	private String psize;
+	private String pcountry;
+	private String pmanufacturer;
+	private DATE pmadedate;
+	private DATE pdate;
 }

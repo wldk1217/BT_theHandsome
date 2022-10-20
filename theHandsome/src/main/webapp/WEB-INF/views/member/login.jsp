@@ -59,7 +59,7 @@
 												id="j_username" placeholder="아이디 입력하세요." title="아이디"
 												value="">
 										</div>
-										<div>
+										<div>ㅇ
 											<input class="pw_iput" name="mpassword" type="password"
 												id="j_password" placeholder="비밀번호를 입력하세요." title="비밀번호">
 										</div>
