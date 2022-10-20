@@ -52,29 +52,23 @@
 								<legend>로그인 입력항목</legend>
 								<div class="login_section">
 									<p class="login_err_txt" id="hpErrMsg"
-										style="margin-left: 0px;"></p>
+										style="margin-left: 0px; margin-bottom: 35px;"></p>
 									<div>
-										<div>
+										<div> 
 											<input class="id_input" name="mid" type="text"
 												id="j_username" placeholder="아이디 입력하세요." title="아이디"
-												value="">
+												value="" style="width: 410px; height: 35px; ">
 										</div>
-										<div>ㅇ
+										<div>
 											<input class="pw_iput" name="mpassword" type="password"
-												id="j_password" placeholder="비밀번호를 입력하세요." title="비밀번호">
+												id="j_password" placeholder="비밀번호를 입력하세요." title="비밀번호" style="width: 410px; height: 35px; margin-top: 5px;">
 										</div>
 									</div>
-									<c:if test="${result == 0 }">
-										<div class="login_warn">사용자 ID 또는 비밀번호를 잘못 입력하셨습니다.</div>
-									</c:if>
-									<div class="login_button_wrap">
-										<input type="button" class="login_button" value="로그인">
+									
+									<div class="login_button_wrap" style="width: 410px; height: 35px; padding-top: 25px;">
+										<input type="button" class="login_button btn add_ss join " value="로그인" style="width: 410px; height: 35px; ">
 									</div>
-									<div class="id_save">
-										<input class="pw_iput" name="mpassword" type="checkbox"
-											id="id_save" value="Y"><label for="id_save">아이디
-											저장</label>
-									</div>
+									
 								</div>
 							</fieldset>
 
