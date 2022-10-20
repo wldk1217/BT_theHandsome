@@ -2,22 +2,36 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/views/common/header.jsp"%>
-<script src="https://code.jquery.com/jquery-3.4.1.js"
-	integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-	crossorigin="anonymous"></script>
+<head>
+<script src="/jquery-3.4.1.min.js"></script>
 
-<form id ="join_form" action="/member/join" method="POST">
 
-<!--  
-	<input type="hidden" name="emailDuplChk" id="emailDuplChk" value=""title="이메일 중복" /> 
-	<input type="hidden" name="pwTypeChk" id="pwTypeChk" value="" title="비밀번호 형식" />
-	<input type="hidden" name="pwConfirmChk" id="pwConfirmChk" value="" title="비밀번호 일치" />
-	<input type="hidden" id="uid" name="uid" value="gjm1026@naver.com" /> 
-	<input type="hidden" id="emailAddress" name="emailAddress" value="" /> 
-	<input type="hidden" id="sBirthday" name="sBirthday" value="" /> 
-	<input type="hidden" id="gender" name="gender" value="" /> 
-	<input type="hidden" id="collectionAgreementYN" name="collectionAgreementYN" value="" />
--->
+
+<style>
+.id_ok {
+	color: #008000;
+	display: none;
+}
+
+.id_already {
+	color: #6A82FB;
+	display: none;
+}
+
+.pw_ok {
+	color: #008000;
+	display: none;
+}
+
+.pw_notokay {
+	color: #6A82FB;
+	display: none;
+}
+</style>
+
+</head>
+
+<form id="join_form" action="/member/join" method="POST">
 
 	<div id="bodyWrap">
 		<!--title-->
@@ -49,97 +63,70 @@
 									<th scope="row"><strong class="reqd">*</strong><label
 										for="mid">아이디</label></th>
 									<td><input type="text" style="width: 120px" id="id"
-										name='mid' /></td>
+										name='mid' oninput="checkId()" required /> <span class="id_ok">사용
+											가능한 아이디입니다.</span> <span class="id_already">이미 사용중인 아이디입니다.</span></td>
+
+
 								</tr>
 								<tr>
 									<th scope="row"><label for="email">E-mail (정보수신용)</label></th>
-									<td><input type="hidden" id="mid" name='memail' ><input
-										type="hidden" id='memail' > <input
-										type="text" style="width: 120px" title="이메일" id="email">
-										<span class="andmail">@</span> <select id="emailDomainSel"
-										style="width: 120px" title="이메일">
-											<option value="">직접입력</option>
-											<option value="naver.com">naver.com</option>
-											<option value="daum.net">daum.net</option>
-											<option value="gmail.com">gmail.com</option>
-											<option value="yahoo.co.kr">yahoo.co.kr</option>
-											<option value="lycos.co.kr">lycos.co.kr</option>
-											<option value="nate.com">nate.com</option>
-											<option value="empas.com">empas.com</option>
-											<option value="hotmail.com">hotmail.com</option>
-											<option value="msn.com">msn.com</option>
-											<option value="hanmir.com">hanmir.com</option>
-											<option value="chol.net">chol.net</option>
-											<option value="korea.com">korea.com</option>
-											<option value="netsgo.com">netsgo.com</option>
-											<option value="dreamwiz.com">dreamwiz.com</option>
-											<option value="hanafos.com">hanafos.com</option>
-											<option value="freechal.com">freechal.com</option>
-											<option value="hitel.net">hitel.net</option>
-									</select> 
-									<!-- 
-									<input type="text" id="emailDomain" style="width: 120px"
-										value="" title="이메일 도메인"> 
-										 
-										<input type="button"
-										class="btn add_s" id="emailDubChkBtn" value="중복확인"
-										onclick="checkId()"> <span class="guide_comment"
-										id="emailMsg"></span>
-										<div class="wtype_comment pt10">
-											<p class="login_err_txt" id="id_ok"
-												style="margin-left: 0px; color: brown; display: none">사용
-												가능한 이메일입니다.</p>
-											<p class="login_err_txt" id="id_already"
-												style="margin-left: 0px; color: brown; display: none">이미
-												사용중인 이메일입니다.</p>
-										</div>
-										-->
-										</td>
+									<td><input type="text" style="width: 120px" title="이메일"
+										id="userEmail" /> <span class="andmail" id="middle">@</span>
+										<input type="text" id="email_address"
+										list="user_email_address" style="width: 150px" required> <datalist
+											id="user_email_address">
+											<option value="직접입력"></option>
+											<option value="naver.com"></option>
+											<option value="daum.net"></option>
+											<option value="gmail.com"></option>
+											<option value="hotmail.com"></option>
+											<option value="msn.com"></option>
+
+										</datalist> 
+										<input type="hidden" id="totalEmail" name='memail' /></td>
 								</tr>
 								<tr>
 									<th scope="row"><strong class="reqd">*</strong><label
 										for="pw">비밀번호</label></th>
 									<td><input type="password" id="pw" name='mpassword'
-										style="width: 150px" title="비밀번호" /> <span
+										style="width: 150px" title="비밀번호" required /> <span
 										class="guide_comment lh_30" id="pwMsg"></span> <span
 										class="guide_comment lh_30" id="pwcapsLockMsg"></span></td>
 								</tr>
-								<!-- 
+
 								<tr>
 									<th scope="row"><strong class="reqd">*</strong> <label
 										for="pw2">비밀번호 확인</label></th>
 									<td><input type="password" id="pwc" style="width: 150px"
-										title="비밀번호 확인" /> <span class="guide_comment" id="pwcMsg"></span>
-										<span class="guide_comment" id="pwcCapsLockMsg"></span></td>
+										title="비밀번호 확인" required /> 
+										<span class="pw_ok">비밀번호가 일치합니다.</span> <span class="pw_notokay">비밀번호가 불일치합니다.</span>
+									</td>
 								</tr>
-								 -->
+
 								<tr>
 									<th scope="row"><strong class="reqd">*</strong><label
 										for="name">이름</label></th>
 									<td><input type="text" style="width: 120px" id="name"
-										name='mname' /></td>
+										name='mname' required /></td>
 								</tr>
 								<tr>
 									<th scope="row"><strong class="reqd">*</strong><label
 										for="mtel">전화번호</label></th>
 									<td><input type="text" style="width: 120px" id="name"
-										name='mtel' /></td>
+										name='mtel' required /></td>
 								</tr>
 								<tr>
-									<th scope="row"><strong class="reqd">*</strong><label
-										for="mzipcode">우편번호</label></th>
+									<th scope="row"><label for="mzipcode">우편번호</label></th>
 									<td><input type="text" style="width: 120px" id="mzipcode"
 										name='mzipcode' /></td>
 								</tr>
 								<tr>
-									<th scope="row"><strong class="reqd">*</strong><label
-										for="maddress1">주소</label></th>
+									<th scope="row"><label for="maddress1">주소</label></th>
 									<td><input type="text" style="width: 120px" id="maddress1"
 										name='maddress1' /></td>
 								</tr>
 								<tr>
-									<th scope="row"><strong class="reqd">*</strong><label
-										for="maddress2">상세 주소</label></th>
+									<th scope="row"><label for="maddress2">상세 주소</label></th>
 									<td><input type="text" style="width: 120px" id="maddress2"
 										name='maddress2' /></td>
 								</tr>
@@ -150,9 +137,9 @@
 
 					<div class="btnwrap">
 						<input type="button" value="취소" class="btn wt" id="cancleBtn"
-							onClick="location.href='login'" /> 
-						<button type ="submit" id="join_button" class="btn gray mr0">회원가입</button>
-						
+							onClick="location.href='login'" />
+						<button type="submit" id="join_button" class="btn gray mr0">회원가입</button>
+
 					</div>
 				</div>
 			</fieldset>
@@ -162,15 +149,77 @@
 </form>
 
 
-<!-- footerWrap 
+<!-- footerWrap -->
+
 <script>
-	$(document).ready(function() {
-		//회원가입 버튼(회원가입 기능 작동)
-		$("#join_button").click(function() {
-			$("#join_form").attr("action", "/member/join");
-			$("#join_form").submit();
+	//이메일주소 합쳐서 한번에 저장하기
+	$("#email_address").blur(function() {
+		email();
+	});
+	$("#userEmail").blur(function() {
+		email();
+	});
+
+	function email() {
+
+		const email_id = $("#userEmail").val();
+		const middle = $("#middle").text();
+
+		const email_domain = $("#email_address").val();
+
+		if (email_id != "" && email_domain != "") {
+			$("#totalEmail").val(email_id + middle + email_domain);
+		}
+	}
+
+	// 아이디 중복체크
+	function checkId() {
+		var id = $('#id').val(); //id값이 "id"인 입력란의 값을 저장
+		console.log(id);
+
+		$.ajax({
+			url : './idCheck', //Controller에서 요청 받을 주소
+			type : 'post', //POST 방식으로 전달
+			data : {
+				id : $("#id").val()
+			},
+			dataType : 'text',
+			success : function(result) {
+				console.log(result);
+				//컨트롤러에서 넘어온 cnt값을 받는다 
+				if (result == "possible") { //cnt가 1이 아니면(=0일 경우) -> 사용 가능한 아이디 
+					console.log(cnt);
+					$('.id_ok').css("display", "inline-block");
+					$('.id_already').css("display", "none");
+
+				} else {
+					// cnt가 1일 경우 -> 이미 존재하는 아이디
+					$('.id_already').css("display", "inline-block");
+					$('.id_ok').css("display", "none");
+				}
+			},
+			error : function() {
+				alert("에러입니다");
+			}
 		});
+	};
+
+	// 비밀번호 확인
+	$(function() {
+		$('#pwc').blur(function() {
+			if ($('#pw').val() != $('#pwc').val()) {
+				if ($('#pwc').val() != '') {
+					$('.pw_notokay').css("display", "inline-block");
+					$('.pw_ok').css("display", "none");
+					$('#pwc').val('');
+					$('#pwc').focus();
+				}
+				}else{
+					$('.pw_ok').css("display", "inline-block");
+					$('.pw_notokay').css("display", "none");
+			}
+		})
 	});
 </script>
--->
+
 <%@ include file="/WEB-INF/views/common/footer.jsp"%>
