@@ -1,6 +1,7 @@
 package com.theHandsome.service;
 
 import static org.junit.Assert.assertNotNull;
+
 import java.util.Date;
 
 import org.junit.Test;
@@ -9,8 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.thehandsome.domain.BoardCriteria;
 import com.thehandsome.domain.BoardVO;
-import com.thehandsome.mapper.BoardMapper;
 import com.thehandsome.service.BoardService;
 
 import lombok.Setter;
@@ -38,7 +39,8 @@ public class BoardServiceTests {
 	}
 	@Test
 	public void testGetList() throws Exception{
-		service.getList().forEach(board -> log.info(board));
+//		service.getList().forEach(board -> log.info(board));
+		service.getListWithPaging(new BoardCriteria(2,10)).forEach(board->log.info(board));
 	}
 	@Test
 	public void insertTest() throws Exception {

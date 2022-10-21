@@ -29,5 +29,4 @@ public class MemberLoginTest {
 		mapper.memberLogin(member);
 		System.out.println("결과 값 : " + mapper.memberLogin(member));
 	}
-	
-}//end class
+}
