@@ -306,7 +306,7 @@ input[type="week"]:disabled{background:#f9f9f9}
 .tab_a.m3 li{width:33.333333%}
 .tab_a.m4 li{width:25%}
 .tab_a.m6 li{width:16.7%}
-.tab_a.m8 li{width:12.54%}
+.tab_a.m8 li{width:16.75%}
 
 .tab_b li{float:left;background:url("/_ui/desktop/common/images/common/bul_1.gif") left 4px no-repeat}
 .tab_b li:first-child{background:none}
@@ -617,7 +617,7 @@ table td .receive_choice > span label{padding-right:25px;display:inline-block;}
  Paging
 ****************************************************/
 .paging{margin-top:40px;text-align: center}
-.paging > a{display:inline-block;width:15px;margin:0 5px;height:13px;background: url("/_ui/desktop/common/images/common/ico_paging.png") 0 0 no-repeat;text-indent: -999em; cursor:pointer;}/*200702 수정*/
+.paging > a{display:inline-block;width:15px;margin:0 5px;height:13px;background: url("http://www.thehandsome.com/_ui/desktop/common/images/common/ico_paging.png") 0 0 no-repeat;text-indent: -999em; cursor:pointer;}/*200702 수정*/
 .paging .prev{background-position: -25px -4px;}
 .paging .next{background-position: -62px -4px;}
 .paging .prev2{background-position: 0 -4px;}
@@ -626,6 +626,9 @@ table td .receive_choice > span label{padding-right:25px;display:inline-block;}
 .paging .num a{display: inline-block;padding:0 5px;vertical-align: top; cursor: pointer;}/*페이징 마우스 포인터 속성 추가 200701*/
 .paging .num a.on{font-weight: bold}
 
+.paging .paginate_button{margin-top:-4px;margin-top:-3px\9;display:inline-block;}
+.paging .paginate_button a{display: inline-block;padding:0 5px;vertical-align: top; cursor: pointer;}
+.paging .paginate_button a.on{font-weight: bold}
 /****************************************************
  Basket Info
 ****************************************************/
@@ -2056,3 +2059,5 @@ div.deilvery_chk_order span.red-alert{font-size:11px; font-weight:bold !importan
 .popwrap.pop_pinfo_agree {width:355px; position:absolute; top:50%; left:0; right:0; margin:0 auto; transform:translateY(-50%)}
 .popwrap.pop_pinfo_agree ol {padding:20px 0 0 14px;}
 .popwrap.pop_pinfo_agree ol li {list-style:inherit;}
+
+.qcontent:focus{outline:none;}
