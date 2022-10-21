@@ -1,4 +1,4 @@
-package com.theHandsome.persistence;
+package com.theHandsome.mapper;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,16 +14,14 @@ import com.thehandsome.mapper.TimeMapper;
 @ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
 @Log4j
 public class TimeMapperTests2 {
-	
-	@Autowired 
+
+	@Autowired
 	private TimeMapper timeMapper;
-	
+
 	@Test
 	public void testGetTime2() {
 		log.info("getTime2");
 		log.info(timeMapper.getTime2());
-		
-	}//end void
 
-	
-}//end class
+	}
+}
