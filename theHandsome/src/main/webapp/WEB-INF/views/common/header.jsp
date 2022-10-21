@@ -2799,12 +2799,12 @@ deg
 							<%
 								if (session.getAttribute("member") == null) {
 							%>
-							<li><a href="member/login"
+							<li><a href="/member/login"
 								onclick="GA_Event('공통','헤더_메뉴','로그인')"> 로그인</a></li>
 							<%
 								} else {
 							%>
-							<li><a href="member/logout"
+							<li><a href="/member/logout"
 								onclick="GA_Event('공통','헤더_메뉴','로그아웃')"> 로그아웃</a></li>
 							<%
 								}

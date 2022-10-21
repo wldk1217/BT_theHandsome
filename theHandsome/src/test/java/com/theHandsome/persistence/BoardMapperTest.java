@@ -1,6 +1,7 @@
 package com.theHandsome.persistence;
 
 import java.util.Date;
+import java.util.List;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.thehandsome.domain.BoardCriteria;
 import com.thehandsome.domain.BoardVO;
 import com.thehandsome.mapper.BoardMapper;
 
@@ -17,14 +19,10 @@ import lombok.extern.log4j.Log4j;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
 @Log4j
-public class BoardInsertTest {
+public class BoardMapperTest {
 	@Setter(onMethod_ = @Autowired)
 	private BoardMapper mapper;
 	
-	@Test
-	public void testGetList() {
-		mapper.getList().forEach(board -> log.info(board));
-	}
 	@Test
 	public void testInsert() {
 		Date day = new Date();
@@ -56,5 +54,15 @@ public class BoardInsertTest {
 		
 		boolean count = mapper.update(board);
 		log.info("update count : " + count);
+	}
+	@Test
+	public void testPaging() {
+		BoardCriteria cri = new BoardCriteria();
+		//10개씩 3페이지
+		cri.setPageNum(3);
+		cri.setAmount(10);
+		List<BoardVO> list = mapper.getListWithPaging(cri);
+		
+		list.forEach(board -> log.info(board.getQid()));
 	}
 }
