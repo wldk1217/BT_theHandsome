@@ -5,7 +5,7 @@ import java.util.Date;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.Data;
-
+//작성자 구영모
 @Data
 public class BoardVO {
 	private long qid;
