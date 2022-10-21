@@ -21,6 +21,7 @@ public class MemberServiceImpl implements MemberService {
 	// 회원가입
 	@Override
 	public void memberJoin(MemberVO member) throws Exception {
+		log.info("register.." + member);
 		mapper.memberJoin(member);
 	}
 	
@@ -28,6 +29,7 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public int idCheck(String mid) {
         int cnt = mapper.idCheck(mid);
+        System.out.println("service..." + cnt);
         return cnt;
     }
 	

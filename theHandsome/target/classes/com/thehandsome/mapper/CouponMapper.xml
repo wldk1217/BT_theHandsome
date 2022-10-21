@@ -13,20 +13,14 @@
   <mapper namespace="com.thehandsome.mapper.CouponMapper">
 
 	<insert id="makeCoupon">
-  		insert into coupon values(#{ccode}, #{eid}, #{mid}, #{cname}, sysdate, sysdate+7, 0)
+  		insert into coupon values
+  		(#{ccode}, #{eid}, #{mid}, #{cname}, sysdate, sysdate+10, 0)
   	</insert>
   	
+  	<!--  
   	<select id="couponlist" parameterType="String" resultType="String">
   		select * from coupon where mid=#{mid}
   	</select>
+  	-->
   	
-  	
-<!--   	<update id="modifyInfo">
-  		update member set mpassword=#{mpassword}, mzipcode=#{mzipcode}, maddress1=#{maddress1}, maddress2=#{maddress2}, mtel=#{mtel} where mid=#{mid}
-  	</update>
-  	
-  	<update id="memberWithdrawal">
-  		update member set menabled=0 where mid=#{mid}
-  	</update> -->
-
 </mapper>

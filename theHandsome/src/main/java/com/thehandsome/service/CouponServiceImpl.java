@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.thehandsome.domain.CouponVO;
 import com.thehandsome.mapper.CouponMapper;
+import com.thehandsome.mapper.MemberMapper;
 
 import lombok.AllArgsConstructor;
 import lombok.Setter;

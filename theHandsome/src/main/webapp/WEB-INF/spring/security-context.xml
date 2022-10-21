@@ -14,7 +14,7 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
 
 		<security:form-login />
 		
-		<security:access-denied-handler error-page="/accessError" />
+		
 	</security:http>
 
 	<security:authentication-manager>

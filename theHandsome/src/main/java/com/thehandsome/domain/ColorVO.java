@@ -4,11 +4,14 @@ import lombok.Data;
 
 @Data
 public class ColorVO {
-	private String pid; // »óÇ° Ç°¹ø
-	private String ccolorcode; // »ö»ó ÄÚµå
-	private String cimage1; // »ö»ó ÀÌ¹ÌÁö1
-	private String cimage2; // »ö»ó ÀÌ¹ÌÁö2
-	private String cimage3; // »ö»ó ÀÌ¹ÌÁö3
-	private String ccolorimage; // »ö»ó ÀÌ¹ÌÁö
-	private String cmatchpid; // »ö»ó º° »óÇ°¸ÅÄ¡
+	private String pid; // ï¿½ï¿½Ç° Ç°ï¿½ï¿½
+	private String ccolorcode; // ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½
+	private String cname;
+	private String ccolorimage;
+	private String cpreview;
+	private String cimage1; // ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½1
+	private String cimage2; // ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½2
+	private String cimage3; // ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½3
+	private String cimage4;
+	private String cimage5;
 }

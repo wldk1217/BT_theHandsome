@@ -2,55 +2,55 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-   <!-- 
- /* 
- * 작성자 : 고정민, 변민혁, 문혁
- * 
- * [상품 상세 조회, 상품 컬러 리스트 조회, 상품정보 조회, 카테고리별 상품 조회, 상품 총 개수 조회] 쿼리
- */
-  -->
-<mapper namespace="com.jmh.mapper.ProductMapper">
+
+<!-- 상품 상세 조회, 상품 컬러 리스트 조회, 상품정보 조회, 카테고리별 상품 조회, 상품 총 개수 조회 쿼리 -->
+
+<mapper namespace="com.thehandsome.mapper.ProductMapper">
 
 	<select id="productGetDetail"
-		resultType="com.jmh.domain.ProductVO">
-		select pid, p.bno, bname, clarge, cmedium, csmall, pname,
-		pprice, pdetail, t01_imageurl, t02_imageurl, t03_imageurl
+		resultType="com.thehandsome.domain.ProductVO">
+		select pid, bname, clarge, cmedium, csmall, pname, pprice, pdetail,
+		pinfo, pitem, pmaterial, pcolor, psize, pcountry, pmanufacturer
 		from product
-		p join brand b on p.bno = b.bno
 		where pid=#{pid}
 	</select>
 
 	<select id="productGetColor"
-		resultType="com.jmh.domain.ProductColorVO">
-		select pid, ccolorcode, cimage1 from color where pid=#{pid}
+		resultType="com.thehandsome.domain.ColorVO">
+		select pid, ccolorcode, cname, ccolorimage, cpreview, cimage1,
+		cimage2, cimage3, cimage4, cimage5 from color where pid=#{pid}
 	</select>
 
-	<select id="getList" resultType="com.jmh.domain.ProductVO">
-		select pid, pname, pprice, (select bname from brand b where b.bno=p.bno) as
-		bname, t01_imageurl, t02_imageurl
-		from product p
-	</select>
-
-	<select id="read" resultType="com.jmh.domain.ProductVO">
-		select
-		pid, bno, clarge, cmedium, csmall, pname, pprice, pdetail, t01_imageurl,
-		t02_imageurl
+	<select id="getList"
+		resultType="com.thehandsome.domain.ProductVO">
+		select p.pid, p.pname, p.pprice, c.cpreview
 		from product
-		where bno = #{bno}
+		join
+		color c on p.pid = c.pid
+		where bname=#{bname}
+	</select>
+
+	<select id="read" resultType="com.thehandsome.domain.ProductVO">
+		select p.pid, bname, clarge, cmedium, csmall,
+		pname, pprice, pdetail, c.cimage1, c.cimage2
+		from product p
+		join color c on p.pid = c.pid
+		where bname = #{bname}
 	</select>
 
 	<select id="getListWithPaging"
-		resultType="com.jmh.domain.ProductVO">
+		resultType="com.thehandsome.domain.ProductVO">
  		<![CDATA[
-			SELECT p.*, (select bname from brand b where p.bno=b.bno) bname
+			SELECT p.*, (select pid from color c where p.pid=c.pid) bname
 			FROM (select rownum rn, pid, pname, pprice, t01_imageurl, t02_imageurl, bno from 
 				(select * from product where clarge = #{param2} and cmedium = #{param3} and csmall = #{param4})) p
 			WHERE p.rn > (#{param1.pageNum} -1) * #{param1.amount} and p.rn <= #{param1.pageNum} * #{param1.amount}
     	]]>
 	</select>
-	
+
 	<select id="getTotal" resultType="int">
-		select count(*) from product 
-			where clarge = #{param1} and cmedium = #{param2} and csmall = #{param3}
+		select count(*) from product
+		where clarge = #{param1} and cmedium = #{param2} and csmall =
+		#{param3}
 	</select>
 </mapper>
