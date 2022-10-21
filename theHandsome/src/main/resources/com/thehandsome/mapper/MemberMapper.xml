@@ -6,7 +6,7 @@
 <mapper namespace="com.thehandsome.mapper.MemberMapper">
 
 	<insert id="memberJoin">
-		insert into member values (#{mid}, #{mpassword}, #{mname}, #{memail}, #{mtel}, #{mzipcode}, #{maddress1},#{maddress2},'member',sysdate,0,1)
+		insert into member values (#{mid}, #{mpassword}, #{mname}, #{memail}, #{mtel}, #{mzipcode}, #{maddress1},#{maddress2},'MEMBER',sysdate,0,1)
 	</insert>
 
 	<select id="idCheck" parameterType="String" resultType="int">
