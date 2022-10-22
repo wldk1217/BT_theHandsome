@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hyundai.handsome.mapper.ProductMapper">
+
+	<select id="productGetDetail"
+		resultType="com.hyundai.handsome.vo.ProductVO">
+		select p.pid, p.bno, b.bname, p.clarge, p.cmedium,
+		p.csmall, p.pname,
+		p.pprice, p.pdetail, c.ccolorcode, c.cimage1,
+		c.cimage2, c.cimage3, c.cimage4, c.cimage5, c.cimage6
+		from product p
+		join brand b on p.bno = b.bno
+		join
+		color c on p.pid = c.pid
+		where
+		p.pid=#{pid} AND
+		c.ccolorcode=#{ccolorcode}
+	</select>
+
+	<select id="productGetColor"
+		resultType="com.hyundai.handsome.vo.ProductColorVO">
+		select pid, ccolorcode,ccolorname, ccolorimage, cimage1,
+		cimage2, cimage3, cimage4, cimage5, cimage6 from color where pid=#{pid}
+	</select>
+
+	<select id="productGetStock" parameterType="map"
+		resultType="com.hyundai.handsome.vo.ProductStockVO">
+		select distinct(s.ssize), c.pid, c.ccolorcode,
+		c.ccolorname, s.samount
+		from color c
+		join stock s on c.pid = s.pid AND
+		c.ccolorcode=#{ccolorcode}
+		where c.pid=#{pid}
+		ORDER BY
+        CASE s.ssize
+            WHEN 'XXS' THEN 0
+            WHEN 'XS' THEN 1
+            WHEN 'S' THEN 2
+            WHEN 'M' THEN 3
+            WHEN 'L' THEN 4
+            WHEN 'XL' THEN 5
+            WHEN 'XXL' THEN 6
+        END
+      	ASC,
+      	to_number(REGEXP_REPLACE(s.ssize, '[^0-9]'))
+	</select>
+
+	<select id="getList"
+		resultType="com.hyundai.handsome.vo.ProductVO">
+		select p.pid, pname, pprice,
+		(select bname from brand b
+		where b.bno=p.bno)
+		as bname, c.cimage1, c.cimage2
+		from product p
+		join
+		color c on p.pid =
+		c.pid
+	</select>
+
+	<select id="read" resultType="com.hyundai.handsome.vo.ProductVO">
+		select pid, bname, clarge, cmedium,
+		csamll, pname, pprice, pdetail, c.cimage1, c.cimage2
+		from product p
+		join color c on p.pid = c.pid
+		where bname= #{bname}
+	</select>
+
+	<select id="getListWithPaging"
+		resultType="com.hyundai.handsome.vo.ProductVO">
+		SELECT p.*, (select bname from brand b where p.bno=b.bno) bname
+		FROM (select distinct pid,rownum rn, pname, pprice, bno
+		from (select * from product where clarge = #{clarge}
+		<if test="cmedium !='' ">
+			and cmedium = #{cmedium}
+		</if>
+		<if test="csmall !='' ">
+			and csmall =#{csmall}
+		</if>
+		)) p
+			<![CDATA[
+			WHERE p.rn > (#{param1.pageNum} -1) * #{param1.amount} and p.rn <= #{param1.pageNum} * #{param1.amount}
+    		]]>
+	</select>
+
+	<select id="getTotal" resultType="int">
+		select count(*)
+		from product
+		where clarge = #{clarge}
+		<if test="cmedium !='' ">
+			and cmedium = #{cmedium}
+		</if>
+		<if test="csmall !='' ">
+			and csmall =#{csmall}
+		</if>
+	</select>
+
+	<select id="getListWithPagingBrand"
+		resultType="com.hyundai.handsome.vo.ProductVO">
+		SELECT p.*
+		FROM (select distinct pid,rownum rn, a.pname, a.pprice, a.bno, b. bname
+		from product a
+		join brand b on b.bno=a.bno
+		where b.bname=#{bname}
+		) p
+		WHERE  <![CDATA[ p.rn >  (#{param1.pageNum} -1) * #{param1.amount} and p.rn <=#{param1.pageNum} * #{param1.amount} ]]>
+	</select>
+	
+	<select id="getTotalBrand" resultType="int">
+		SELECT count(*)
+		FROM (select distinct pid
+              from product a
+             join brand b on b.bno=a.bno
+             where b.bname=#{bname}
+            ) p
+	</select>
+
+	<select id="getSize" resultType="String">
+		select distinct ssize
+		from stock
+		where pid=#{pid}
+		ORDER BY
+        CASE ssize
+            WHEN 'XXS' THEN 0
+            WHEN 'XS' THEN 1
+            WHEN 'S' THEN 2
+            WHEN 'M' THEN 3
+            WHEN 'L' THEN 4
+            WHEN 'XL' THEN 5
+            WHEN 'XXL' THEN 6
+        END
+      	ASC,
+      	to_number(REGEXP_REPLACE(ssize, '[^0-9]'))
+	</select>
+</mapper>

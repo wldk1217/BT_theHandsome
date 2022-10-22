@@ -21,4 +21,6 @@ public interface ProductService {
 	
 	// 대, 중, 소 분류에 해당하는 상품 총 개수 조회
 	public int getTotal(String clarge, String cmedium, String csmall);
+
+	public List<String> getSize(String pid);
 }

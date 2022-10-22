@@ -22,4 +22,15 @@ public class ProductVO {
 	private String pmanufacturer;
 	private DATE pmadedate;
 	private DATE pdate;
+	
+	public ProductVO() {
+		super();
+	}
+
+	public ProductVO(String clarge, String cmedium, String csmall) {
+		super();
+		this.clarge = clarge;
+		this.cmedium = cmedium;
+		this.csmall = csmall;
+	}
 }
