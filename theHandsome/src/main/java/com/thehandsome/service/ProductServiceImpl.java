@@ -54,4 +54,10 @@ public class ProductServiceImpl implements ProductService {
 		log.info("get Total Product");
 		return mapper.getTotal(clarge, cmedium, csmall);
 	}
+	
+	@Override
+    public List<String> getSize(String pid) {
+        log.info("get size per product" + pid);
+        return mapper.getSize(pid);
+    }
 }
