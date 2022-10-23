@@ -9,25 +9,12 @@
 
 	<select id="productGetDetail"
 		resultType="com.thehandsome.domain.ProductVO">
-		select p.pid, p.bname, p.clarge, p.cmedium,
-		p.csmall,
-		p.pname,
-		p.pprice, p.pdetail, c.ccolorcode, c.cimage1,
-		c.cimage2,
-		c.cimage3, c.cimage4, c.cimage5
-		from product p
-		join
-		color c on p.pid =
-		c.pid
-		where
-		p.pid=#{pid}
+		select * from product where pid=#{pid}
 	</select>
 
 	<select id="productGetColor"
 		resultType="com.thehandsome.domain.ColorVO">
-		select pid, ccolorcode, cname, ccolorimage, cpreview,
-		cimage1,
-		cimage2, cimage3, cimage4, cimage5 from color where pid=#{pid}
+		select * from color where pid=#{pid}
 	</select>
 
 	<select id="getList"
