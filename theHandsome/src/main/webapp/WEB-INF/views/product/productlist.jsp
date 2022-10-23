@@ -521,12 +521,7 @@
 																		+ $(
 																				this)
 																				.attr(
-																						"productid")
-																		+ "&ccolorcode="
-																		+ $(
-																				this)
-																				.attr(
-																						"ccolorcode"));
+																						"productid"));
 											});
 
 							$(".item_info1").hover(

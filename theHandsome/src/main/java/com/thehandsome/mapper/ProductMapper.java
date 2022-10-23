@@ -10,7 +10,7 @@ import com.thehandsome.domain.ProductVO;
 
 public interface ProductMapper {
 
-	public ProductVO productGetDetail(@Param("pid")String pid); // 상품 상세 정보
+	public ProductVO productGetDetail(String pid); // 상품 상세 정보
 
 	public List<ColorVO> productGetColor(String pid); // 상품 컬러 리스트
 
