@@ -632,6 +632,8 @@ transform
 
 
 
+
+
 :
 
 
@@ -654,7 +656,9 @@ transform
 
 
 
+
  
+
 
 
 
@@ -719,8 +723,12 @@ rotate
 
 
 
+
+
 (9
 deg
+
+
 
 
 
@@ -808,6 +816,8 @@ transform
 
 
 
+
+
 :
 
 
@@ -830,7 +840,9 @@ transform
 
 
 
+
  
+
 
 
 
@@ -895,8 +907,12 @@ rotate
 
 
 
+
+
 (-1
 deg
+
+
 
 
 
@@ -3672,11 +3688,6 @@ deg
 					</ul>
 					<ul class="cate_m cate_banner gnbul2" id="cate_m_main"
 						style="float: right;">
-						<li><a href="/ko/magazine/exhibitions"
-							onclick="GA_Event('공통','GNB','기획전');"> 기획전 <!-- 기획전 -->
-						</a></li>
-						<li><a href="/event/event"
-							onclick="GA_Event('공통','GNB','이벤트');">이벤트</a></li>
 						<!-- THE 매거진 수정 200330 -->
 						<li><a href="/ko/magazine/submain" class="magazine1803"
 							onclick="GA_Event('공통','GNB','매거진');"> 매거진 <!-- 매거진 --> <span
@@ -3722,11 +3733,8 @@ deg
 									</div>
 								</div>
 							</div></li>
-						<!-- // THE 매거진 수정 200330 -->
-						<!-- 20210319 편집샵 추가 -->
-						<li><a href="/ko/ed/edMain"
-							onclick="GA_Event('공통','GNB','편집샵');">편집샵</a></li>
-						<!-- 20200710 룩북 추가 -->
+						<li><a href="/event/event"
+							onclick="GA_Event('공통','GNB','이벤트');">이벤트</a></li>
 						<li><a href="/board/list?pageNum=1&amount=10">고객 게시판(Q&A)</a></li>
 					</ul>
 				</div>

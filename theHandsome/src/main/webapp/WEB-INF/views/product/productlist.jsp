@@ -393,7 +393,7 @@
 											productid="${product.pid }"
 											ccolorcode="${colorList.ccolorcode }"
 											;
-											cimage3="${colorList.cimage3}"
+											cimage2="${colorList.cimage2}"
 											cimage4="${colorList.cimage4}"></a>
 										<input type="hidden" class="colorvalue"
 											value="${colorList.ccolorcode}">
@@ -458,7 +458,7 @@
 							for (i = 0; i < products.length; i++) {
 								const img1 = products[i]
 										.getElementsByClassName("cl")[0]
-										.getAttribute("cimage3");
+										.getAttribute("cimage2");
 								const img2 = products[i]
 										.getElementsByClassName("cl")[0]
 										.getAttribute("cimage4");
@@ -503,7 +503,7 @@
 																"src",
 																$(this)
 																		.attr(
-																				"cimage3"));
+																				"cimage2"));
 												$(this)
 														.closest("li")
 														.find("img:eq(1)")
