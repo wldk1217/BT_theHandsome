@@ -4,6 +4,7 @@ package com.thehandsome.controller;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.thehandsome.domain.EventVO;
+import com.thehandsome.domain.MemberVO;
 import com.thehandsome.service.CouponService;
 import com.thehandsome.domain.CouponVO;
 
@@ -46,15 +48,19 @@ public class EventController {
 		log.info("이벤트 상세 & 쿠폰발급 페이지 진입");
 	}
 	
+	
 	//쿠폰 발급
-	@RequestMapping(value = "/makecoupon", 
-			consumes = "application/json",
-			produces ="application/json",
-			method = RequestMethod.POST)
-	public String makeCoupon(CouponVO coupon) throws Exception {
-		couponservice.makeCoupon(coupon);
-
-		log.info("make coupon 성공");
+	@PostMapping("/makecoupon")
+	public String makeCoupon(HttpServletRequest request, HttpServletResponse response, MemberVO member, CouponVO coupon) throws Exception {
+		HttpSession session = request.getSession();
+		String loginUser = (String) session.getAttribute("member.mid");
+		 if (loginUser == null) {
+	         String url = "/member/login";
+	         response.sendRedirect(url);
+	      } else {
+	    	  couponservice.makeCoupon(coupon);
+	    	  log.info("make coupon 성공");
+	      }
 
 		return "redirect:/event";
 
