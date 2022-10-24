@@ -20,7 +20,7 @@ import lombok.extern.log4j.Log4j;
 
 @Log4j
 @Controller
-@RequestMapping("/product")
+@RequestMapping("/product/*")
 @AllArgsConstructor
 public class ProductController {
 
@@ -39,7 +39,7 @@ public class ProductController {
 		model.addAttribute("sizelist", sizelist);
 		model.addAttribute("productVO", service.productGetDetail(pid));
 		model.addAttribute("colorVOList", service.productGetColor(pid));
-		model.addAttribute("ColorCode",ccolorcode);
+		model.addAttribute("curColorCode",ccolorcode);
 		return "/product/productDetail";
 	}
 
