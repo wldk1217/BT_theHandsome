@@ -3,14 +3,11 @@
 <%@ include file="/WEB-INF/views/common/header.jsp"%>
 
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
-<script>
-function alert() {
-	
-	alret('쿠폰이 발급되었습니다.')	
-}
-</script>
+	    <meta charset="UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body oncontextmenu='return false'>
@@ -37,16 +34,21 @@ function alert() {
 
 			</div>
 			<div style=" padding-top: 30px;  display: flex; justify-content: center;">
-		
+				
 				<div style= "height: 200px;">
+				<form action="/event/makecoupon" method ="POST"  name="coupon_form">
+					<input type="hidden" id="mid" name="mid" value="${member.mid}">
 					<button
-						type ="button"
+						type ="submit" 
 						style="border: 2px black dot; border-radius: 40%; background-color: ivory; width: 160px; heigth: 200px; font-size: 20px; font-weight: bold;"
 						>
 						쿠폰 발급받기</button>
+				</form>
 				</div>
 			</div>
 
 
 			<%@ include file="/WEB-INF/views/common/footer.jsp"%>
+			
+
 </html>

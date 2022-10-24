@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.thehandsome.domain.EventVO;
 import com.thehandsome.domain.MemberVO;
 import com.thehandsome.service.CouponService;
 import com.thehandsome.domain.CouponVO;
@@ -30,7 +29,7 @@ import lombok.extern.log4j.Log4j;
 @Controller
 @RequestMapping("/event/*")
 @AllArgsConstructor
-public class EventController {
+public class CouponController {
 	
 	@Autowired
 	private CouponService couponservice;
@@ -51,18 +50,19 @@ public class EventController {
 	
 	//쿠폰 발급
 	@PostMapping("/makecoupon")
-	public String makeCoupon(HttpServletRequest request, HttpServletResponse response, MemberVO member, CouponVO coupon) throws Exception {
+	public String makeCoupon(HttpServletRequest request, MemberVO member, CouponVO coupon) throws Exception {
 		HttpSession session = request.getSession();
-		String loginUser = (String) session.getAttribute("member.mid");
+		MemberVO loginUser = (MemberVO) session.getAttribute("member");
 		 if (loginUser == null) {
-	         String url = "/member/login";
-	         response.sendRedirect(url);
+			 log.info("로그인하고 오십쇼");
+	       	 return "redirect:/member/login";
 	      } else {
 	    	  couponservice.makeCoupon(coupon);
-	    	  log.info("make coupon 성공");
+	    	  log.info("쿠폰 발급");
+	
+		      return "redirect:/";
 	      }
 
-		return "redirect:/event";
 
 	}
 

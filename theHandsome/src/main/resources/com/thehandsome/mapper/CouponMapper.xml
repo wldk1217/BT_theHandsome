@@ -12,9 +12,9 @@
   
   <mapper namespace="com.thehandsome.mapper.CouponMapper">
 
-	<insert id="makeCoupon">
+	<insert id="makeCoupon" parameterType="com.thehandsome.domain.CouponVO" >
   		insert into coupon values
-  		(#{ccode}, #{eid}, #{mid}, #{cname}, sysdate, sysdate+10, 0)
+  		(seq_ccode.nextval, #{mid},'event coupon', sysdate, sysdate+10, 0)
   	</insert>
   	
   	<!--  
