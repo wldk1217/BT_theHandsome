@@ -2,6 +2,7 @@ package com.thehandsome.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,6 +24,7 @@ import lombok.extern.log4j.Log4j;
 @AllArgsConstructor
 public class ProductController {
 
+	@Autowired
 	private ProductService service;
 
 	// 상품 상세 정보 보기

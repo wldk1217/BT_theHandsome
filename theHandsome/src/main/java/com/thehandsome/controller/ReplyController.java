@@ -35,7 +35,7 @@ import lombok.extern.log4j.Log4j;
 
 public class ReplyController {
 	
-	@Setter(onMethod_ = {@Autowired})
+	@Autowired
 	private ReplyService service;
 	
 	
