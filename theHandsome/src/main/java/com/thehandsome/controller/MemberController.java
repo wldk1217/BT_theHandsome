@@ -40,7 +40,6 @@ public class MemberController {
 	@PostMapping("/login")
 	public String loginPost(HttpServletRequest request, MemberVO member, RedirectAttributes rttr) throws Exception {
 		log.info("전달된 데이터 : " + member);
-
 		HttpSession session = request.getSession();
 		MemberVO memberVO = memberservice.memberLogin(member); // 아이디와 비밀번호 매핑 확인
 

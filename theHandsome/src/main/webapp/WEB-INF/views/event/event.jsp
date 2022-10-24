@@ -72,7 +72,7 @@
 							<div class="pic">
 								<img 
 									src="${ctx}/resources/images/event/dog.png"
-									onclick ="javascript:location.href='/controller/event/coupon'"/>
+									onclick ="javascript:location.href='/event/coupon'"/>
 								<img
 									style = "padding-left: 10px; "
 									src="http://cdn.thehandsome.com/pc/event/list/banner/20220928_50936344591474494_ko.jpg"
