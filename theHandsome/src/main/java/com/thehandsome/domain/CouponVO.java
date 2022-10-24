@@ -6,7 +6,6 @@ import lombok.Data;
 @Data
 public class CouponVO {
 	private String ccode;
-	private int eid;
 	private String mid;
 	private String cname;
 	private Date cstartDate;

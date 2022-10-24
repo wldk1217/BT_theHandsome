@@ -72,7 +72,7 @@
 				<!--orderwrap-->
 				<div class="orderwrap del_pay">
 					<!--orderwrap left-->
-					<div class="float_left">
+					<div >
 						<!--table wrap1-->
 						<div id="checkoutCartView" class="tblwrap">
 							<table class="tbl_ltype ">
@@ -93,33 +93,30 @@
 								</thead>
 								<tbody>
 									<tr class="al_middle">
-										<td class="frt">
+										<td class="frt" style ="height: 200px; ">
 											<!-- pt_list_all -->
-											<div class="pt_list_all">
-												<a
-													href="/ko/HANDSOME/WOMEN/DRESS/MINI-DRESS/%5BNANUSHKA%5D-%ED%81%AC%EB%A1%9C%EC%85%B0-%EB%93%9C%EB%A0%88%EC%8A%A4/p/MU2C1WDR207WN6_IV_S">
-													<img
+											<div class="pt_list_all" style ="width : 700px; height: 150px; padding:0px; ">
+												<img style ="height: 150px; width: 150px;"  
 													src="http://newmedia.thehandsome.com/MU/2C/SS/MU2C1WDR207WN6_IV_S01.jpg"
 													alt="" />
-												</a>
-												<div class="tlt_wrap">
-													<a
-														href="/ko/HANDSOME/WOMEN/DRESS/MINI-DRESS/%5BNANUSHKA%5D-%ED%81%AC%EB%A1%9C%EC%85%B0-%EB%93%9C%EB%A0%88%EC%8A%A4/p/MU2C1WDR207WN6_IV_S"
-														class="basket_tlt"> <span class="tlt">MUE</span> <span
-														class="sb_tlt">[NANUSHKA] 크로셰 드레스</span>
+				
+												<div class="tlt_wrap" style ="font-size: 20px; width: 500px;" >
+													<a class="basket_tlt"> <span class="tlt" style ="font-size: 20px; margin-bottom:60px; padding-left:200px; height: 50px;" >MUE</span> <span
+														class="sb_tlt" style ="font-size: 20px; padding-left:200px; height: 40px; margin-top: 10px;" >[NANUSHKA] 크로셰 드레스</span>
+			
 													</a>
-													<p class="color_op">
+													<p class="color_op" style ="font-size: 20px; padding-left:200px; width: 300px;" >
 
-														color : IVORY<span class="and_line">/</span> size : S
+														color : IVORY<span class="and_line" style ="font-size: 20px;" >/</span> size : S
 													</p>
 												</div>
 											</div> <!-- //pt_list_all -->
 										</td>
-										<td>1</td>
+										<td  style ="font-size: 20px;">1</td>
 										<td>
 											<!-- price_wrap -->
 											<div class="price_wrap ">
-												<span> ₩651,000</span>
+												<span  style ="font-size: 20px;"> ₩651,000</span>
 											</div> <!-- //price_wrap -->
 										</td>
 									</tr>
@@ -276,407 +273,31 @@
 								</tbody>
 							</table>
 						</div>
-						<!-- H.Point START ------------------------------------------------>
-						<!-- H.Point END -------------------------------------------->
-
-						<!--//title_wrap & table wrap2-->
-						<!--title_wrap & table wrap5-->
+				
+					
 						<div class="title_wrap clearfix mt40">
-							<h4 class="float_left">결제 수단 선택</h4>
+							<h4 class="float_left">최종 결제 금액</h4>
 						</div>
 						<div class="tblwrap">
-							<table class="tbl_wtype1">
-								<caption>결제 수단 선택</caption>
+							<table class="tbl_wtype1"  style =" margin-bottom : 20px;">
+								<caption>최종 결제 금액</caption>
 								<colgroup>
 									<col style="width: 140px" />
 									<col />
 								</colgroup>
 								<tbody>
-									<!-- H.Point Start NOT ANY **********************************-->
-									<!-- H.Point End ********************************************-->
 									<tr>
-										<th scope="row" class="th_space">결제수단 선택</th>
-										<td>
-											<div class="rd_wrap payment_way1907">
-												<ul>
-													<li><input type="radio" name="mode" id="sel_rd0"
-														checked="checked" value="KO001-3"
-														onclick="showCkout(this);" /> <label for="sel_rd0"
-														class="mr20 one_click_pay">원클릭결제</label></li>
-													<li><input type="radio" name="mode" id="sel_rd1"
-														value="KO001" onclick="showCkout(this);" /> <label
-														for="sel_rd1" class="mr20">신용카드</label></li>
-													<li><input type="radio" name="mode" id="sel_rd2"
-														value="KO002" onclick="showCkout(this);" /> <label
-														for="sel_rd2" class="mr20">실시간 계좌이체</label></li>
-													<!-- #2610 [주문] 가상계좌 결제수단 제외 및 중복 구매 제한 처리 요청 건 (가상계좌 선택 삭제) 51013 -->
-													<span id="paymentSmilePay">
-														<li><input type="radio" name="mode" id="sel_rd5"
-															value="KO006" onclick="showCkout(this);" /> <label
-															for="sel_rd5" class="mr20">스마일 페이</label><br /></li>
-													</span>
-													<span id="paymentRedVoucher" style="display: block;">
-														<li><input type="radio" name="mode" id="sel_rd4"
-															value="KO001-4" onclick="showCkout(this);" /> <label
-															for="sel_rd4" class="mr20">현대카드 레드 쇼핑바우처</label></li>
-													</span>
-													<li><input type="radio" name="mode" id="sel_rd6"
-														value="KO007" onclick="showCkout(this);" /> <label
-														for="sel_rd6" class="mr20">토스</label></li>
-													<li><input type="radio" name="mode" id="sel_rd7"
-														value="KO008" onclick="showCkout(this);" /> <label
-														for="sel_rd7" class="mr20">페이코</label></li>
-												</ul>
-											</div> <!-- ckout_wrap -->
-
-											<div class="ckout_wrap" id="ckout_wrap0"
-												style="display: none;">
-												<div class="oclk_card_list_wrap" id="oclk_card_list_wrap">
-													<div
-														class="card_easy_pay_wrap swiper-container swiper_card_easy_pay swiper-container-horizontal"
-														id="card_easy_pay"></div>
-													<a href="#;" class="prev_oclk_slide_btn oclks_btn1905">이전</a>
-													<a href="#;" class="next_oclk_slide_btn oclks_btn1905">다음</a>
-												</div>
-
-											</div>
-
-											<div class="ckout_wrap" id="ckout_wrap"
-												style="display: none;">
-												<p>※ 한섬마일리지/기프트카드와 가상계좌 함께 사용 시, 입금시점에 한섬마일리지/기프트카드의 결제
-													잔액이 있어야 주문이 완료됩니다.</p>
-												<p id="virtualText">
-													※ <font color="red">4시간 이내 입금</font> 하셔야 주문이 완료 됩니다.
-												</p>
-												<div class="escrow_wrap">
-													<p class="escrowservice">
-														<strong>에스크로 서비스</strong>
-													</p>
-													<input type="radio" name="escrowYn" id="ipt_escrow_01"
-														value="N" checked /> <label for="ipt_escrow_01"
-														class="mr20">아니요</label> <input type="radio"
-														name="escrowYn" id="ipt_escrow_02" value="Y" /> <label
-														for="ipt_escrow_02">예</label>
-													<p class="escrowservice_txt">정부방침에 따라 실시간계좌이체 및 무통장입금,
-														가상계좌로 주문하시는 경우 에스크로 서비스 이용여부를 선택할 수 있습니다.</p>
-												</div>
-												<a href="#;" onclick="escrowPopup();" class="btn add_s">매매보호서비스
-													가입사실확인</a>
-											</div> <!-- //ckout_wrap -->
-
-											<div class="hyundaiRed ckout_wrap" id="NEWckout_wrap2"
-												style="display: none;">
-												<p>NOTICE</p>
-												<ul>
-													<li>• 현대카드 the Red Edition 2/4/5로 30만원 이상 결제 시, 쇼핑바우처
-														10만원권 사용 가능합니다.</li>
-													<li>• 현대카드 the Red Edition 3 으로 50만원 이상 결제 시, 쇼핑바우처
-														15만원권 사용 가능합니다.</li>
-													<li>• 레드카드 쇼핑바우처는 부분 사용 불가하며 카드대금 결제일에 일괄 청구할인 됩니다.</li>
-													<li>• 예약 판매 상품은 레드카드 쇼핑바우처 사용 불가합니다.</li>
-													<li>• 레드카드 쇼핑바우처를 사용한 구매는 부분취소/부분반품 불가 하오니 단품 주문을
-														권장합니다.</li>
-													<li>• 취소 시 전체취소 후 재결제 필요 하며, 교환/취소 관련 문의는 고객센터 1:1 문의를
-														이용해 주세요.</li>
-												</ul>
-											</div>
-											<div class="hyundaiRed ckout_wrap" id="ckout_wrap2"
-												style="display: none;">
-												<p>NOTICE</p>
-												<ul>
-													<li>• 최종 결제금액 30만원 이상일 시, 현대카드 the Red Edition2로 결제 및<br />
-														쇼핑바우처 10만원권 사용 가능합니다.
-													</li>
-													<li>• 레드카드 쇼핑바우처 10만원권은 부분 사용 불가하며 카드 대금 결제일에<br />
-														10만원 일괄 <span>청구할인</span> 됩니다.
-													</li>
-													<li>• 예약 판매 상품은 레드카드 쇼핑바우처 사용 불가합니다.</li>
-													<li>• 레드카드 쇼핑바우처를 사용한 구매는 <span>부분취소/부분반품 불가</span>하오니<br />
-														단품 주문을 권장합니다.
-													</li>
-													<li>• 취소 시 <span>전체취소 후 재결제 필요</span>하며, 교환/취소 관련 문의는<br />
-														고객센터 1:1문의를 이용해 주세요.
-													</li>
-												</ul>
-											</div>
-										</td>
+										<th scope="row" class="th_space">상품 합계</th>
+										<td>상품 합계금액</td>
 									</tr>
+									<tr>
+										<th scope="row" class="th_space">합계</th>
+										<td>합계금액</td>
+									</tr>
+
 								</tbody>
 							</table>
-						</div>
-			
-						<div class="ce_tab_container mt40">
-							<!--tab contents 1-->
-							<div>
-								<div class="title_wrap">
-									<h5>무이자 할부 행사</h5>
-								</div>
-								<!--Table wrap-->
-								<table class="cnt_type1">
-									<caption>무이자 할부 행사</caption>
-									<colgroup>
-										<col style="width: 155px" />
-										<col style="width: 270px" />
-										<col />
-									</colgroup>
-									<tbody>
-										<tr>
-											<th scope="row"><span class="card"><img
-													src="/medias/shinhan.jpg?context=bWFzdGVyfHJvb3R8MjY1N3xpbWFnZS9qcGVnfGhkZS9oMmIvODgxNDE4MTUxNTI5NC5qcGd8NTAwMDYxM2ZmZmRlZGFhZDQ0ODNmODJjZTg2OTE3MGI3OWQ2ZmE3YzI0ZjA3MDY3NzIxYWVhNmY3NDQyYWUzMA"
-													alt="신한카드" /></span></th>
-											<td><b>신한카드 5만원이상 결제시 2~6개월 무이자 할부</b><br /> 대상: 신한카드 전
-												회원<br /> (신한BC 제외/ 법인,기프트,체크,선불카드 제외)</td>
-											<td>행사기간 : 2022.10.01 ~ 2022.10.31</td>
-										</tr>
-										<tr>
-											<th scope="row"><span class="card"><img
-													src="/medias/SAMSUNG.jpg?context=bWFzdGVyfHJvb3R8MzIxOXxpbWFnZS9qcGVnfGgzZC9oNGQvODgxNDE4MTYxMzU5OC5qcGd8ZGY1NDJiM2U1YWNmNGE5MTJkOTA0MTAxMDliMDc4ZjRlNTJmZjJlOTkxOTQzZTEwMDcxZWU2NGU2MjJmMWE2Mw"
-													alt="삼성카드" /></span></th>
-											<td><b>삼성카드 5만원이상 결제시 2~6개월 무이자 할부</b><br /> 대상: 삼성카드 전
-												회원<br /> (법인,기프트,체크,선불카드 제외)</td>
-											<td>행사기간 : 2022.10.01 ~ 2022.10.31</td>
-										</tr>
-										<tr>
-											<th scope="row"><span class="card"><img
-													src="/medias/BC.jpg?context=bWFzdGVyfHJvb3R8MjQ1OHxpbWFnZS9qcGVnfGhmMi9oMGQvODgxNDE4MTIyMDM4Mi5qcGd8MjZlZGU2ZGQyNDBkYzU5YmY2NWY0MDU3NDc1OTA0YWI5NmM4NDJjMDFiYjBiYjBjY2FhZjhmMzg3ZmE5NGU5Yw"
-													alt="비씨카드" /></span></th>
-											<td><b>비씨카드 5만원이상 결제시 2~7개월 무이자 할부</b><br /> 대상: 비씨카드 전
-												회원<br />(법인,기프트,체크,선불카드 제외)</td>
-											<td>행사기간 : 2022.10.01 ~ 2022.10.31</td>
-										</tr>
-										<tr>
-											<th scope="row"><span class="card"><img
-													src="/medias/HYUNDAI.jpg?context=bWFzdGVyfHJvb3R8MjYxMHxpbWFnZS9qcGVnfGg1ZC9oN2MvODgxNDE4MTcxMTkwMi5qcGd8YmM5ZWY0ZjlhODlkMzdmMjYyNmY4NjQ4OWU5NWVjOWFlMGY4ODIwYzZlNjA0MjBlNDkwNWI0ZDllYThjMWE5Mw"
-													alt="현대카드" /></span></th>
-											<td><b>현대카드 5만원이상 결제시 2~7개월 무이자 할부</b><br /> 대상: 현대카드 전
-												회원<br /> (법인,기프트,체크,선불카드 제외)</td>
-											<td>행사기간 : 2022.10.01 ~ 2022.10.31</td>
-										</tr>
-										<tr>
-											<th scope="row"><span class="card"><img
-													src="/medias/kucmin.jpg?context=bWFzdGVyfHJvb3R8MzMwM3xpbWFnZS9qcGVnfGgyZS9oMzQvODgxNDE4MTAyMzc3NC5qcGd8MjM1YjEyN2I4OTljMGIxYzY3MjhjNDhkZWMyOTE5ODZjYmRiYWExNDdhOWZmNDQ3ZWNhNGIxZjYwYzk2MDA4Zg"
-													alt="국민카드" /></span></th>
-											<td><b>KB국민카드 5만원이상 결제시 2~7개월 무이자 할부</b><br /> 대상:
-												KB국민카드 전 회원<br /> (NH농협, 국민BC 제외/ 법인,기프트,체크,선불카드 제외)</td>
-											<td>행사기간 : 2022.10.01 ~ 2022.10.31</td>
-										</tr>
-										<tr>
-											<th scope="row"><span class="card"><img
-													src="/medias/hanacard.gif?context=bWFzdGVyfHJvb3R8MTkzNXxpbWFnZS9naWZ8aDYwL2hmYi84ODE0MDU0OTY1Mjc4LmdpZnxhMGM5OWY0MDdhNDhjYzkwOTdiMzhkM2VmMDQ2YTI0NTAyNDBjZTljNTdiYzk4YWRhZmI0NjBhOWRhNzRiMGYw"
-													alt="하나카드" /></span></th>
-											<td><b>하나카드 5만원이상 결제시 2~8개월 무이자 할부</b><br /> 대상: 하나카드 전
-												회원 (구 하나SK, 구 외환)<br /> (하나BC카드 포함/법인,기프트,체크,선불카드 제외)</td>
-											<td>행사기간 : 2022.10.01 ~ 2022.10.31</td>
-										</tr>
-										<tr>
-											<th scope="row"><span class="card"><img
-													src="/medias/NH.jpg?context=bWFzdGVyfHJvb3R8Mzk3OXxpbWFnZS9qcGVnfGg4ZS9oMzYvODgxNDE4MTkwODUxMC5qcGd8ZWVlNmY1OWM0NDdmMjg2M2Y4NGZkNDZjYThmOTVkMWNmY2QwYWNkOWI1ODc5YTdiMTc5MjY4MThiZTkzYzNmMw"
-													alt="NH카드" /></span></th>
-											<td><b>NH농협카드 5만원이상 결제시 2~8개월 무이자 할부</b><br /> 대상:
-												NH농협카드 전 회원<br /> (NH농협BC카드 포함/ 법인,기프트,체크,선불카드 제외)</td>
-											<td>행사기간 : 2022.10.01 ~ 2022.10.31</td>
-										</tr>
-										<tr>
-											<th scope="row"><span class="card"><img
-													src="/medias/LOTTE.jpg?context=bWFzdGVyfHJvb3R8MzI3MXxpbWFnZS9qcGVnfGhiMy9oNDcvODgxNDE4MTgxMDIwNi5qcGd8MDliOThkNzA1ZDc2ZDE4MzZhYmUzYjI2MDMxZDk0NGU3OTVjYzBhYTA1MmMzMjAyZmE0Y2U4OTZlNTU3NDU2Zg"
-													alt="롯데카드" /></span></th>
-											<td><b>롯데카드 5만원이상 결제시 2~4개월 무이자 할부</b><br /> 대상:롯데카드 전
-												회원<br /> (법인,기프트,체크,선불카드 제외)</td>
-											<td>행사기간 : 2022.10.01 ~ 2022.10.31</td>
-										</tr>
-									</tbody>
-								</table>
-								<!--//Table wrap-->
-								<div class="title_wrap mt40">
-									<h5>부분 무이자 할부 행사</h5>
-								</div>
-								<!--Table wrap-->
-								<table class="cnt_type1">
-									<caption>부분 무이자 할부 행사</caption>
-									<colgroup>
-										<col style="width: 155px" />
-										<col style="width: 270px" />
-										<col />
-									</colgroup>
-									<tbody>
-										<tr>
-											<th scope="row"><span class="card"><img
-													src="/medias/shinhan.jpg?context=bWFzdGVyfHJvb3R8MjY1N3xpbWFnZS9qcGVnfGhkZS9oMmIvODgxNDE4MTUxNTI5NC5qcGd8NTAwMDYxM2ZmZmRlZGFhZDQ0ODNmODJjZTg2OTE3MGI3OWQ2ZmE3YzI0ZjA3MDY3NzIxYWVhNmY3NDQyYWUzMA"
-													alt="신한카드" /></span></th>
-											<td><b>10개월 부분무이자</b><br /> (5만원이상 결제시/1,2,3,4회차 고객부담,
-												잔여할부 수수료 면제/법인,체크,기프트카드 제외)</td>
-											<td>행사기간 : 2022.10.01 ~ 2022.10.31</td>
-										</tr>
-										<tr>
-											<th scope="row"><span class="card"><img
-													src="/medias/SAMSUNG.jpg?context=bWFzdGVyfHJvb3R8MzIxOXxpbWFnZS9qcGVnfGgzZC9oNGQvODgxNDE4MTYxMzU5OC5qcGd8ZGY1NDJiM2U1YWNmNGE5MTJkOTA0MTAxMDliMDc4ZjRlNTJmZjJlOTkxOTQzZTEwMDcxZWU2NGU2MjJmMWE2Mw"
-													alt="삼성카드" /></span></th>
-											<td><b>10개월 부분무이자</b><br /> (5만원이상 결제시/1,2,3,4회차 고객 부담,
-												잔여할부 수수료 면제/법인,체크,기프트카드 제외)</b></td>
-											<td>행사기간 : 2022.10.01 ~ 2022.10.31</td>
-										</tr>
-										<tr>
-											<th scope="row"><span class="card"><img
-													src="/medias/SAMSUNG.jpg?context=bWFzdGVyfHJvb3R8MzIxOXxpbWFnZS9qcGVnfGgzZC9oNGQvODgxNDE4MTYxMzU5OC5qcGd8ZGY1NDJiM2U1YWNmNGE5MTJkOTA0MTAxMDliMDc4ZjRlNTJmZjJlOTkxOTQzZTEwMDcxZWU2NGU2MjJmMWE2Mw"
-													alt="삼성카드" /></span></th>
-											<td><b>12개월 부분무이자</b><br /> (5만원이상 결제시/1,2,3,4,5회차 고객
-												부담, 잔여할부 수수료 면제/법인,체크,기프트카드 제외)</b></td>
-											<td>행사기간 : 2022.10.01 ~ 2022.10.31</td>
-										</tr>
-										<tr>
-											<th scope="row"><span class="card"><img
-													src="/medias/BC.jpg?context=bWFzdGVyfHJvb3R8MjQ1OHxpbWFnZS9qcGVnfGhmMi9oMGQvODgxNDE4MTIyMDM4Mi5qcGd8MjZlZGU2ZGQyNDBkYzU5YmY2NWY0MDU3NDc1OTA0YWI5NmM4NDJjMDFiYjBiYjBjY2FhZjhmMzg3ZmE5NGU5Yw"
-													alt="비씨카드" /></span></th>
-											<td><b> 우리BC 10개월 부분무이자</b><br /> (5만원이상 결제시/1,2,3회차
-												고객부담, 잔여할부 수수료 면제/법인,체크,기프트카드 제외)</td>
-											<td>행사기간 : 2022.10.01 ~ 2022.10.31</td>
-										</tr>
-										<tr>
-											<th scope="row"><span class="card"><img
-													src="/medias/BC.jpg?context=bWFzdGVyfHJvb3R8MjQ1OHxpbWFnZS9qcGVnfGhmMi9oMGQvODgxNDE4MTIyMDM4Mi5qcGd8MjZlZGU2ZGQyNDBkYzU5YmY2NWY0MDU3NDc1OTA0YWI5NmM4NDJjMDFiYjBiYjBjY2FhZjhmMzg3ZmE5NGU5Yw"
-													alt="비씨카드" /></span></th>
-											<td><b>우리BC 12개월 부분무이자</b><br /> (5만원이상 결제시/1,2,3,4회차
-												고객부담, 잔여할부 수수료 면제/법인,체크,기프트카드 제외)</td>
-											<td>행사기간 : 2022.10.01 ~ 2022.10.31</td>
-										</tr>
-										<tr>
-											<th scope="row"><span class="card"><img
-													src="/medias/kucmin.jpg?context=bWFzdGVyfHJvb3R8MzMwM3xpbWFnZS9qcGVnfGgyZS9oMzQvODgxNDE4MTAyMzc3NC5qcGd8MjM1YjEyN2I4OTljMGIxYzY3MjhjNDhkZWMyOTE5ODZjYmRiYWExNDdhOWZmNDQ3ZWNhNGIxZjYwYzk2MDA4Zg"
-													alt="국민카드" /></span></th>
-											<td><b>10개월 부분무이자</b><br /> (5만원이상 결제시/1,2,3,4 회차 고객부담,
-												잔여할부 수수료 면제/법인,체크,기프트카드 제외)</td>
-											<td>행사기간 : 2022.10.01 ~ 2022.10.31</td>
-										</tr>
-										<tr>
-											<th scope="row"><span class="card"><img
-													src="/medias/kucmin.jpg?context=bWFzdGVyfHJvb3R8MzMwM3xpbWFnZS9qcGVnfGgyZS9oMzQvODgxNDE4MTAyMzc3NC5qcGd8MjM1YjEyN2I4OTljMGIxYzY3MjhjNDhkZWMyOTE5ODZjYmRiYWExNDdhOWZmNDQ3ZWNhNGIxZjYwYzk2MDA4Zg"
-													alt="국민카드" /></span></th>
-											<td><b>12개월 부분무이자</b><br /> (5만원이상 결제시/1,2,3,4,5 회차
-												고객부담, 잔여할부 수수료 면제/법인,체크,기프트카드 제외)</td>
-											<td>행사기간 : 2022.10.01 ~ 2022.10.31</td>
-										</tr>
-										<tr>
-											<th scope="row"><span class="card"><img
-													src="/medias/hanacard.gif?context=bWFzdGVyfHJvb3R8MTkzNXxpbWFnZS9naWZ8aDYwL2hmYi84ODE0MDU0OTY1Mjc4LmdpZnxhMGM5OWY0MDdhNDhjYzkwOTdiMzhkM2VmMDQ2YTI0NTAyNDBjZTljNTdiYzk4YWRhZmI0NjBhOWRhNzRiMGYw"
-													alt="하나카드" /></span></th>
-											<td><b>10개월 부분무이자</b><br /> (5만원이상 결제시/1,2,3회차 고객부담,
-												잔여할부 수수료 면제/법인,체크,기프트카드 제외)</td>
-											<td>행사기간 : 2022.10.01 ~ 2022.10.31</td>
-										</tr>
-										<tr>
-											<th scope="row"><span class="card"><img
-													src="/medias/hanacard.gif?context=bWFzdGVyfHJvb3R8MTkzNXxpbWFnZS9naWZ8aDYwL2hmYi84ODE0MDU0OTY1Mjc4LmdpZnxhMGM5OWY0MDdhNDhjYzkwOTdiMzhkM2VmMDQ2YTI0NTAyNDBjZTljNTdiYzk4YWRhZmI0NjBhOWRhNzRiMGYw"
-													alt="하나카드" /></span></th>
-											<td><b>12개월 부분무이자</b><br /> (5만원이상 결제시/1,2,3,4회차 고객부담,
-												잔여할부 수수료 면제/법인,체크,기프트카드 제외)</td>
-											<td>행사기간 : 2022.10.01 ~ 2022.10.31</td>
-										</tr>
-										<tr>
-											<th scope="row"><span class="card"><img
-													src="/medias/shinhan.jpg?context=bWFzdGVyfHJvb3R8MjY1N3xpbWFnZS9qcGVnfGhkZS9oMmIvODgxNDE4MTUxNTI5NC5qcGd8NTAwMDYxM2ZmZmRlZGFhZDQ0ODNmODJjZTg2OTE3MGI3OWQ2ZmE3YzI0ZjA3MDY3NzIxYWVhNmY3NDQyYWUzMA"
-													alt="신한카드" /></span></th>
-											<td><b>12개월 부분무이자</b><br /> (5만원이상 결제시/1,2,3,4,5회차
-												고객부담, 잔여할부 수수료 면제/법인,체크,기프트카드 제외)</td>
-											<td>행사기간 : 2022.10.01 ~ 2022.10.31</td>
-										</tr>
-									</tbody>
-								</table>
-								<!--//Table wrap-->
-								<ul class="bul_sty01_li mt40">
-									<li>ARS 무이자 할부는 해당 카드사 ARS 번호로 사전 신청을 하신 경우에 한하여 무이자 혜택이
-										적용됩니다.<br />(ARS 부문 무이자 할부 포함)
-									</li>
-									<li>상기 부분 무이자 할부는 5만원 이상 결제 시 자동 적용되며, 결제창에는 무이자 표시가 되지 않을
-										수 있습니다.</li>
-									<li>법인 / 체크 / 선불 / 기프트 / 은행 계열 카드는 제외됩니다.</li>
-									<li>고객 부담 수수료는 해당 카드사로 문의 바랍니다.</li>
-									<li>본 행사는 카드사 사정에 따라 일부 내용이 변경 또는 중단될 수 있습니다.</li>
-								</ul>
-							</div>
-							<!--//tab contents 1-->
-							<!--tab contents 2-->
-							<div>
-								<div class="title_wrap">
-									<h5>청구할인 행사</h5>
-								</div>
-								<!--Table wrap-->
-								<table class="cnt_type1">
-									<caption>청구할인 행사</caption>
-									<colgroup>
-										<col style="width: 155px" />
-										<col style="width: 270px" />
-										<col />
-									</colgroup>
-									<tbody>
-									</tbody>
-								</table>
-								<!--//Table wrap-->
-								<ul class="bul_sty01_li mt40">
-									<li>법인/선불/기프트/은행 계열 카드는 제외됩니다.</li>
-									<!--  <li>상기 청구할인 행사는 5만원 이상 결제 시 자동 적용되며, 결제창에는 표시가 되지 않을 수
-                                            있습니다.</li>-->
-									<li>본 행사는 카드사 사정에 따라 일부 내용이 변경 또는 중단될 수 있습니다.</li>
-								</ul>
-							</div>
-							<!--//tab contents 2-->
-							<!--tab contents 3-->
-							<div>
-								<div class="title_wrap">
-									<h5>즉시할인 행사</h5>
-								</div>
-								<!--Table wrap-->
-								<table class="cnt_type1">
-									<caption>즉시할인 행사</caption>
-									<colgroup>
-										<col style="width: 155px" />
-										<col style="width: 270px" />
-										<col />
-									</colgroup>
-									<tbody>
-									</tbody>
-								</table>
-								<!--//Table wrap-->
-								<div id="nowSale1Img">
-									<img src="/_ui/desktop/common/images/paynow.jpg" alt="paynow"
-										width="100%" />
-								</div>
-								<ul class="bul_sty01_li" style="display: none" id="nowSale1">
-									<li>선착순 1,000명 대상 행사로, 조기 종료될 수 있습니다.</li>
-									<li>전액 취소될 경우에 한하여 할인 혜택이 복원됩니다.</li>
-									<li>PAYNOW로 결제하는 경우 무이자 할부는 PAYNOW 정책에 따라 진행됩니다.</li>
-									<li>결제문의 : 페이나우 고객센터 (1544-7772)</li>
-								</ul>
-								<ul class="bul_sty01_li mt40" id="nowSale2">
-									<li>법인/체크/선불/기프트/은행 계열 카드는 제외됩니다.</li>
-									<li>상기 청구할인 행사는 5만원 이상 결제 시 자동 적용되며, 결제창에는 표시가 되지 않을 수
-										있습니다.</li>
-									<li>본 행사는 카드사 사정에 따라 일부 내용이 변경 또는 중단될 수 있습니다.</li>
-								</ul>
-							</div>
-							<!--//tab contents 3-->
-						</div>
-						<!--//card event tab container-->
-					</div>
-					<!--//orderwrap left-->
-					<!--orderwrap right-->
-					<div class="float_right" style="position: absolute; left: 680px;">
-						<!--final payment sum box-->
-						<div class="sum_box">
-							<div>
-								<p class="tlt">최종 결제 금액</p>
-								<hr />
-								<dl class="clearfix">
-									<dt>상품 합계</dt>
-									<dd id="subTotal">₩651,000</dd>
-									
-								</dl>
-							</div>
-							<div class="total">
-								<dl class="clearfix">
-									<dt>합계</dt>
-									<dd id="totalPrice">₩651,000</dd>
-								</dl>
-							</div>
+				
 							<input type="hidden" name="total" id="total" value="651000.0" />
 							<input type="hidden" name="cartDeliveryCost"
 								id="cartDeliveryCost" value="0.0" />

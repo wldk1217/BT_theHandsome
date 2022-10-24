@@ -24,6 +24,7 @@ public class CouponServiceImpl implements CouponService{
 
 	@Override
 	public void makeCoupon(CouponVO coupon) throws Exception {
+		log.info("register.." + coupon);
 		mapper.makeCoupon(coupon);
 		
 	}

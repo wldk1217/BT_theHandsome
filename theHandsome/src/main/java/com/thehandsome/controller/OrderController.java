@@ -46,8 +46,6 @@ public class OrderController {
 		MemberVO loginUser = (MemberVO) session.getAttribute("member");
 		log.info(loginUser);
 		 if (loginUser == null) {
-//	         String url = "/member/login";
-//	         response.sendRedirect(url);
 			 return "redirect:/member/login";
 	      } else {
 	    	  log.info("order page 2차 진입");

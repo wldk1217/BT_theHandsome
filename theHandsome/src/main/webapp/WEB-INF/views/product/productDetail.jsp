@@ -8,14 +8,14 @@
 	<div id="oneEventLayer"></div>
 
 	<div class="adaptive_wrap">
-		<div class="clearfix prd_detail1905" id="clearfix">
+		<div class="clearfix prd_detail1905" id="clearfix" style ="height: 1000px;">
 			<div class="clearfix image_view3">
 				<a href="javascript:imageZoom()" id="btn_zoom" class="btn_zoom"
 					onclick="GA_Event('상품_상세','크게보기','클릭')">크게보기</a>
 				<c:forEach items="${colorVOList}" var="colorVO">
 					<div class="image_view_${colorVO.ccolorcode}"
 						id="image_view_${colorVO.ccolorcode}" style="display: none">
-						<div class="item_visual" id="imageDiv" style="margin-top: 20px;">
+						<div class="item_visual" id="imageDiv" style="margin-top: 20px; height: ">
 							<ul>
 								<c:if test="${not empty colorVO.cimage2}">
 									<li><img src="${colorVO.cimage2}" class="respon_image"
@@ -751,7 +751,7 @@
 							<input type="hidden" name="order_hspoint" id="order_hspoint"
 								value="" /> <input type="hidden" name="order_count"
 								id="order_count" value="" /> <input type="button" value="바로주문"
-								class="btn order float_right mr0" style="width: 473px;"
+								class="btn order float_right mr0" style="width: 473px; height: 60px;"
 								id="addToCartBuyNowButton">
 						</form>
 					</div>
@@ -767,7 +767,7 @@
 
 		</div>
 		<div class="product-detail-img"></div>
-		<div class="matches_items" id="productDetailEtc"></div>
+	
 	</div>
 </div>
 <!--// pop_cnt-->
