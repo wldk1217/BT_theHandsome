@@ -41,7 +41,7 @@ public class ProductController {
 		return "/product/productDetail";
 	}
 
-	// 해당 상품에 대한 color list 가져오기
+	// 해당 상품에 대한 color list가져오기
 	@ResponseBody
 	@GetMapping(value = "/productColor", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE })
 	public List<ColorVO> productGetColor(@RequestParam("pid") String pid) {
