@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.thehandsome.domain.ColorVO;
 import com.thehandsome.domain.Criteria;
@@ -26,27 +27,40 @@ public class ProductListController {
 
 	private ProductService service;
 
-	@GetMapping("/list/{clarge}/{cmedium}/{csmall}")
-	public String list(Criteria cri, Model model, @PathVariable("clarge") String clarge,
-			@PathVariable("cmedium") String cmedium, @PathVariable("csmall") String csmall) {
+	// 카테고리 별 상품리스트
+	@GetMapping("/list")
+	public String list(Criteria cri, Model model, @RequestParam("clarge") String clarge,
+			@RequestParam("cmedium") String cmedium, @RequestParam("csmall") String csmall) {
 		log.info("list: " + cri);
+
+		System.out.println("Category info: " + clarge + " " + cmedium + " " + csmall);
+		ProductVO category = new ProductVO(clarge, cmedium, csmall);
+		model.addAttribute("category", category);
+
 		List<ProductVO> list = service.getList(cri, clarge, cmedium, csmall);
+		log.info("list: " + list);
 		List<ColorVO> colorList = null;
+		List<String> sizeList = null;
 		List<List<ColorVO>> colorMap = new ArrayList<>();
+		List<List<String>> sizeMap = new ArrayList<>();
 		model.addAttribute("list", list);
 		int total = service.getTotal(clarge, cmedium, csmall);
 		log.info("total = " + total);
 		model.addAttribute("pageMaker", new PageDTO(cri, total));
+		model.addAttribute("totalProducts", total);
 
 		for (int i = 0; i < list.size(); i++) {
 			colorList = service.productGetColor(list.get(i).getPid());
+			sizeList = service.getSize(list.get(i).getPid());
 			colorMap.add(colorList);
+			sizeMap.add(sizeList);
 		}
 		log.info(colorMap);
 		log.info(clarge + cmedium + csmall);
 
 		model.addAttribute("colorMap", colorMap);
-		return "list";
+		model.addAttribute("sizeMap", sizeMap);
+		return "product/productlist";
 	}
 
 	@GetMapping("/get")

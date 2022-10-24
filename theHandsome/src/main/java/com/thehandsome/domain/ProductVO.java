@@ -6,6 +6,7 @@ import oracle.sql.DATE;
 @Data
 public class ProductVO {
 	private String pid; // ��ǰ ǰ��
+	private String ccolorcode;
 	private String bname; // 브랜드 이름
 	private String clarge; // ī�װ� ��з�
 	private String cmedium; // ī�װ� �ߺз�
@@ -22,4 +23,15 @@ public class ProductVO {
 	private String pmanufacturer;
 	private DATE pmadedate;
 	private DATE pdate;
+	
+	public ProductVO() {
+		super();
+	}
+
+	public ProductVO(String clarge, String cmedium, String csmall) {
+		super();
+		this.clarge = clarge;
+		this.cmedium = cmedium;
+		this.csmall = csmall;
+	}
 }

@@ -30,7 +30,7 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public List<ColorVO> productGetColor(String pid) {
 		log.info("ProductServiceImpl");
-		log.info(mapper.productGetColor(pid));
+		log.info("상품 색상 : " + mapper.productGetColor(pid));
 		return mapper.productGetColor(pid);
 	}
 
@@ -53,5 +53,11 @@ public class ProductServiceImpl implements ProductService {
 	public int getTotal(String clarge, String cmedium, String csmall) {
 		log.info("get Total Product");
 		return mapper.getTotal(clarge, cmedium, csmall);
+	}
+
+	@Override
+	public List<String> getSize(String pid) {
+		log.info("get size per product" + pid);
+		return mapper.getSize(pid);
 	}
 }
