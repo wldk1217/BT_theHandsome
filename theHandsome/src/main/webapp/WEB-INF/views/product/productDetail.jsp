@@ -9,7 +9,6 @@
 	<img src="/_ui/desktop/common/images/common/loading.gif" alt="loading">
 	<span>�로딩중</span>
 </div>
-<!-- //Loading -->
 
 <div id="bodyWrap" class="item_detail">
 	<div id="oneEventLayer"></div>
