@@ -15,7 +15,7 @@ import lombok.extern.log4j.Log4j;
 @AllArgsConstructor
 public class MemberServiceImpl implements MemberService {
 
-	@Setter(onMethod_ = @Autowired)
+	@Autowired
 	private MemberMapper mapper;
 	
 	// 회원가입

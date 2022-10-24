@@ -17,7 +17,7 @@ import lombok.extern.log4j.Log4j;
 @AllArgsConstructor
 public class ProductServiceImpl implements ProductService {
 
-	@Setter(onMethod_ = @Autowired)
+	@Autowired
 	private ProductMapper mapper;
 
 	// 상품 상세 조회

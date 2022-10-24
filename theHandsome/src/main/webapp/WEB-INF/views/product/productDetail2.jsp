@@ -262,31 +262,31 @@
 					<div class="image_view1" id="image_view1">
 						<div class="item_visual" id="imageDiv" style="margin-top: 20px;">
 							<ul>
-							<li><img src="${product.cimage2 }" class="respon_image"
-									id="img2" alt="${product.pname }"
+							<li><img src="${ColorVO.cimage2 }" class="respon_image"
+									id="img2" alt="${ProductVO.pname }"
 									onerror="this.src='http://cdn.thehandsome.com/_ui/desktop/common/images/products/no_img1.jpg'" /></li>
-								<li><img src="${product.cimage3 }" class="respon_image"
-									id="img3" alt="${product.pname }"
+								<li><img src="${ColorVO.cimage3 }" class="respon_image"
+									id="img3" alt="${ProductVO.pname }"
 									onerror="this.src='http://cdn.thehandsome.com/_ui/desktop/common/images/products/no_img1.jpg'" /></li>
-								<li><img src="${product.cimage4 }" class="respon_image"
-									id="img4" alt="${product.pname }"
+								<li><img src="${ColorVO.cimage4 }" class="respon_image"
+									id="img4" alt="${ProductVO.pname }"
 									onerror="this.src='http://cdn.thehandsome.com/_ui/desktop/common/images/products/no_img1.jpg'" /></li>
-								<li><img src="${product.cimage5 }" class="respon_image"
-									id="img5" alt="${product.pname }"
+								<li><img src="${ColorVO.cimage5 }" class="respon_image"
+									id="img5" alt="${ProductVO.pname }"
 									onerror="this.src='http://cdn.thehandsome.com/_ui/desktop/common/images/products/no_img1.jpg'" /></li>
 							</ul>
 						</div>
 					</div>
 					<div class="item_visual" id="imageDivW" style="display: none">
 						<ul>
-							<li><img src="${product.cimage1 }" class="respon_image"
-								alt="${product.pname }"
+							<li><img src="${ColorVO.cimage1 }" class="respon_image"
+								alt="${ProductVO.pname }"
 								onerror="this.src='http://cdn.thehandsome.com/_ui/desktop/common/images/products/no_img1.jpg'" /></li>
-							<li><img src="${product.cimage1 }" class="respon_image"
-								alt="${product.pname }"
+							<li><img src="${ColorVO.cimage1 }" class="respon_image"
+								alt="${ProductVO.pname }"
 								onerror="this.src='http://cdn.thehandsome.com/_ui/desktop/common/images/products/no_img1.jpg'" /></li>
-							<li><img src="${product.cimage1 }" class="respon_image"
-								alt="${product.pname }"
+							<li><img src="${ColorVO.cimage1 }" class="respon_image"
+								alt="${ProductVO.pname }"
 								onerror="this.src='http://cdn.thehandsome.com/_ui/desktop/common/images/products/no_img1.jpg'" /></li>
 						</ul>
 					</div>
@@ -324,7 +324,7 @@
 							<!-- 20200914이후 추가 상품설명 (신) -->
 							<div class="prod-detail-con-box">
 								<strong class="number-code">상품품번 &#58; <span
-									class="prodNum">${product.ccolorcode }</span></strong>
+									class="prodNum">${ColorVO.ccolorcode }</span></strong>
 								<div class="round-style">
 									<p>${product.pdetail }</p>
 								</div>
@@ -1312,7 +1312,7 @@
 								action="/shoppingbag" method="post">
 								<!-- <input type="hidden" maxlength="3" size="1" name="qty"class="qty" />  -->
 								<input type="hidden" id="pid" name="pid" value="${product.pid }" />
-								<input type="hidden" id="ccolorcode" name="ccolorcode" value="${product.ccolorcode}" /> 
+								<input type="hidden" id="ccolorcode" name="ccolorcode" value="${ColorVO.ccolorcode}" /> 
 								<input type="hidden" id="mid" name="mid" value="${mid}" /> 
 								<input type="hidden" id="psize" name="psize" value="" /> 
 								<input type="hidden" id="pamount" name="pamount" value="1" /> 
@@ -1916,9 +1916,10 @@
 			function getproduct(){
 				var qty = $("#txtqty").val();
 				var size = $("#psize").val();
-				location.href="/order/orderpage?mid=${member.mid}&pid=${product.pid}&ccolorcode=${product.ccolorcode}&amount="+ qty +"&ssize=" + size;
+				location.href="/order/orderpage?mid=${member.mid}&pid=${product.pid}&ccolorcode=${ColorVO.ccolorcode}&amount="+ qty +"&ssize=" + size;
 			}
 		</script>
 		<!-- layer pop 1 -->
 		<!-- layer pop 1 -->
 </body>
+<%@ include file="/WEB-INF/views/common/footer.jsp"%>
