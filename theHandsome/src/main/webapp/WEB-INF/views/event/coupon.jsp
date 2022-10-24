@@ -42,7 +42,7 @@ function alert() {
 					<button
 						type ="button"
 						style="border: 2px black dot; border-radius: 40%; background-color: ivory; width: 160px; heigth: 200px; font-size: 20px; font-weight: bold;"
-						onclick= "location.href = '/controller/event/makecoupon'">
+						>
 						쿠폰 발급받기</button>
 				</div>
 			</div>
