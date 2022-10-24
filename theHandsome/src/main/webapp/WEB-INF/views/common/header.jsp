@@ -3727,8 +3727,7 @@ deg
 						<li><a href="/ko/ed/edMain"
 							onclick="GA_Event('공통','GNB','편집샵');">편집샵</a></li>
 						<!-- 20200710 룩북 추가 -->
-						<li><a href="/ko/ou/outletMain"
-							onclick="GA_Event('공통','GNB','아울렛');">아울렛*</a></li>
+						<li><a href="/board/list?pageNum=1&amount=10">고객 게시판(Q&A)</a></li>
 					</ul>
 				</div>
 				<!-- 첫번째 c:if -->
