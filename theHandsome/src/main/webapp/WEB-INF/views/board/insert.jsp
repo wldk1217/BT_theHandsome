@@ -89,7 +89,7 @@
             </div>
             <!-- enctype="multipart/form-data" -->
             <form id="manToManInquiryForm" name="manToManInquiryForm" method="post" >
-                <input type="hidden" id="mid" name="mid" value="test01">
+                <input type="hidden" id="mid" name="mid" value="${member.mid}">
                 <fieldset>
                     <legend>1:1 문의 입력</legend>
                     <div class="tblwrap">

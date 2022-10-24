@@ -80,7 +80,8 @@
 
             <!-- enctype="multipart/form-data" -->
             <form id="manToManInquiryForm" name="manToManInquiryForm" method="post" >
-                <input type="hidden" id="mid" name="mid" value="test01">
+            	<!-- mid 부분 -->
+                <input type="hidden" id="mid" name="mid" value="${member.mid}">               
                 <input type="hidden" id="qid" name="qid" value="${board.qid}">
                 <fieldset>
                     <legend>1:1 문의 입력</legend>
@@ -166,8 +167,10 @@ ${board.qcontent}
                     <!-- btn -->
                     <div class="btnwrap">
                         <input type="button" id="btn_cancle" value="취소" class="btn wt">
-                        <input type="button" id="btn_modify" value="수정" class="btn gray mr0">
-                        <input type="button" id="btn_delete" value="삭제" class="btn wt">
+                        <c:if test="${member.mid eq board.mid}">
+                        	<input type="button" id="btn_modify" value="수정" class="btn gray mr0">
+                        	<input type="button" id="btn_delete" value="삭제" class="btn wt">
+                        </c:if>
                     </div>
                     <!-- //btn -->
                 </fieldset>
@@ -177,18 +180,188 @@ ${board.qcontent}
                 </div>
                  -->
             </form>
+            <!-- 댓글 목록 시작 -->
+            <div class="title_wrap mt30 clearfix">
+                <h4 class="float_left">댓글</h4>
+            </div>
+            <div class="tab_a m2" id="faqTabs" style="margin-bottom:0px;">
+                <ul>
+                    <li><a href="#a" class="active" onclick="testFunc('0')" id="aa">회원</a></li>
+                    <li><a href="#b" onclick="testFunc('1')" id="bb">관리자</a></li>
+                </ul>
+            </div>            
+            <div class="tblwrap" style="overflow: hidden;">
+            	<textarea class="new_reply" id="new_reply" style="width:79%;" placeholder="댓글 입력"></textarea>          	
+            	<button id="btn_reply" class="btn gray mr0" style="float:right; height:52px;">댓글</button>
+                <table class="tbl_ltype toggle_list" style="border-top: none;">
+                    <caption>회원 댓글 리스트</caption>
+                    <colgroup>
+                        <col style="width:115px">
+                        <col style="width:600px">
+                        <col style="width:50px">
+                        <col style="width:100px">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col"><small>이름</small></th>
+                            <th scope="col"><small>댓글</small></th>
+                            <th scope="col"></th>
+                            <th scope="col"><small>날짜</small></th>
+                        </tr>
+                    </thead>
+                    <tbody id="listBody" class="reply">
+                        <tr class="al_middle">
+                            <td class="frt"><small></small></td>
+                            <td class="al_left"></td>
+                            <td class="al_right"><small></small></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- 댓글 목록 끝 -->
             <ul class="bul_sty01_li mt60">
                 <li>문의하신 내용에 대한 답변은 이메일 또는 <a href="/ko/mypage/mymantomaninquiry"><em class="ft_point01">마이페이지 &gt; 1:1
                             문의내역</em></a>에서 확인하실 수 있습니다. </li>
                 <li>SMS 문자와 이메일로 답변 완료 알림을 받아보실 수 있습니다.</li>
             </ul>
         </div>
+		
+
+        
         <input type="hidden" id="pageNum" value="${cri.pageNum}">        
         <input type="hidden" id="qid" value="${board.qid}">
     </div>
 </div>
-<script>
 
+<!-- 댓글 수정, 삭제 모달창 style 추가 -->
+<style>
+    #my_modal {
+        display: none;
+        padding: 20px 60px;
+        background-color: #fefefe;
+        border: 1px solid #888;
+        border-radius: 3px;
+    }
+</style>
+<!-- 댓글 수정, 삭제 모달창 style 추가 부분 끝 -->
+
+<!-- 모달창 부분 -->
+<div id="my_modal">
+    <div class="sub_container clearfix">
+                    <div class="tblwrap">
+                        <table class="tbl_wtype1">
+                            <caption>댓글 수정 및 삭제</caption>
+                            <colgroup>
+                                <col style="width:140px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row"><strong class="reqd">*</strong>
+                                    	작성자
+                                    </th>
+                                    <td class="replyer">                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">
+                                        <strong class="reqd">*</strong>댓글<span class="com_txt_p">(500자 이하)</span>
+                                    </th>
+                                    <td>
+                                        <!-- textarea -->
+                                        <textarea id="reply_contents" name="reply_contents" title="문의내용" cols="20" rows="10"
+                                            placeholder="수정할 댓글 입력"></textarea>
+                                        <!-- //textarea -->
+                                    </td>
+                                </tr>                                
+                                <!-- popup end -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- 댓글 번호를 받아오기 위한 HIDDEN 태그 -->
+                    <input type="hidden" value="" name="inputValue"/>
+                    <!-- 댓글 번호를 받아오기 위한 HIDDEN 태그  끝-->
+                    <!-- 버튼 부분 시작 -->
+                    <div class="btnwrap">
+                        <input type="button" id="modal_close_btn" value="취소" class="btn wt">
+                        <input type="button" id="reply_modifyBtn" value="수정" class="btn gray mr0">
+                        <input type="button" id="reply_deleteBtn" value="삭제" class="btn gray mr0">
+                    </div>
+                    <!-- 버튼 부분 끝 -->
+                    
+        </div>
+
+    </div>
+    <!-- 모달창 부분 끝-->
+
+<script type="text/javascript" src="/resources/js/reply.js"></script>
+<script>
+$("#customerReviewWriteDiv").hide();
+		//ajax를 이용한 게시판 조회 페이지의 댓글 처리
+		$(document).ready(function(){	
+			var bnoValue ='<c:out value="${board.qid}"/>';
+			var pageValue = '<c:out value="${cri.pageNum}"/>';
+			var reply = $(".reply");
+			showList(1);
+			function showList(page){
+				mid = document.getElementById("mid").value;
+				replyService.getList({bno:bnoValue, page:pageValue}, function(list){
+					var str = "";
+					//댓글이 없을때 아무것도 띄우지 않고 return
+					if(list==null||list.length==0){
+						reply.html("");
+						return;
+					}//end if
+					for(var i=0, len=list.length||0; i<len; i++){
+						str += "<tr class='al_middle'>";
+						str += "<td class='frt'><small>"+list[i].replyer+"</small></td>";
+						str += "<td class='al_left'>"+list[i].reply+"</td>";
+						if(list[i].replyer==mid){
+							str += "<td class='getreply' style='border-left:none;'><small><input type='button' id='click_modify' value='수정' class='btn gray mr0'"; 
+							str += "style='min-width: 40px; font-size: 5px; padding: 0px 0px 0px;'";
+							str +=  "data-rno="+list[i].rno+" data-replyer="+list[i].replyer+"></small></td>";
+						}
+						else{
+							str += "<td style='border-left:none;'></td>";	
+						}
+						str += "<td class='al_left'><small>" +replyService.displayTime(list[i].replyDate)+"</small></td>";
+						
+					}//end for
+					reply.html(str);
+				});//end getList
+			}//end showList		
+		});//end func
+		//댓글을 클릭하면 모달창을 띄우게 하는 함수
+		$(".reply").on("click", "input[id='click_modify']", function(e){
+			rno = $(this).data("rno");
+			console.log("---------------rno:"+rno);
+			replyer = $(this).data("replyer");
+			console.log("---------------replyer:"+replyer);
+			$('input[name=inputValue]').attr("value", rno);
+			$(".replyer").text(replyer);
+			modal('my_modal');
+		});
+		//댓글 수정 및 삭제의 모달창에서 수정 버튼을 누르면 테이블을 업데이트 하는 메소드
+		$("#reply_modifyBtn").click(function(){
+			rno = $('input[name=inputValue]').val();
+			reply = $("#reply_contents").val();
+			replyService.update(
+					{rno:rno, reply:reply}, function(result){
+				alert("댓글 수정 완료");
+				showList(1);
+			});
+			history.go(0);
+		});
+		$("#reply_deleteBtn").click(function(){
+			rno = $('input[name=inputValue]').val();
+			console.log(rno);
+			replyService.remove(rno, function(result){
+				alert("댓글 삭제 완료");
+				showList(1);
+			});
+			history.go(0);
+		});
 	/* 등록 버튼 클릭시 동작하는 method*/
 		$("#btn_modify").click(function() {
 			/* insert 요청 */
@@ -211,7 +384,75 @@ ${board.qcontent}
 			console.log("버튼클릭");
 			$("#manToManInquiryForm").attr("action", "/board/delete");
 			$("#manToManInquiryForm").submit();
-		});		
+		});
+		
+		$("#btn_reply").click(function() {
+			/* 댓글 insert 요청 */
+			mid = document.getElementById("mid").value;
+			//로그인을 하였을 때 댓글 삽입 가능
+			if(mid){
+				replyService.add(
+						{reply:document.getElementById("new_reply").value,
+						replyer:document.getElementById("mid").value,
+						bno:document.getElementById("qid").value}, 
+						function(result){
+							alert("새로운 댓글이 등록되었습니다.");
+							showList(1);						
+				});//end add
+				history.go(0);
+			}			
+		});
+
+		
+		//모달 창 띄우는 함수
+		function modal(id) {
+		    var zIndex = 9999;
+		    var modal = $('#' + id);
+
+		    // 모달 div 뒤의 레이어 색 조절
+		    var bg = $('<div>')
+		        .css({
+		            position: 'fixed',
+		            zIndex: zIndex,
+		            left: '0px',
+		            top: '0px',
+		            width: '100%',
+		            height: '100%',
+		            overflow: 'auto',
+		            // 레이어 색깔 변경
+		            backgroundColor: 'rgba(0,0,0,0.4)'
+		        })
+		        .appendTo('body');
+
+		    modal
+		        .css({
+		            position: 'fixed',
+		            boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+
+		            // 시꺼먼 레이어 보다 한칸 위에 보이기
+		            zIndex: zIndex + 1,
+
+		            // div center 정렬
+		            top: '50%',
+		            left: '50%',
+		            transform: 'translate(-50%, -50%)',
+		            msTransform: 'translate(-50%, -50%)',
+		            webkitTransform: 'translate(-50%, -50%)'
+		        })
+		        .show()
+		        // 닫기 버튼 처리, 시꺼먼 레이어와 모달 div 지우기
+		        .find('#modal_close_btn')
+		        .on('click', function() {
+		            bg.remove();
+		            modal.hide();
+		        });
+		}
+
+		$('#popup_open_btn').on('click', function() {
+		    // 모달창 띄우기
+		    modal('my_modal');
+		});
+		
 </script>
 </html>
 <%@ include file="/WEB-INF/views/common/footer.jsp"%>
