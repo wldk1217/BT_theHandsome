@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.thehandsome.mapper.ReplyMapper">
+
+	<select id="getListWithPage" resultType="com.thehandsome.domain.ReplyVO">
+		SELECT
+		rno, bno, reply, replyer, replydate, updatedate
+		FROM qnareply
+		WHERE bno = #{qid}
+		ORDER BY rno ASC
+	</select>
+	<!-- 댓글 삽입 -->
+  	<insert id="insert">
+  		insert into QNAREPLY (rno, bno, reply, replyer)
+		values(seq_reply.nextval, #{bno}, #{reply}, #{replyer})
+  	</insert>
+  	
+  	<!-- 댓글 읽기 -->
+  	<select id="read" resultType="com.thehandsome.domain.ReplyVO">
+		SELECT * FROM QNAREPLY WHERE rno = #{rno}
+	</select>
+	
+	<delete id="delete">
+		DELETE FROM QNAREPLY WHERE rno = #{rno}
+	</delete>
+	
+	<update id="update">
+		UPDATE QNAREPLY
+		SET reply = #{reply}, updatedate = sysdate
+		WHERE rno = #{rno}
+	</update>
+</mapper>
