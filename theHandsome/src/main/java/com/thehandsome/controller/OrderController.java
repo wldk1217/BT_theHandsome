@@ -2,6 +2,8 @@
 package com.thehandsome.controller;
 
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -20,9 +22,12 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.thehandsome.domain.OrderItemVO;
 import com.thehandsome.domain.OrderListVO;
 import com.thehandsome.domain.MemberVO;
+import com.thehandsome.domain.ProductVO;
+import com.thehandsome.domain.ColorVO;
 
 import com.thehandsome.service.OrderService;
 import com.thehandsome.service.MemberService;
+import com.thehandsome.service.ProductService;
 
 
 import lombok.AllArgsConstructor;
@@ -37,6 +42,7 @@ public class OrderController {
 	@Autowired
 	private OrderService orderservice;
 	private MemberService memberservice;
+	private ProductService productservice;
 
 	// order page 진입
 	@GetMapping("/order")
@@ -52,26 +58,26 @@ public class OrderController {
 	    	 return "/order/order";
 	      }
 	}
+	
+	// 상품 정보 가져오기
+	@PostMapping("/order")
+	public void orderGet(HttpServletRequest request,ProductVO product) throws Exception {
+		HttpSession session = request.getSession();
+//		ProductVO productVO = productservice.productGetDetail(pid);
+//		List<ColorVO> colorInfo = productservice.productGetColor(ccolorcode);
+	
+		log.info("order 상품리스트 떠라 제발");
+	}
+	
+	// orderlist 삽입
+	@PostMapping("/orderlistinsert")
+	public void orderlistinsert(HttpServletRequest request,OrderListVO orderlist) throws Exception {
+		log.info("orderlistinsert 진입 ");
+		// orderlist 삽입 실행
+		orderservice.orderlistinsert(orderlist);
+	}
+
 
 	
-//	// event detail & coupon 발급 page 진입
-//	@GetMapping("/coupon")
-//	public void eventDetailGet() {
-//		log.info("이벤트 상세 & 쿠폰발급 페이지 진입");
-//	}
-//	
-//	//쿠폰 발급
-//	@RequestMapping(value = "/makecoupon", 
-//			consumes = "application/json",
-//			produces ="application/json",
-//			method = RequestMethod.POST)
-//	public String makeCoupon(CouponVO coupon) throws Exception {
-//		couponservice.makeCoupon(coupon);
-//
-//		log.info("make coupon 성공");
-//
-//		return "redirect:/event";
-//
-//	}
 
 }

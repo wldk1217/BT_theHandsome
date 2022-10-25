@@ -59,10 +59,8 @@ public class CouponController {
 	      } else {
 	    	  couponservice.makeCoupon(coupon);
 	    	  log.info("쿠폰 발급");
-	
 		      return "redirect:/";
 	      }
-
 
 	}
 
