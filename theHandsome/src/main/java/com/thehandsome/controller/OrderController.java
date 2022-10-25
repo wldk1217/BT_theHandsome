@@ -52,6 +52,7 @@ public class OrderController {
 		HttpSession session = request.getSession();
 		MemberVO loginUser = (MemberVO) session.getAttribute("member");
 		log.info(loginUser);
+		
 		if (loginUser == null) {
 			return "redirect:/member/login";
 		} else {
@@ -59,6 +60,10 @@ public class OrderController {
 			log.info("order 상품리스트 떠라 제발");
 			CouponVO couponVO = couponservice.getCoupon(loginUser.getMid());
 			log.info(couponVO);
+			String cname = "";
+			cname = couponVO.getCname();
+			System.out.println("쿠폰에 값 넘겨줌"+ couponVO.getCname());
+			session.setAttribute("cc", cname);
 			return "/order/order";
 		}
 
