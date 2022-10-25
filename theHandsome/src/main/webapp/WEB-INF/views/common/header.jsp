@@ -592,14 +592,30 @@ keyframes target_image { 0% {
 transform
 
 
+
+
+
+
 :
+
+
+
+
 
 
 rotate
 
 
+
+
+
+
 (9
 deg
+
+
+
+
 
 
 )
@@ -609,14 +625,30 @@ deg
 transform
 
 
+
+
+
+
 :
+
+
+
+
 
 
 rotate
 
 
+
+
+
+
 (-1
 deg
+
+
+
+
 
 
 );
@@ -2335,16 +2367,6 @@ deg
 				<div class="top_nav_wrap clearfix">
 					<div class="brand_menu brand_menu1903">
 						<ul class="clearfix">
-							<!-- 선호 브랜드 없음 -->
-							<li><span class="on"> <a href="/ko/main"
-									onclick="GA_Event('공통','탑_네비게이션','HOME')">HOME</a>
-							</span></li>
-							<!-- 로그인 상태 -->
-							<!-- 비로그인 상태 -->
-							<p class="brand_menu_guide_text">
-								로그인 후 아래 '브랜드' 메뉴에서 좋아하는 브랜드를 <span
-									style="margin-top: -1px; display: inline-block;">♥</span> 해주세요
-							</p>
 						</ul>
 					</div>
 					<div class="gnb_sh_wrap" style="display: none;">
