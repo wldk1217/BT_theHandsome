@@ -42,6 +42,10 @@ public class MemberController {
 		log.info("전달된 데이터 : " + member);
 		HttpSession session = request.getSession();
 		MemberVO memberVO = memberservice.memberLogin(member); // 아이디와 비밀번호 매핑 확인
+		
+		String mid = "";
+		mid = member.getMid(); // 사용자 입력값 저장
+		session.setAttribute("memid", mid); // member 변수에 id값 저장
 
 		if (memberVO == null) { // 일치하지 않는 아이디 또는 비밀번호를 입력한 경우
 

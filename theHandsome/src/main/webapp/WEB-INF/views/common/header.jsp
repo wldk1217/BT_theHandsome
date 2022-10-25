@@ -596,7 +596,11 @@ transform
 
 
 
+
+
 :
+
+
 
 
 
@@ -610,8 +614,12 @@ rotate
 
 
 
+
+
 (9
 deg
+
+
 
 
 
@@ -629,7 +637,11 @@ transform
 
 
 
+
+
 :
+
+
 
 
 
@@ -643,8 +655,12 @@ rotate
 
 
 
+
+
 (-1
 deg
+
+
 
 
 
@@ -2589,6 +2605,7 @@ deg
 							<%
 								} else {
 							%>
+							<li style="margin-top: 9px;"><%=session.getAttribute("memid")%>님</li>
 							<li><a href="/member/logout"
 								onclick="GA_Event('공통','헤더_메뉴','로그아웃')"> 로그아웃</a></li>
 							<%
@@ -2686,7 +2703,6 @@ deg
 						</a>
 							<div class="sub_back">
 								<div class="sub_menu clearfix">
-									<p class="gnbbr_txt">브랜드 명을 클릭하시면 해당 브랜드로 이동합니다.</p>
 									<ul class="al_frt1">
 										<!-- 대분류_여성  -->
 										<li><a href="/list?clarge=여성&cmedium=&csmall=" class="">여성<span
@@ -2931,16 +2947,6 @@ deg
 											</ul></li>
 										<!-- #1141 - 카테고리 개편 - 메인 즐겨찾기 브랜드 레이어 -->
 									</ul>
-									<p class="gnbbr_txt">로그인 후 좋아하는 브랜드를 ♥해주세요. '적용하기' 버튼을 클릭하면
-										웹사이트 상단에 추가됩니다.</p>
-									<br />
-									<div class="br_button_wrap">
-										<button type="button" name="button" class="btn_br_apply"
-											onclick="applyCategory();GA_Event('공통_브랜드','적용','적용하기');">적용하기</button>
-										<button type="button" name="button" class="btn_br_reset"
-											onclick="resetCategory();GA_Event('공통_브랜드','적용','초기화하기');">초기화하기</button>
-									</div>
-
 								</div>
 							</div></li>
 
