@@ -22,63 +22,6 @@
         $(document).ready(function () {
             var todayDate = new Date();
 
-            //추석 공지 팝업(2022)
-            if (getCookie('chuseokPopup2022') != todayDate.getDate()) {
-                var startChuseok = new Date('2022/09/02 14:00:00'),
-                    endChuseok = new Date('2022/09/11 23:59:59');
-                if (todayDate.getTime() >= startChuseok.getTime() && todayDate.getTime() <= endChuseok
-                    .getTime()) {
-                    layerPopup11('open');
-                }
-            }
-
-            if (getCookie('newYearPopup2022') != todayDate.getDate()) {
-                var startNewYear = new Date('2022/01/25 21:00:00'),
-                    endNewYear = new Date('2022/02/01 23:59:59');
-                if (todayDate.getTime() >= startNewYear.getTime() && todayDate.getTime() <= endNewYear
-                    .getTime()) {
-                    layerPopup9('open');
-                }
-            }
-
-            if (getCookie('HSlayerPopup3') != todayDate.getDate()) {
-                // 추석
-                var startDate1 = new Date('2020/09/26 12:00:00'),
-                    endDate1 = new Date('2020/10/03 23:59:59');
-                if (todayDate.getTime() >= startDate1.getTime() && todayDate.getTime() <= endDate1.getTime()) {
-                    layerPopup6('open');
-                }
-            }
-            if (getCookie('newYearPopup') != todayDate.getDate()) {
-                //설날
-                var startNewYear = new Date('2020/01/20 00:00:00'),
-                    endNewYear = new Date('2020/01/28 00:00:00');
-                if (todayDate.getTime() >= startNewYear.getTime() && todayDate.getTime() < endNewYear
-                    .getTime()) {
-                    layerPopup7('open'); //설날
-                }
-            }
-
-            //설날 공지 팝업(2021)
-            if (getCookie('newYearPopup2021') != todayDate.getDate()) {
-                var startNewYear = new Date('2021/02/03 11:59:59'),
-                    endNewYear = new Date('2021/02/14 23:59:59');
-                if (todayDate.getTime() >= startNewYear.getTime() && todayDate.getTime() <= endNewYear
-                    .getTime()) {
-                    layerPopup9('open');
-                }
-            }
-
-            //추석 공지 팝업(2021)
-            if (getCookie('chuseokPopup2021') != todayDate.getDate()) {
-                var startChuseok = new Date('2021/09/15 16:00:00'),
-                    endChuseok = new Date('2021/09/21 23:59:59');
-                if (todayDate.getTime() >= startChuseok.getTime() && todayDate.getTime() <= endChuseok
-                    .getTime()) {
-                    layerPopup11('open');
-                }
-            }
-
             //통합 멤버십 약관 제정 안내 팝업(2021/03/01~2021/03/07)
             if (getCookie('membershipInfoMain') == "") {
                 var startMemberInfoMain = new Date('2021/03/01 00:00:00'),
@@ -1661,86 +1604,7 @@
             $(".pickfor_wrap1903 .controls .prev").css("opacity", "1");
             $(".pickfor_wrap1903 .controls .next").css("opacity", "1");
             $(".pickfor_wrap1903 .pick_for ul").css("opacity", "1");
-        } //당신만을 위 추천 슬라이더
-
-        function instagramSlider1903() {
-            var swiper1903 = new Swiper('#instaContents', {
-                slidesPerView: 'auto',
-                paginationClickable: false,
-                simulateTouch: false,
-                freeMode: false,
-                loopedSlides: accountCount,
-                spaceBetween: 20,
-                centeredSlides: true,
-                loop: true,
-                speed: 600,
-                navigation: {
-                    nextEl: '.instagram_arrow.next',
-                    prevEl: '.instagram_arrow.prev'
-                }
-            });
-        }
-
-        function instaImgHover() {
-            //인스타 이미지 hover
-            $(".instagram_wrap1903 #instaContents li a > div.insta_pic_info, #instaContents li a > div.insta_pic_info_txt")
-                .hide();
-            $(".instagram_wrap1903 #instaContents li > a").hover(function () {
-                $(this).find(".insta_pic_info").stop().fadeIn("easeOutQuart");
-                $(this).find(".insta_pic_info_txt").stop().fadeIn("easeOutQuart");
-                $(this).children('img').addClass('active');
-            }, function () {
-                $(this).find(".insta_pic_info, .insta_pic_info_txt").stop().fadeOut("300");
-                $(this).children('img').removeClass('active');
-            });
-        }
-
-        function rouletteEvtPopClose(type) {
-            if (type == "close") {
-                $('#popRouletteEvt').hide();
-            } else {
-                var date;
-
-                $.ajax({
-                    type: "GET",
-                    cache: false,
-                    async: false,
-                    url: location.href,
-                    complete: function (req, textStatus) {
-                        var dateString = req.getResponseHeader('Date');
-                        if (dateString.indexOf('GMT') === -1) {
-                            dateString += ' GMT';
-                        }
-                        date = new Date(dateString);
-
-                    }
-                });
-
-                var todayDate = new Date(date);
-                setCookie("rouletteEventPopup", todayDate.getDate(), 1);
-                $('#popRouletteEvt').hide();
-            }
-        }
-
-
-        function goRouletteEvent() {
-            location.href = '/ko/magazine/events/8799828694912';
-        }
-
-        //11월 한섬스타일 이벤트 랜딩
-        function goHandsomeStyleEvent() {
-            location.href = '/ko/magazine/events/8799959734144';
-        }
-        //이벤트 유도팝업 닫기
-        function popClose1904() {
-            //팝업 닫기
-            $('#playHandsomeStyle').remove();
-        }
-
-        function popClose1911() {
-            //팝업 닫기
-            $('#joinEventPopup').remove();
-        }
+        } 
 
         function GA_main(action, e) {
             var index;
@@ -3429,25 +3293,6 @@
 				</div>
 			</div>
 		</div>
-
-		<!-- new & best -->
-		<div class="product_list1903">
-			<div class="nbe_cnt new">
-				<div class="product_left_menu">
-					<h4 class="tit">신상품</h4>
-					<ul></ul>
-				</div>
-				<div class="nbe_cnt_inner_wrap"></div>
-			</div>
-			<div class="nbe_cnt best">
-				<div class="product_left_menu">
-					<h4 class="tit">베스트</h4>
-					<ul></ul>
-				</div>
-				<div class="nbe_cnt_inner_wrap"></div>
-			</div>
-		</div>
-		<!-- new & best -->
 	</div>
 	<!-- //main_container-->
 	<!-- video_main_wrap-->
@@ -3481,53 +3326,8 @@
 		</div>
 	</div>
 	<!--// video_main_wrap-->
-	<!-- main_container-->
-	<div class="main_container">
-		<!-- the_magazine_wrap1903-->
-		<div class="the_magazine_wrap1903">
-			<h4 class="tit">THE 매거진</h4>
-			<div class="magazine_slider1903 swiper-container"
-				id="magazinSlider1903">
-				<ul class="swiper-wrapper"></ul>
-			</div>
-			<!--add arrow -->
-			<div class="themagazine_arrow next">다음</div>
-			<div class="themagazine_arrow prev">이전</div>
-		</div>
-		<!-- //the_magazine_wrap1903-->
-		<!--배너영역 -->
-		<!--//배너영역 -->
-
-		<!-- pick_for-->
-		<div class="pickfor_wrap1903">
-			<h4 class="tit">
-				<span>당신</span> 만을 위한 특별한 추천
-			</h4>
-			<div class="pick_for" id="pickForSlider1903">
-				<ul class="slides"></ul>
-			</div>
-			<div class="controls" id="pickforControls">
-				<a href="#;" class="prev"></a> <a href="#;" class="next"></a>
-			</div>
-		</div>
-		<!--// pick_for-->
-	</div>
-	<!-- //main_container-->
-	<!-- instagram -->
-	<div class="instagram_wrap1903" style="display: none">
-		<div class="txt_wrap">
-			<h4 class="tit"># THE HANDSOME MOMENT</h4>
-			<p class="s_title">한섬 브랜드 공식 인스타그램 속 사진을 감상하세요.</p>
-		</div>
-		<div class="pic_wrap swiper-container" id="instaContents">
-			<ul class="swiper-wrapper"></ul>
-			<div class="instagram_arrow next">다음</div>
-			<div class="instagram_arrow prev">이전</div>
-		</div>
-		<a href="/ko/magazine/instagram" class="insta_view_more">전체보기</a>
-	</div>
-	<!-- //instagram -->
 </div>
+<!-- //main_container-->
 
 <!-- //bodyWrap -->
 <div class="layerArea" id="hpMemberLayer" style="display: none;">
