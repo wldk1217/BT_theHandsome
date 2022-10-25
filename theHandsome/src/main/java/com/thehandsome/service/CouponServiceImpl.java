@@ -26,7 +26,12 @@ public class CouponServiceImpl implements CouponService{
 	public void makeCoupon(CouponVO coupon) throws Exception {
 		log.info("register.." + coupon);
 		mapper.makeCoupon(coupon);
-		
+	}
+	
+	@Override
+	public CouponVO getCoupon(String mid) throws Exception{
+		log.info("조회.." + mid);
+		return mapper.getCoupon(mid);
 	}
 	
 }

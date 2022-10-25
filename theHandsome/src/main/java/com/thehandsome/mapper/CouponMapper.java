@@ -10,4 +10,6 @@ public interface CouponMapper {
 
 	public void makeCoupon(CouponVO coupon);
 	
+	public CouponVO getCoupon(String mid);
+	
 }

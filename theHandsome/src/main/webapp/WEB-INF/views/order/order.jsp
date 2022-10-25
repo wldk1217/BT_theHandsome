@@ -88,7 +88,7 @@
 										<th scope="col">상품정보</th>
 										<th scope="col">수량</th>
 
-										<th scope="col">판매가/쿠폰 적용가</th>
+										<th scope="col">상품 금액</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -142,27 +142,11 @@
 								<tbody>
 									<tr>
 										<th scope="row" class="th_space">주문자</th>
-										<td>김민선</td>
+										<td>${member.mname}</td>
 									</tr>
 									<tr>
-										<th scope="row" class="th_space"><strong class="reqd">*</strong>휴대폰</th>
-										<td>
-											<!-- hp --> <select id="easy_hp" name="hp0_num1"
-											title="휴대폰 번호 앞자리" class="hp_num1">
-												<option value="010">010</option>
-												<option value="011">011</option>
-												<option value="016">016</option>
-												<option value="017">017</option>
-												<option value="018">018</option>
-												<option value="019">019</option>
-										</select>
-											<div class="form_hyphen">-</div> <input title="휴대폰 번호 가운데자리"
-											class="hp_num2" type="text" name="hp0_num2" id="easy_hp1"
-											maxlength="4" numberOnly="true" />
-											<div class="form_hyphen">-</div> <input title="휴대폰 번호 뒷자리"
-											class="hp_num2" type="text" name="hp0_num3" id="easy_hp2"
-											maxlength="4" numberOnly="true" /> <!-- //hp -->
-										</td>
+										<th scope="row" class="th_space">휴대폰</th>
+										<td>${member.mtel}</td>
 									</tr>
 
 								</tbody>
@@ -258,6 +242,7 @@
 													<select title="쿠폰을 선택해 주세요." id="selectVoucher"
 														style="width: 210px;">
 														<option value="">사용 가능한 쿠폰이 없습니다.</option>
+														<option id="cname" name="cname" value="${couponVO.cname}">${couponVO.cname} 떠라 젭말</option>
 													</select>
 													<div class="btnwrap">
 														<a href="#;" id="btnRedeemVoucher"
