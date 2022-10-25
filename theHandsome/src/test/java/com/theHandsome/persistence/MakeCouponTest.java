@@ -25,8 +25,7 @@ public class MakeCouponTest {
 	public void makeCoupon() throws Exception{
 		CouponVO coupon = new CouponVO();
 		coupon.setCcode("ABC1236");
-		coupon.setEid(1);
-		coupon.setMid("test01");
+		coupon.setMid("ms");
 		coupon.setCname("ms coupon");
 		
 	    mapper.makeCoupon(coupon);

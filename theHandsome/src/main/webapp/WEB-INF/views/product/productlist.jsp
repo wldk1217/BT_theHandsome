@@ -390,11 +390,9 @@
 										<a href="javascript:void(0)" class="cl wt"
 											style="background:<%-- ${colorList.ccolorname} --%> url('${colorList.ccolorimage }');"
 											onclick="GA_Event('카테고리_리스트','컬러칩','BK')"
-											productid="${product.pid }"
-											ccolorcode="${colorList.ccolorcode }"
-											;
-											cimage3="${colorList.cimage3}"
-											cimage4="${colorList.cimage4}"></a>
+											productid="${product.pid}"
+											ccolorcode="${colorList.ccolorcode}"
+											cimage2="${colorList.cimage2}" cimage4="${colorList.cimage4}"></a>
 										<input type="hidden" class="colorvalue"
 											value="${colorList.ccolorcode}">
 									</c:forEach>
@@ -445,7 +443,6 @@
 
 <div class="sh_result none" id="searchResult_None"
 	style="display: none;">조건에 맞는 상품 정보가 없습니다.</div>
-</div>
 
 <div id="criteoVariable">
 	<script type="text/javascript">
@@ -458,7 +455,7 @@
 							for (i = 0; i < products.length; i++) {
 								const img1 = products[i]
 										.getElementsByClassName("cl")[0]
-										.getAttribute("cimage3");
+										.getAttribute("cimage2");
 								const img2 = products[i]
 										.getElementsByClassName("cl")[0]
 										.getAttribute("cimage4");
@@ -503,7 +500,7 @@
 																"src",
 																$(this)
 																		.attr(
-																				"cimage3"));
+																				"cimage2"));
 												$(this)
 														.closest("li")
 														.find("img:eq(1)")
@@ -521,7 +518,9 @@
 																		+ $(
 																				this)
 																				.attr(
-																						"productid"));
+																						"productid"
+																								+ "&ccolorcode="
+																								+ ccolorcode));
 											});
 
 							$(".item_info1").hover(
@@ -587,7 +586,6 @@
 			item : [ "SY2C4TTO047W", "CM2C4TTO340WP2", "MW2C4TTO509W" ]
 		});
 	</script>
-</div>
 </div>
 <!-- //bodyWrap -->
 

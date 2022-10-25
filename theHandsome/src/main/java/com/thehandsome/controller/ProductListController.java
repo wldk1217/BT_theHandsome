@@ -36,8 +36,8 @@ public class ProductListController {
 		log.info("list: " + cri);
 
 		System.out.println("Category info: " + clarge + " " + cmedium + " " + csmall);
-		ProductVO category = new ProductVO(clarge, cmedium, csmall);
-		model.addAttribute("category", category);
+		ProductVO product = new ProductVO(clarge, cmedium, csmall);
+		model.addAttribute("product", product);
 
 		List<ProductVO> list = service.getList(cri, clarge, cmedium, csmall);
 		log.info("list: " + list);

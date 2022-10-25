@@ -8,44 +8,36 @@
 	<div id="oneEventLayer"></div>
 
 	<div class="adaptive_wrap">
-		<div class="clearfix prd_detail1905" id="clearfix">
+		<div class="clearfix prd_detail1905" id="clearfix" style ="height: 1000px;">
 			<div class="clearfix image_view3">
 				<a href="javascript:imageZoom()" id="btn_zoom" class="btn_zoom"
 					onclick="GA_Event('상품_상세','크게보기','클릭')">크게보기</a>
-				<!-- 버튼 클릭시 item_visual 에 zoom 클래스 추가 -->
-				<!-- 2021.08.18 동영상 재생 수정, 상품 imageDivisionCode에 VOD가 있는 경우 동영상 url 세팅 -->
 				<c:forEach items="${colorVOList}" var="colorVO">
 					<div class="image_view_${colorVO.ccolorcode}"
 						id="image_view_${colorVO.ccolorcode}" style="display: none">
-						<div class="item_visual" id="imageDiv" style="margin-top: 20px;">
+						<div class="item_visual" id="imageDiv" style="margin-top: 20px; height: ">
 							<ul>
-								<c:if test="${colorVO.cimage1}">
-									<li><img src="${colorVO.cimage1}" class="respon_image"
-										alt="${colorVO.pid}"
-										onerror="this.src='http://cdn.thehandsome.com/_ui/desktop/common/images/products/no_img1.jpg'">
-									</li>
-								</c:if>
-								<c:if test="${colorVO.cimage2}">
+								<c:if test="${not empty colorVO.cimage2}">
 									<li><img src="${colorVO.cimage2}" class="respon_image"
-										alt="${colorVO.pid}"
+										alt=""
 										onerror="this.src='http://cdn.thehandsome.com/_ui/desktop/common/images/products/no_img1.jpg'">
 									</li>
 								</c:if>
-								<c:if test="${colorVO.cimage3}">
+								<c:if test="${not empty colorVO.cimage3}">
 									<li><img src="${colorVO.cimage3}" class="respon_image"
-										alt="${colorVO.pid}"
+										alt=""
 										onerror="this.src='http://cdn.thehandsome.com/_ui/desktop/common/images/products/no_img1.jpg'">
 									</li>
 								</c:if>
-								<c:if test="${colorVO.cimage4}">
+								<c:if test="${not empty colorVO.cimage4}">
 									<li><img src="${colorVO.cimage4}" class="respon_image"
-										alt="${colorVO.pid}"
+										alt=""
 										onerror="this.src='http://cdn.thehandsome.com/_ui/desktop/common/images/products/no_img1.jpg'">
 									</li>
 								</c:if>
-								<c:if test="${colorVO.cimage5}">
+								<c:if test="${not empty colorVO.cimage5}">
 									<li><img src="${colorVO.cimage5}" class="respon_image"
-										alt="${colorVO.pid}"
+										alt=""
 										onerror="this.src='http://cdn.thehandsome.com/_ui/desktop/common/images/products/no_img1.jpg'">
 									</li>
 								</c:if>
@@ -82,8 +74,7 @@
 						<p class="selling_point"></p>
 						<!-- 20200914이후 추가 상품설명 (신) -->
 						<div class="prod-detail-con-box">
-							<strong class="number-code">상품품번 : ${productVO.pid}<span
-								id="pcscode">${curColorCode}</span></strong>
+							<strong class="number-code">상품품번 : <span id="pcscode">${curColorCode}</span></strong>
 							<div class="round-style">
 								<p>${productVO.pdetail}</p>
 							</div>
@@ -760,8 +751,8 @@
 							<input type="hidden" name="order_hspoint" id="order_hspoint"
 								value="" /> <input type="hidden" name="order_count"
 								id="order_count" value="" /> <input type="button" value="바로주문"
-								class="btn order float_right mr0" 
-								style= "width: 473px;" id="addToCartBuyNowButton">
+								class="btn order float_right mr0" style="width: 473px; height: 60px;"
+								id="addToCartBuyNowButton">
 						</form>
 					</div>
 				</div>
@@ -776,7 +767,7 @@
 
 		</div>
 		<div class="product-detail-img"></div>
-		<div class="matches_items" id="productDetailEtc"></div>
+	
 	</div>
 </div>
 <!--// pop_cnt-->

@@ -598,76 +598,7 @@ transform
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 :
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -685,74 +616,8 @@ rotate
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 (9
 deg
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -774,76 +639,7 @@ transform
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 :
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -861,74 +657,8 @@ rotate
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 (-1
 deg
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1622,134 +1352,6 @@ deg
 
 			<script>
 				var arkQuery = $.noConflict(true);
-			</script>
-
-			<script>
-				/*
-				 * 챗봇 관련 스크립트
-				 */
-				// 챗봇의 푸시링크를 클릭했을 때
-				function openChatView(token, talkId) {
-					callChatbot(token, talkId);
-				}
-
-				function callChatbot(token, talkId) {
-					if (token == null) {
-						$
-								.ajax({
-									type : "POST",
-									url : "/ko/chatbot/token",
-									data : {
-										"CSRFToken" : "38dac78e-999f-4177-895a-5a388435491e"
-									},
-									async : false,
-									success : function(data) {
-										if (data.result == "SHOULD_LOGIN") {
-											var la = new layerAlert(
-													"로그인이 필요합니다");
-											la.confirmAction = function() {
-												//확인 버튼 클릭시 추가 호출 펑션
-												location.href = "/ko/ko/member/login";
-											};
-										} else if (data.result == "NOT_VIP") {
-											var la = new layerAlert(
-													"VVIP 회원님만 이용 가능하십니다");
-											la.confirmAction = function() {
-											};
-										} else if (data.result == "OFF-HOURS") {
-											//일반 : CREW, FRIEND, 간편회원일경우, 평일 오전 9시 30분 ~ 오후 6시 30분만 사용가능
-											var la = new layerAlert(
-													"평일(월~금) 09:00 ~ 18:00 (토/일, 공휴일 휴무)에 이용 가능하십니다");
-											la.confirmAction = function() {
-											};
-										} else {
-											if (data.token != "") {
-												token = data.token;
-											}
-										}
-									},
-									error : function(e) {
-										;
-									}
-								});
-					}
-
-					if (token != null && token != '') {
-						try {
-							ga(
-									'gp.send',
-									'pageview',
-									{
-										'title' : '하니톡_채팅서비스',
-										//가상페이지 화면명
-										'location' : 'http://www.thehandsome.com/ko/hanitalk' //가상페이지URL
-									});
-						} catch (e) {
-							console.log(e);
-						}
-						$("#chatbot_token").val(token);
-						$("#chatbot_talkId").val(talkId);
-
-						var targetTalkUrl = ""
-						if (location.href.indexOf("www.thehandsome.com") > -1) {
-							//운영
-							//운영 챗봇 url
-							targetTalkUrl = "https://talk.thehandsome.com/front/v1/jsp/view/chat.jsp";
-						} else {
-							//그외
-							//개발 챗봇 url
-							targetTalkUrl = "https://handsome-dev.enomix.co.kr/front/v1/jsp/view/chat.jsp";
-						}
-
-						$("#chatbotForm").attr("action", targetTalkUrl);
-
-						$("#chatbotForm").submit();
-					}
-					return false;
-				}
-				/*
-				 * // 챗봇 관련 스크립트
-				 */
-				function GA_Common(action, e) {
-					var eventCategory;
-					var eventAction;
-					var label;
-
-					if (action == "topNav") {
-						eventCategory = "공통";
-						eventAction = "탑_네비게이션";
-						label = escape(e.text());
-					} else if (action == "news") {
-						eventCategory = "공통";
-						eventAction = "뉴스";
-						label = escape(e.text());
-					} else if (action.indexOf("commonBrand") > -1) {
-						eventCategory = "공통_브랜드";
-						eventAction = gaBrandType(action.split('_')[0]);
-						label = e.text();
-					} else if (action.indexOf("brandLike") > -1) {
-						eventCategory = "공통_브랜드";
-						eventAction = gaBrandType(action.split('_')[0])
-								+ "_좋아요";
-						label = e.parent().find("a").text();
-					}
-
-					GA_Event(eventCategory, eventAction, label);
-				}
-
-				function gaBrandType(brandCode) {
-					var brandTypeNm = "";
-					if (brandCode == "WE") {
-						brandTypeNm = "여성_브랜드";
-					} else if (brandCode == "ME") {
-						brandTypeNm = "남성_브랜드";
-					} else if (brandCode == "ED") {
-						brandTypeNm = "편집_브랜드";
-					} else if (brandCode == "OS") {
-						brandTypeNm = "해외_브랜드";
-					}
-					return brandTypeNm;
-				}
 			</script>
 
 			<script type="text/javascript">
@@ -2781,16 +2383,6 @@ deg
 				<div class="top_nav_wrap clearfix">
 					<div class="brand_menu brand_menu1903">
 						<ul class="clearfix">
-							<!-- 선호 브랜드 없음 -->
-							<li><span class="on"> <a href="/ko/main"
-									onclick="GA_Event('공통','탑_네비게이션','HOME')">HOME</a>
-							</span></li>
-							<!-- 로그인 상태 -->
-							<!-- 비로그인 상태 -->
-							<p class="brand_menu_guide_text">
-								로그인 후 아래 '브랜드' 메뉴에서 좋아하는 브랜드를 <span
-									style="margin-top: -1px; display: inline-block;">♥</span> 해주세요
-							</p>
 						</ul>
 					</div>
 					<div class="gnb_sh_wrap" style="display: none;">
@@ -3013,6 +2605,7 @@ deg
 							<%
 								} else {
 							%>
+							<li style="margin-top: 9px;"><%=session.getAttribute("memid")%>님</li>
 							<li><a href="/member/logout"
 								onclick="GA_Event('공통','헤더_메뉴','로그아웃')"> 로그아웃</a></li>
 							<%
@@ -3110,7 +2703,6 @@ deg
 						</a>
 							<div class="sub_back">
 								<div class="sub_menu clearfix">
-									<p class="gnbbr_txt">브랜드 명을 클릭하시면 해당 브랜드로 이동합니다.</p>
 									<ul class="al_frt1">
 										<!-- 대분류_여성  -->
 										<li><a href="/list?clarge=여성&cmedium=&csmall=" class="">여성<span
@@ -3355,16 +2947,6 @@ deg
 											</ul></li>
 										<!-- #1141 - 카테고리 개편 - 메인 즐겨찾기 브랜드 레이어 -->
 									</ul>
-									<p class="gnbbr_txt">로그인 후 좋아하는 브랜드를 ♥해주세요. '적용하기' 버튼을 클릭하면
-										웹사이트 상단에 추가됩니다.</p>
-									<br />
-									<div class="br_button_wrap">
-										<button type="button" name="button" class="btn_br_apply"
-											onclick="applyCategory();GA_Event('공통_브랜드','적용','적용하기');">적용하기</button>
-										<button type="button" name="button" class="btn_br_reset"
-											onclick="resetCategory();GA_Event('공통_브랜드','적용','초기화하기');">초기화하기</button>
-									</div>
-
 								</div>
 							</div></li>
 
@@ -3561,7 +3143,7 @@ deg
 							</div></li>
 						<!-- 대분류_잡화 -->
 						<li><a href="/list?clarge=잡화&cmedium=&csmall=" class="">잡화<span
-								class="arr">arrow</span></a> </a>
+								class="arr">arrow</span></a>
 							<div class="sub_back">
 								<div class="sub_menu clearfix">
 									<ul class="al_frt1">
@@ -3672,11 +3254,6 @@ deg
 					</ul>
 					<ul class="cate_m cate_banner gnbul2" id="cate_m_main"
 						style="float: right;">
-						<li><a href="/ko/magazine/exhibitions"
-							onclick="GA_Event('공통','GNB','기획전');"> 기획전 <!-- 기획전 -->
-						</a></li>
-						<li><a href="/event/event"
-							onclick="GA_Event('공통','GNB','이벤트');">이벤트</a></li>
 						<!-- THE 매거진 수정 200330 -->
 						<li><a href="/ko/magazine/submain" class="magazine1803"
 							onclick="GA_Event('공통','GNB','매거진');"> 매거진 <!-- 매거진 --> <span
@@ -3722,11 +3299,8 @@ deg
 									</div>
 								</div>
 							</div></li>
-						<!-- // THE 매거진 수정 200330 -->
-						<!-- 20210319 편집샵 추가 -->
-						<li><a href="/ko/ed/edMain"
-							onclick="GA_Event('공통','GNB','편집샵');">편집샵</a></li>
-						<!-- 20200710 룩북 추가 -->
+						<li><a href="/event/event"
+							onclick="GA_Event('공통','GNB','이벤트');">이벤트</a></li>
 						<li><a href="/board/list?pageNum=1&amount=10">고객 게시판(Q&A)</a></li>
 					</ul>
 				</div>
