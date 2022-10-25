@@ -23,9 +23,11 @@
 	<update id="memberWithdrawal">
 		update member set menabled=0 where mid=#{mid}
 	</update>
-	
-	<insert id="memberJoin">
-		insert into member values (#{mid}, #{mpassword}, #{mname}, #{memail}, #{mtel}, #{mzipcode}, #{maddress1},#{maddress2},'MEMBER',sysdate,0,1)
-	</insert>
 	-->
+	
+	<insert id="orderlistinsert">
+		insert into orderlist values 
+		(seq_oid.nextval, #{mid}, #{ozipcode}, #{oaddress1}, #{oaddress2}, sysdate, #{oreceiver},#{otel},0,0,0,sysdate,0)
+	</insert>
+	
 </mapper>
