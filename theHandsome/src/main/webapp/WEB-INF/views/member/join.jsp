@@ -112,7 +112,7 @@
 								<tr>
 									<th scope="row"><strong class="reqd">*</strong><label
 										for="mtel">전화번호</label></th>
-									<td><input type="text" style="width: 120px" id="name"
+									<td><input type="text" style="width: 120px" id="mtel"
 										name='mtel' required /></td>
 								</tr>
 								<tr>

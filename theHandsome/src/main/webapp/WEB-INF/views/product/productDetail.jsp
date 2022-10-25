@@ -3,6 +3,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@include file="/WEB-INF/views/common/header.jsp"%>
+<script src="/jquery-3.4.1.min.js"></script>
+
+
 
 <div id="bodyWrap" class="item_detail">
 	<div id="oneEventLayer"></div>
@@ -76,7 +79,9 @@
 						<p class="selling_point"></p>
 						<!-- 20200914이후 추가 상품설명 (신) -->
 						<div class="prod-detail-con-box">
+
 							<strong class="number-code">상품품번 : <span id="pcscode">${curColorCode}</span></strong>
+
 							<div class="round-style">
 								<p>${productVO.pdetail}</p>
 							</div>
@@ -463,7 +468,7 @@
 																<tr class="al_middle">
 																	<th scope="col">BRAND/<br>SIZE
 																	</th>
-																	<th scope="col"F>S</th>
+																	<th scope="col" F>S</th>
 																	<th scope="col">M</th>
 																	<th scope="col">L</th>
 																	<th scope="col">XL</th>
@@ -740,27 +745,26 @@
 						</div>
 					</div>
 					<!-- //st_store_wrap -->
-					<form action="/order/order" method="post" name ="order_form">
-					<div class="btnwrap clearfix"
-						style="position: absolute; width: 473px; margin-bottom: 153.979px;">
-						<!--//190508 추가 -->
+					<form action="/order/order" method="post" name="order_form">
+						<div class="btnwrap clearfix"
+							style="position: absolute; width: 473px; margin-bottom: 153.979px;">
+							<!--//190508 추가 -->
 							<input type="hidden" name="cimage2" id="cimage2"
-								value="${colorVO.cimage2}" /> <input type="hidden"
-								name="bname" id="bname" value="${productVO.bname}" />
-							<input type="hidden" name="pname"
-								id="pname" value="${productVO.pname}" /> <input
+								value="${colorVO.cimage2}" /> <input type="hidden" name="bname"
+								id="bname" value="${productVO.bname}" /> <input type="hidden"
+								name="pname" id="pname" value="${productVO.pname}" /> <input
 								type="hidden" name="curColorCode" id="curColorCode"
-								value="${curColorCode}" /> <input type="hidden"
-								name="size" id="size" value="${size}" /> <input
-								type="hidden" name="txtqty" id="txtqty"
-								value="txtqty" /> <input type="hidden" name="pprice"
-								id="pprice" value="${productVO.pprice}" />
-							<button type="submit" class="btn order float_right mr0"
-							     style="width: 473px; height: 60px;">
-								바로주문</button>
+								value="${curColorCode}" /> <input type="hidden" name="size"
+								id="size" value="${size}" /> <input type="hidden" name="txtqty"
+								id="txtqty" value="txtqty" /> <input type="hidden"
+								name="pprice" id="pprice" value="${productVO.pprice}" />
+							<button type="submit"
+								class="btn order float_right mr0 btn_direct_order"
+								onclick="selectedProductColor()"
+								style="width: 473px; height: 60px;">바로주문</button>
 
-					
-					</div>
+
+						</div>
 					</form>
 				</div>
 
