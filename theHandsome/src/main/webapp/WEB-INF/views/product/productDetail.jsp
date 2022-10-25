@@ -8,14 +8,16 @@
 	<div id="oneEventLayer"></div>
 
 	<div class="adaptive_wrap">
-		<div class="clearfix prd_detail1905" id="clearfix" style ="height: 1000px;">
+		<div class="clearfix prd_detail1905" id="clearfix"
+			style="height: 1000px;">
 			<div class="clearfix image_view3">
 				<a href="javascript:imageZoom()" id="btn_zoom" class="btn_zoom"
 					onclick="GA_Event('상품_상세','크게보기','클릭')">크게보기</a>
 				<c:forEach items="${colorVOList}" var="colorVO">
 					<div class="image_view_${colorVO.ccolorcode}"
 						id="image_view_${colorVO.ccolorcode}" style="display: none">
-						<div class="item_visual" id="imageDiv" style="margin-top: 20px; height: ">
+						<div class="item_visual" id="imageDiv"
+							style="margin-top: 20px; height:">
 							<ul>
 								<c:if test="${not empty colorVO.cimage2}">
 									<li><img src="${colorVO.cimage2}" class="respon_image"
@@ -461,7 +463,7 @@
 																<tr class="al_middle">
 																	<th scope="col">BRAND/<br>SIZE
 																	</th>
-																	<th scope="col">S</th>
+																	<th scope="col"F>S</th>
 																	<th scope="col">M</th>
 																	<th scope="col">L</th>
 																	<th scope="col">XL</th>
@@ -738,23 +740,28 @@
 						</div>
 					</div>
 					<!-- //st_store_wrap -->
+					<form action="/order/order" method="post" name ="order_form">
 					<div class="btnwrap clearfix"
 						style="position: absolute; width: 473px; margin-bottom: 153.979px;">
 						<!--//190508 추가 -->
-						<form id="addToCartBuynowForm" name="addToCartBuynowForm"
-							action="/product/order_page" method="post">
-							<input type="hidden" name="order_colorcode" id="order_colorcode"
-								value="${curcolorcode}" /> <input type="hidden"
-								name="order_size" id="order_size" value="" /> <input
-								type="hidden" name="order_sumprice" id="order_sumprice" value="" />
-							<input type="hidden" name="order_hsm" id="order_hsm" value="" />
-							<input type="hidden" name="order_hspoint" id="order_hspoint"
-								value="" /> <input type="hidden" name="order_count"
-								id="order_count" value="" /> <input type="button" value="바로주문"
-								class="btn order float_right mr0" style="width: 473px; height: 60px;"
-								id="addToCartBuyNowButton">
-						</form>
+							<input type="hidden" name="cimage2" id="cimage2"
+								value="${colorVO.cimage2}" /> <input type="hidden"
+								name="bname" id="bname" value="${productVO.bname}" />
+							<input type="hidden" name="pname"
+								id="pname" value="${productVO.pname}" /> <input
+								type="hidden" name="curColorCode" id="curColorCode"
+								value="${curColorCode}" /> <input type="hidden"
+								name="size" id="size" value="${size}" /> <input
+								type="hidden" name="txtqty" id="txtqty"
+								value="txtqty" /> <input type="hidden" name="pprice"
+								id="pprice" value="${productVO.pprice}" />
+							<button type="submit" class="btn order float_right mr0"
+							     style="width: 473px; height: 60px;">
+								바로주문</button>
+
+					
 					</div>
+					</form>
 				</div>
 
 				<input type="hidden" id="viewExhibitionPageCode" value=""> <input
@@ -767,7 +774,7 @@
 
 		</div>
 		<div class="product-detail-img"></div>
-	
+
 	</div>
 </div>
 <!--// pop_cnt-->

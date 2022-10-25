@@ -40,8 +40,7 @@
 					<input type="hidden" id="mid" name="mid" value="${member.mid}">
 					<button
 						type ="submit" 
-						style="border: 2px black dot; border-radius: 40%; background-color: ivory; width: 160px; heigth: 200px; font-size: 20px; font-weight: bold;"
-						>
+						style="border: 2px black dot; border-radius: 40%; background-color: ivory; width: 160px; heigth: 200px; font-size: 20px; font-weight: bold;">
 						쿠폰 발급받기</button>
 				</form>
 				</div>

@@ -97,26 +97,26 @@
 											<!-- pt_list_all -->
 											<div class="pt_list_all" style ="width : 700px; height: 150px; padding:0px; ">
 												<img style ="height: 150px; width: 150px;"  
-													src="http://newmedia.thehandsome.com/MU/2C/SS/MU2C1WDR207WN6_IV_S01.jpg"
+													src="${colorVO.cimage2}"
 													alt="" />
 				
 												<div class="tlt_wrap" style ="font-size: 20px; width: 500px;" >
-													<a class="basket_tlt"> <span class="tlt" style ="font-size: 20px; margin-bottom:60px; padding-left:200px; height: 50px;" >MUE</span> <span
-														class="sb_tlt" style ="font-size: 20px; padding-left:200px; height: 40px; margin-top: 10px;" >[NANUSHKA] 크로셰 드레스</span>
+													<a class="basket_tlt"> <span class="tlt" style ="font-size: 20px; margin-bottom:60px; padding-left:200px; height: 50px;" >${productVO.bname}</span> <span
+														class="sb_tlt" style ="font-size: 20px; padding-left:200px; height: 40px; margin-top: 10px;" >${productVO.pname}</span>
 			
 													</a>
 													<p class="color_op" style ="font-size: 20px; padding-left:200px; width: 300px;" >
 
-														color : IVORY<span class="and_line" style ="font-size: 20px;" >/</span> size : S
+														color : ${curColorCode} <span class="and_line" style ="font-size: 20px;" >/</span> size : ${size}
 													</p>
 												</div>
 											</div> <!-- //pt_list_all -->
 										</td>
-										<td  style ="font-size: 20px;">1</td>
+										<td  style ="font-size: 20px;">${txtqty}</td>
 										<td>
 											<!-- price_wrap -->
 											<div class="price_wrap ">
-												<span  style ="font-size: 20px;"> ₩651,000</span>
+												<span  style ="font-size: 20px;"> ₩${productVO.pprice} * ${txtqty}</span>
 											</div> <!-- //price_wrap -->
 										</td>
 									</tr>
