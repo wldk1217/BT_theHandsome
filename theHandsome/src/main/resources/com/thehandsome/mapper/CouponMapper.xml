@@ -17,10 +17,10 @@
   		(seq_ccode.nextval, #{mid},'event coupon', sysdate, sysdate+10, 0)
   	</insert>
   	
-  	<!--  
-  	<select id="couponlist" parameterType="String" resultType="String">
-  		select * from coupon where mid=#{mid}
+  	 
+  	<select id="getCoupon" parameterType="String" resultType="com.thehandsome.domain.CouponVO">
+  		select * from coupon where mid= #{mid}
   	</select>
-  	-->
+  
   	
 </mapper>
