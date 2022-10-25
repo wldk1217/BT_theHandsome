@@ -242,7 +242,7 @@
 													<select title="쿠폰을 선택해 주세요." id="selectVoucher"
 														style="width: 210px;">
 														<option value="">사용 가능한 쿠폰이 없습니다.</option>
-														<option id="cname" name="cname" value="${couponVO.cname}">${couponVO.cname} 떠라 젭말</option>
+														<option id="cname" name="cname" value="${couponVO}"><%=session.getAttribute("cc")%></option>
 													</select>
 													<div class="btnwrap">
 														<a href="#;" id="btnRedeemVoucher"
