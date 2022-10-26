@@ -1,3 +1,11 @@
+<!-- 
+/*****************************************************
+ * @function : productlist.jsp
+ * @author : 심지연
+ * @Date : 2022.10.19
+ *****************************************************/
+ -->
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -408,28 +416,28 @@
 	<input type="hidden" class="clarge" value="${product.clarge}">
 	<input type="hidden" class="cmedium" value="${product.cmedium}">
 	<input type="hidden" class="csmall" value="${product.csmall}">
-	<input type="hidden" class="realEnd" value="${pageMaker.realEnd}">
+	<input type="hidden" class="realEnd" value="${pager.realEnd}">
 	<a class="prev2" href="#"></a>
-	<c:if test="${pageMaker.prev}">
+	<c:if test="${pager.prev}">
 		<!-- 이전 버튼 -->
 		<a class="prev"
-			href="/list?clarge=${product.clarge}&cmedium=${product.cmedium}&csmall=${product.csmall}&pageNum=${pageMaker.startPage - 1}">Previous</a>
+			href="/list?clarge=${product.clarge}&cmedium=${product.cmedium}&csmall=${product.csmall}&pageNum=${pager.startPage - 1}">Previous</a>
 	</c:if>
 
 	<!-- 1~10 버튼 -->
 	<span class="num"> <c:forEach var="num"
-			begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
-			<c:if test="${(pageMaker.startPage+i) <= pageMaker.endPage}">
+			begin="${pager.startPage}" end="${pager.endPage}">
+			<c:if test="${(pager.startPage+i) <= pager.endPage}">
 				<a
 					href="/list?clarge=${product.clarge}&cmedium=${product.cmedium}&csmall=${product.csmall}&pageNum=${num}"
 					class="pageBtn">${num}</a>
 			</c:if>
 		</c:forEach>
 	</span>  
-	<c:if test="${pageMaker.next}">
+	<c:if test="${pager.next}">
 		<!-- 다음 버튼 -->
 		<a
-			href="/list?clarge=${product.clarge}&cmedium=${product.cmedium}&csmall=${product.csmall}&pageNum=${pageMaker.endPage +1}"
+			href="/list?clarge=${product.clarge}&cmedium=${product.cmedium}&csmall=${product.csmall}&pageNum=${pager.endPage +1}"
 			class="next">Next</a>
 	</c:if>
 	<a class="next2" href="#"></a>
@@ -437,8 +445,8 @@
 <!--  end Pagination -->
 
 <form id='actionForm' action="/list" method='get'>
-	<input type='hidden' name='pageNum' value='${pageMaker.cri.pageNum}'>
-	<input type='hidden' name='amount' value='${pageMaker.cri.amount}'>
+	<input type='hidden' name='pageNum' value='${pager.cri.pageNum}'>
+	<input type='hidden' name='amount' value='${pager.cri.amount}'>
 </form>
 
 <div class="sh_result none" id="searchResult_None"

@@ -50,7 +50,7 @@ public class ProductListController {
 		model.addAttribute("list", list);
 		int total = service.getTotal(clarge, cmedium, csmall);
 		log.info("total = " + total);
-		model.addAttribute("pageMaker", new PageDTO(cri, total));
+		model.addAttribute("pager", new PageDTO(cri, total));
 		model.addAttribute("totalProducts", total);
 
 		for (int i = 0; i < list.size(); i++) {
