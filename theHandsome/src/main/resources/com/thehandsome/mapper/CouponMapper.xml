@@ -4,20 +4,21 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
  <!-- 
- /* 
- * 김민선 생성
- * [쿠폰 생성, 쿠폰 삭제, 쿠폰 조회, 쿠폰 ] 쿼리
- */
+ /*****************************************************
+ * @function : CouponMapper
+ * @author : 김민선
+ * @Date : 2022.10.20
+ *****************************************************/
   -->
   
   <mapper namespace="com.thehandsome.mapper.CouponMapper">
-
+	<!-- 쿠폰생성 -->
 	<insert id="makeCoupon" parameterType="com.thehandsome.domain.CouponVO" >
   		insert into coupon values
   		(seq_ccode.nextval, #{mid},'10% event coupon', sysdate, sysdate+10, 10, 0)
   	</insert>
   	
-  	 
+  	<!-- 쿠폰조회 -->
   	<select id="getCoupon" parameterType="String" resultType="com.thehandsome.domain.CouponVO">
   		select * from coupon where mid= #{mid}
   	</select>

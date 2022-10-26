@@ -1,4 +1,10 @@
-<!-- 김민선 생성 -->
+<!-- 
+/*****************************************************
+ * @function : order.jsp
+ * @author : 김민선
+ * @Date : 2022.10.23
+ *****************************************************/
+ -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/views/common/header.jsp"%>
@@ -260,6 +266,7 @@
 
 
 <script>
+	// 상품 금액에서 쿠폰 적용시 할인율 적용
 	var price = document.getElementById("totalPrice").value
 	var sale = <%=session.getAttribute("cupto")%>;
 	var sale_price = (price * sale)/100;
@@ -271,7 +278,7 @@
 	document.getElementById("sale_price").innerHTML=sale_price;
 	document.getElementById("total_price").innerHTML=total_price;
 	
-	
+	// 쿠폰적용 버튼 동작
 function redeemVoucher(){
 	$('.afterbtn ').css("display", 
 			"inline");
