@@ -14,7 +14,7 @@
 
 	<insert id="makeCoupon" parameterType="com.thehandsome.domain.CouponVO" >
   		insert into coupon values
-  		(seq_ccode.nextval, #{mid},'event coupon', sysdate, sysdate+10, 0)
+  		(seq_ccode.nextval, #{mid},'10% event coupon', sysdate, sysdate+10, 10, 0)
   	</insert>
   	
   	 

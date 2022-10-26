@@ -27,7 +27,6 @@ public class MakeCouponTest {
 		coupon.setCcode("ABC1236");
 		coupon.setMid("ms");
 		coupon.setCname("ms coupon");
-		
 	    mapper.makeCoupon(coupon);
 
 	}

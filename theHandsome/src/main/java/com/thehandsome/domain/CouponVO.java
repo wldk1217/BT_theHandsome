@@ -10,5 +10,6 @@ public class CouponVO {
 	private String cname;
 	private Date cstartDate;
 	private Date cendDate;
+	private int cupto;
 	private int cstate;
 }
