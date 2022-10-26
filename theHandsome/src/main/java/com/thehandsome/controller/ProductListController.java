@@ -2,23 +2,25 @@ package com.thehandsome.controller;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import com.thehandsome.domain.ColorVO;
 import com.thehandsome.domain.Criteria;
 import com.thehandsome.domain.PageDTO;
 import com.thehandsome.domain.ProductVO;
 import com.thehandsome.service.ProductService;
-
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
+
+/*****************************************************
+ * @function : ProductListController
+ * @author : 심지연
+ * @Date : 2022.10.19
+ *****************************************************/
 
 @Controller
 @RequestMapping("")

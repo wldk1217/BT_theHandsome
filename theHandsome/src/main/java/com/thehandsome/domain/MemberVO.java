@@ -2,6 +2,12 @@ package com.thehandsome.domain;
 
 import lombok.Data;
 
+/*****************************************************
+ * @function : MemberVO
+ * @author : 구영모, 김민선, 심지연 공동작업
+ * @Date : 2022.10.17
+ *****************************************************/
+
 @Data
 public class MemberVO {
 	private String mid;
