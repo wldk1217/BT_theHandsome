@@ -62,6 +62,6 @@ public class OrderController {
 	public String orderlistisnsert(HttpServletRequest request, OrderListVO orderlist) throws Exception {
 		orderservice.orderlistinsert(orderlist);
 		log.info("orderlistinsert 완료");
-		return "/";
+		return "redirect:/";
 	}
 }
