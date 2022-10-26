@@ -27,7 +27,7 @@
 	
 	<insert id="orderlistinsert">
 		insert into orderlist values 
-		(seq_oid.nextval, #{mid}, #{ozipcode}, #{oaddress1}, #{oaddress2}, sysdate, #{oreceiver},#{otel},0,0,0,sysdate,0)
+		(seq_oid.nextval, #{mid}, #{ozipcode}, #{oaddress1}, #{oaddress2}, sysdate, #{oreceiver},#{otel})
 	</insert>
 	
 </mapper>
