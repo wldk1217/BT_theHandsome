@@ -3,20 +3,21 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<!-- 상품 상세 조회, 상품 컬러 리스트 조회, 상품정보 조회, 카테고리별 상품 조회, 상품 총 개수 조회 쿼리 -->
-
 <mapper namespace="com.thehandsome.mapper.ProductMapper">
 
+	<!-- 상품 상세 조회 쿼리-->
 	<select id="productGetDetail"
 		resultType="com.thehandsome.domain.ProductVO">
 		select * from product where pid=#{pid}
 	</select>
 
+	<!-- 상품 컬러 리스트 조회 쿼리 -->
 	<select id="productGetColor"
 		resultType="com.thehandsome.domain.ColorVO">
 		select * from color where pid=#{pid}
 	</select>
 
+	<!-- 상품 리스트 조회 쿼리 -->
 	<select id="getList"
 		resultType="com.thehandsome.domain.ProductVO">
 		select p.pid, pname, c.clarge, c.medium, c.csamll,
@@ -31,6 +32,7 @@
 		bname = #{bname}
 	</select>
 
+	<!-- 상품 상세 조회 -->
 	<select id="read" resultType="com.thehandsome.domain.ProductVO">
 		select pid, bno, clarge, cmedium,
 		csamll, pname, pprice, pdetail, c.cimage1, c.cimage2
@@ -39,6 +41,7 @@
 		where bname = #{bname}
 	</select>
 
+	<!-- 페이징된 상품 리스트 조회 쿼리  -->
 	<select id="getListWithPaging"
 		resultType="com.thehandsome.domain.ProductVO">
 		SELECT p.*
@@ -60,6 +63,7 @@
     		]]>
 	</select>
 
+	<!-- 상품 사이즈 조회 쿼리 -->
 	<select id="getSize" resultType="String">
 		select distinct ssize
 		from stock
@@ -79,6 +83,7 @@
 		to_number(REGEXP_REPLACE(ssize, '[^0-9]'))
 	</select>
 
+	<!-- 총 상품 개수 조회 쿼리 -->
 	<select id="getTotal" resultType="int">
 		select count(*)
 		from product
