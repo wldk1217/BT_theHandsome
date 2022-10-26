@@ -2600,7 +2600,7 @@ deg
 							<%
 								if (session.getAttribute("member") == null) {
 							%>
-							<li><a href="/member/login"
+							<li ><a href="/member/login"
 								onclick="GA_Event('공통','헤더_메뉴','로그인')"> 로그인</a></li>
 							<%
 								} else {
@@ -2611,53 +2611,6 @@ deg
 							<%
 								}
 							%>
-							<li class="header_dropmemu mypage"><a href="/ko/mypage"
-								class="btn" onclick="GA_Event('공통','헤더_메뉴','마이페이지')">마이페이지</a>
-								<div class="list">
-									<ul>
-										<li><a href="/ko/mypage/order/myorders"
-											onclick="GA_Event('공통','헤더_메뉴','마이페이지_주문조회')"> 주문조회 <!-- 주문조회 -->
-										</a></li>
-										<li><a href="/ko/mypage/myGradeInfo"
-											onclick="GA_Event('공통','헤더_메뉴','마이페이지_나의회원등급')"> 나의회원등급 <!-- 온라인등급 -->
-										</a></li>
-										<li><a href="/ko/mypage/voucher"
-											onclick="GA_Event('공통','헤더_메뉴','마이페이지_쿠폰조회')"> 쿠폰조회 <!-- 쿠폰조회 -->
-										</a></li>
-										<li><a href="/ko/mypage/mypoint"
-											onclick="GA_Event('공통','헤더_메뉴','마이페이지_마일리지조회')"> 마일리지조회 <!-- 포인트조회 -->
-										</a></li>
-										<li><a href="/ko/mypage/myEGiftCard"
-											onclick="GA_Event('공통','헤더_메뉴','마이페이지_e-Gift Card')">
-												e-Gift Card <!-- e-Gfit Card -->
-										</a></li>
-										<li><a href="/ko/mypage/personInfomationChangePWCheck"
-											onclick="GA_Event('공통','헤더_메뉴','마이페이지_회원정보변경')"> 회원정보변경 <!-- 회원정보변경 -->
-										</a></li>
-										<li><a href="/ko/svcenter/mantomaninquiry"
-											onclick="GA_Event('공통','헤더_메뉴','마이페이지_온라인상담')"> 온라인상담 <!-- 온라인 상담 -->
-										</a></li>
-									</ul>
-								</div></li>
-
-							<li>
-								<div class="header_dropmemu lang_switch lang_1911">
-									<a href="javascript:void(0);" class="btn"
-										onclick="GA_Event('공통','헤더_메뉴','LANGUAGE')">LANGUAGE</a>
-									<div class="list"
-										style="display: none; height: 87px; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;">
-										<ul>
-											<li><a href="javascript:language('ko')"
-												onclick="GA_Event('공통','헤더_메뉴','LANGUAGE_한국어')">한국어</a></li>
-											<li><a href="javascript:language('en')"
-												onclick="GA_Event('공통','헤더_메뉴','LANGUAGE_ENGLISH')">ENGLISH</a>
-											</li>
-											<li><a href="javascript:language('zh')"
-												onclick="GA_Event('공통','헤더_메뉴','LANGUAGE_中文')">中文</a></li>
-										</ul>
-									</div>
-								</div>
-							</li>
 						</ul>
 					</div>
 				</div>

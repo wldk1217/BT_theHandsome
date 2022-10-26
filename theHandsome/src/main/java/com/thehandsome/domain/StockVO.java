@@ -2,10 +2,16 @@ package com.thehandsome.domain;
 
 import lombok.Data;
 
+/*****************************************************
+ * @function : StockVO
+ * @author : ì‹¬ì§€ì—°
+ * @Date : 2022.10.19
+ ******************************************************/
+
 @Data
 public class StockVO {
-	private String pid; // »óÇ° Ç°¹ø
-	private String ccolorcode; // »ö»ó ÄÚµå
-	private String ssize; // Àç°í »çÀÌÁî
-	private int samount; // Àç°í ¼ö·®
+	private String pid; // ìƒí’ˆí’ˆë²ˆ
+	private String ccolorcode; // ìƒ‰ìƒì½”ë“œ
+	private String ssize; // ì¬ê³ ì‚¬ì´ì¦ˆ
+	private int samount; // ì¬ê³ ìˆ˜ëŸ‰
 }

@@ -2,6 +2,12 @@ package com.thehandsome.domain;
 
 import lombok.Data;
 
+/*****************************************************
+ * @function : PageDTO
+ * @author : 심지연
+ * @Date : 2022.10.21
+ ******************************************************/
+
 @Data
 public class PageDTO {
 	/* 페이지 시작 번호 */

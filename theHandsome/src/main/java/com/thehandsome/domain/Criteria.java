@@ -2,6 +2,12 @@ package com.thehandsome.domain;
 
 import lombok.Data;
 
+/*****************************************************
+ * @function : Criteria
+ * @author : 심지연
+ * @Date : 2022.10.20
+ ******************************************************/
+
 @Data
 public class Criteria {
 
