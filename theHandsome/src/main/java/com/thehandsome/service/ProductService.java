@@ -1,10 +1,15 @@
 package com.thehandsome.service;
 
 import java.util.List;
-
 import com.thehandsome.domain.ColorVO;
 import com.thehandsome.domain.Criteria;
 import com.thehandsome.domain.ProductVO;
+
+/*****************************************************
+ * @function : ProductService
+ * @author : 심지연
+ * @Date : 2022.10.19
+ *****************************************************/
 
 public interface ProductService {
 
