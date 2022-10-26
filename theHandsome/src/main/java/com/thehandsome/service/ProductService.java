@@ -1,10 +1,15 @@
 package com.thehandsome.service;
 
 import java.util.List;
-
 import com.thehandsome.domain.ColorVO;
 import com.thehandsome.domain.Criteria;
 import com.thehandsome.domain.ProductVO;
+
+/*****************************************************
+ * @function : ProductService
+ * @author : 심지연
+ * @Date : 2022.10.19
+ *****************************************************/
 
 public interface ProductService {
 
@@ -22,5 +27,6 @@ public interface ProductService {
 	// 대, 중, 소 분류에 해당하는 상품 총 개수 조회
 	public int getTotal(String clarge, String cmedium, String csmall);
 
+	// 상품 사이즈 리스트 조회
 	public List<String> getSize(String pid);
 }

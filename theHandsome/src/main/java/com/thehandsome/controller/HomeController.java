@@ -1,8 +1,8 @@
 package com.thehandsome.controller;
 
 import java.util.Locale;
-//¾È³çÇÏ¼¼¿ä testÁßÀÔ´Ï´Ù
-// Å×½ºÆ®ÁßÀÔ³×´Ù
+//ï¿½È³ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½ testï¿½ï¿½ï¿½Ô´Ï´ï¿½
+// ï¿½×½ï¿½Æ®ï¿½ï¿½ï¿½Ô³×´ï¿½
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -10,17 +10,17 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-/**
- * Handles requests for the application home page.
- */
+/*****************************************************
+ * @function : HomeController
+ * @author : êµ¬ì˜ëª¨, ê¹€ë¯¼ì„ , ì‹¬ì§€ì—° ê³µë™ì‘ì—…
+ * @Date : 2022.10.17
+ *****************************************************/
+
 @Controller
 public class HomeController {
 
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
-	/**
-	 * Simply selects the home view to render by returning its name.
-	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		return "home";

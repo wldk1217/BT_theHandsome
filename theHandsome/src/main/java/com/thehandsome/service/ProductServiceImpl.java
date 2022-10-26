@@ -3,14 +3,18 @@ package com.thehandsome.service;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import com.thehandsome.domain.ColorVO;
 import com.thehandsome.domain.Criteria;
 import com.thehandsome.domain.ProductVO;
 import com.thehandsome.mapper.ProductMapper;
 import lombok.AllArgsConstructor;
-import lombok.Setter;
 import lombok.extern.log4j.Log4j;
+
+/*****************************************************
+ * @function : ProductServiceImpl
+ * @author : 심지연
+ * @Date : 2022.10.19
+ *****************************************************/
 
 @Log4j
 @Service
@@ -55,6 +59,7 @@ public class ProductServiceImpl implements ProductService {
 		return mapper.getTotal(clarge, cmedium, csmall);
 	}
 
+	// 상품 사이즈 조회
 	@Override
 	public List<String> getSize(String pid) {
 		log.info("get size per product" + pid);

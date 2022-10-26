@@ -3,22 +3,22 @@ package com.thehandsome.domain;
 import lombok.Data;
 
 /*****************************************************
- * @function : OrderItem Å×ÀÌºí VO
- * @author : ±¸¿µ¸ğ
- * @Date : 2022.10.16
+ * @function : OrderItem í…Œì´ë¸” VO
+ * @author : êµ¬ì˜ëª¨
+ * @Date : 2022.10.17
  ******************************************************/
 @Data
 public class OrderItemVO {
-	//ÁÖ¹® ¹øÈ£
+	//ì£¼ë¬¸ ë²ˆí˜¸
 	private String oid;
-	//»ö±ò ÄÚµå
+	//ìƒ‰ê¹” ì½”ë“œ
 	private String ccolorcode;
-	//»çÀÌÁî
+	//ì‚¬ì´ì¦ˆ
 	private String ssize;
-	//»óÇ° id
+	//ìƒí’ˆ id
 	private String pid;
-	//È¸¿ø id
+	//íšŒì› id
 	private String mid;
-	//ÁÖ¹® ¼ö·®
+	//ì£¼ë¬¸ìˆ˜ëŸ‰
 	private int oamount;
 }

@@ -3,29 +3,20 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
+ <!-- 
+ /*****************************************************
+* @function : OrderMapper
+ * @author : 김민선
+ * @Date : 2022.10.24
+ *****************************************************/
+  -->
+
 <mapper namespace="com.thehandsome.mapper.OrderMapper">
 
-	<!-- 
-	<select id="orderItem"
-		resultType="com.thehandsome.domain.OrderItemVO">
-		select * from orderitem where mid=#{mid} and pid=#{pid}
-	</select>
-
-	 
-	<update id="modifyInfo">
-		update member set mpassword=#{mpassword},
-		mzipcode=#{mzipcode},
-		maddress1=#{maddress1}, maddress2=#{maddress2},
-		mtel=#{mtel} where
-		mid=#{mid}
-	</update>
-
-	<update id="memberWithdrawal">
-		update member set menabled=0 where mid=#{mid}
-	</update>
-	
-	<insert id="memberJoin">
-		insert into member values (#{mid}, #{mpassword}, #{mname}, #{memail}, #{mtel}, #{mzipcode}, #{maddress1},#{maddress2},'MEMBER',sysdate,0,1)
+	<!-- orderlist 삽입-->
+	<insert id="orderlistinsert">
+		insert into orderlist values 
+		(seq_oid.nextval, #{mid}, #{ozipcode}, #{oaddress1}, #{oaddress2}, sysdate, #{oreceiver},#{otel})
 	</insert>
-	-->
+	
 </mapper>
