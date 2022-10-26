@@ -11,9 +11,9 @@ import lombok.Data;
 @Data
 public class Criteria {
 
-	private int pageNum;
+	private int pageNum; // 페이지번호
 
-	private int amount;
+	private int amount; // 한 페이지에 띄울 상품 개수
 
 	public Criteria(int pageNum, int amount) {
 		this.pageNum = pageNum;
@@ -21,7 +21,7 @@ public class Criteria {
 	}
 
 	public Criteria() {
-		this(1, 12);
+		this(1, 12); // 1페이지 당 상품 12개
 	}
 
 	@Override
