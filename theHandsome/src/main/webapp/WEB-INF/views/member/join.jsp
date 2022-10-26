@@ -1,12 +1,17 @@
-<!-- 김민선 생성 -->
+<!-- 
+/*****************************************************
+ * @function : join.jsp
+ * @author : 김민선
+ * @Date : 2022.10.18
+ *****************************************************/
+ -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/views/common/header.jsp"%>
 <head>
 <script src="/jquery-3.4.1.min.js"></script>
 
-
-
+<!-- id 중복체크 css -->
 <style>
 .id_ok {
 	color: #008000;
@@ -149,7 +154,6 @@
 </form>
 
 
-<!-- footerWrap -->
 
 <script>
 	//이메일주소 합쳐서 한번에 저장하기
