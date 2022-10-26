@@ -7,22 +7,23 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.thehandsome.domain.OrderListVO;
-import com.thehandsome.mapper.OrderMapper;
 import com.thehandsome.service.OrderService;
 
-import lombok.Setter;
-import lombok.extern.log4j.Log4j;
-import oracle.sql.DATE;
+/*****************************************************
+ * @function : OrderlistInsert
+ * @author : 김민선
+ * @Date : 2022.10.24
+ *****************************************************/
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
-@Log4j
+
 public class OrderlistinsertTest {
 	
 	@Autowired
 	private OrderService service;
 	
-	
+	// orderlist insert 테스트
 	@Test
 	public void orderlistinsert() throws Exception{
 		OrderListVO orderlist = new OrderListVO();
