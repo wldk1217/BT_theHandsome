@@ -35,9 +35,6 @@ public class OrderlistinsertTest {
 		orderlist.setOaddress2("123");
 		orderlist.setOreceiver("ㄱㅁㅅ");
 		orderlist.setOtel("123");
-		orderlist.setOstatus(1);
-	
-
 		service.orderlistinsert(orderlist);
 	}
 
