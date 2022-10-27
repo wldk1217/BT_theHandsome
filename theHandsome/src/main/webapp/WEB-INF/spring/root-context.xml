@@ -12,39 +12,47 @@
       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
-
+<!-- 
+/*****************************************************
+ * @function : root-context.xml
+ * @author : 구영모, 김민선, 심지연 
+ * 설명: 프로젝트 초기 세팅
+ * @Date : 2022.10.17 ~ 2022.10.18
+ *****************************************************/
+ -->
+ 
 	<!-- Root Context: defines shared resources visible to all other web components -->
 
 	<context:annotation-config></context:annotation-config>
 
-	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
+<!-- 	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
 		<property name="driverClassName"
 			value="oracle.jdbc.OracleDriver"></property>
 		<property name="jdbcUrl"
 			value="jdbc:oracle:thin:@localhost:1521/xepdb1"></property>
 		<property name="username" value="test"></property>
 		<property name="password" value="test"></property>
-	</bean>
+	</bean> -->
 
-
-<!-- 	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">  
+	<!-- hikariConfig 설정 -->
+	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">  
 		<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property> 
 		<property name="jdbcUrl" value="jdbc:log4jdbc:oracle:thin:@hd_high?TNS_ADMIN=C:\\\\dev\\\\OracleWallet\\\\Wallet_hd"></property> 
 		<property name="username" value="handsome"></property> <property name="password" 
-		value="xxxxxxAt21cc"></property> </bean> -->
-
+		value="xxxxxxAt21cc"></property> </bean>
+	<!-- dataSource 설정 -->
 	<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource"
 		destroy-method="close">
 		<constructor-arg ref="hikariConfig">
 		</constructor-arg>
 	</bean>
-
+	<!-- sqlSession 설정 -->
 	<bean id="sqlSessionFactory"
 		class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"></property>
 		<property name="typeAliasesPackage" value="com.thehandsome"></property>
 	</bean>
-
+	<!-- transactionManager 설정 -->
 	<bean id="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource"></property>

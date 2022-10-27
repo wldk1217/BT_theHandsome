@@ -2,7 +2,14 @@
 <web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee https://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
-
+<!-- 
+/*****************************************************
+ * @function : web.xml
+ * @author : 구영모, 김민선, 심지연 작성
+ * 설명 : 스프링 프로젝트 설정
+ * @Date : 2022.10.17 ~ 2022.10.26
+ *****************************************************/
+ -->
 	<!-- ContextLoaderListener가 사용하는 스프링 설정 파일 위치 -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
@@ -63,5 +70,4 @@
 		<filter-name>springSecurityFilterChain</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-
 </web-app>

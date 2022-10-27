@@ -36,13 +36,13 @@ import lombok.extern.log4j.Log4j;
 public class MemberController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
-	//비밀번호를 암호화 하기 위한 모듈 불러오기
+	//author:구영모 비밀번호를 암호화 하기 위한 모듈 불러오기
 	BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 	
 	@Autowired
 	private MemberService memberservice;
 	
-	// 로그인 뷰로 이동
+	// author:심지연 로그인 뷰로 이동
 	@GetMapping("/login")
 	public void loginGet(String error, String logout, Model model) {
 		log.info("error"+error);
@@ -55,7 +55,7 @@ public class MemberController {
 		}
 	}
 
-	// 로그아웃 기능
+	// author:심지연 로그아웃 기능
 	@GetMapping("/logout")
 	public String logoutGet(HttpServletRequest request) throws Exception {
 		HttpSession session = request.getSession();
@@ -64,14 +64,14 @@ public class MemberController {
 		return "redirect:/"; // 로그아웃 후 메인페이지로 이동
 	}
 	
-	// 회원가입 페이지 이동
+	// author:김민선 회원가입 페이지 이동
 	@GetMapping("/join")
 	public void loginGET() {
 		logger.info("회원가입 페이지 진입");
 
 	}
 
-	// 회원가입
+	// author:김민선 회원가입
 	@PostMapping("/join")
 	public String joinPOST(MemberVO member) throws Exception {
 		log.info("----------회원가입 페이지 진입 ---------- member : " + member);
@@ -88,7 +88,7 @@ public class MemberController {
 		return "redirect:/member/login";
 	}
 
-	// 회원가입아이디 중복체크
+	// author:김민선 회원가입아이디 중복체크
 	@ResponseBody
 	@PostMapping("/idCheck")
 	public String idCheck(@RequestParam("id") String id) {

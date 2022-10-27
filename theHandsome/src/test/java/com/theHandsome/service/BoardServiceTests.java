@@ -32,16 +32,18 @@ public class BoardServiceTests {
 	private BoardService service;
 	//BoardService 객체 주입 테스트
 	Date day = new Date();
+	//테스트 작동 확인
 	@Test
 	public void testExist() {
 		log.info(service);
 		assertNotNull(service);
 	}
+	//댓글 리스트 가져오기 테스트
 	@Test
 	public void testGetList() throws Exception{
-//		service.getList().forEach(board -> log.info(board));
 		service.getListWithPaging(new BoardCriteria(2,10)).forEach(board->log.info(board));
 	}
+	//댓글 삽입 테스트
 	@Test
 	public void insertTest() throws Exception {
 		BoardVO board = new BoardVO();
@@ -52,11 +54,13 @@ public class BoardServiceTests {
 		service.insert(board);
 		log.info("게시물 생성");
 	}
+	//댓글 조회 테스트
 	@Test 
 	public void testRead() throws Exception{
-		log.info(service.read(1L));
+		log.info(service.read(1L));//1번 댓글 조회
 		log.info("게시판 read 완료");
 	}
+	//댓글 수정 테스트
 	@Test
 	public void testUpdate() throws Exception{
 		BoardVO board = service.read(4L);
@@ -66,6 +70,7 @@ public class BoardServiceTests {
 		board.setQtitle("제목 수정");
 		log.info("수정 : " + service.update(board));
 	}
+	//댓글 삭제 테스트
 	@Test
 	public void testDelete() throws Exception{
 		log.info(service.delte(4L));

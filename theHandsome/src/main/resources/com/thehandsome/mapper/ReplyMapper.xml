@@ -2,9 +2,15 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  
+  <!-- 
+  /*****************************************************
+ * @function : ReplyMapper
+ * @author : 구영모
+ * @Date : 2022.10.18 ~ 2022.10.23
+ *****************************************************/
+  -->  
 <mapper namespace="com.thehandsome.mapper.ReplyMapper">
-
+	<!-- 댓글 리스트 불러오기 -->
 	<select id="getListWithPage" resultType="com.thehandsome.domain.ReplyVO">
 		SELECT
 		rno, bno, reply, replyer, replydate, updatedate
@@ -22,11 +28,11 @@
   	<select id="read" resultType="com.thehandsome.domain.ReplyVO">
 		SELECT * FROM QNAREPLY WHERE rno = #{rno}
 	</select>
-	
+	<!-- 댓글 삭제 -->
 	<delete id="delete">
 		DELETE FROM QNAREPLY WHERE rno = #{rno}
 	</delete>
-	
+	<!-- 댓글 수정 -->
 	<update id="update">
 		UPDATE QNAREPLY
 		SET reply = #{reply}, updatedate = sysdate

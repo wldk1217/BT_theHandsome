@@ -10,21 +10,15 @@ import com.thehandsome.domain.MemberVO;
 
 public interface MemberService {
 
-	// 회원가입
+	// author:김민선 회원가입
 	public void memberJoin(MemberVO member) throws Exception;
 
-	// 중복체크
+	// author:김민선 아이디 중복체크
 	public int idCheck(String mid);
 
-	// 로그인
+	//author:심지연 로그인
 	public MemberVO memberLogin(MemberVO member) throws Exception;
 
-	// 회원 정보 변경
-	public int modifyInfo(MemberVO member) throws Exception;
-
-	// 회원 탈퇴
-	public int memberWithdrawal(MemberVO member) throws Exception;
-
-	// 회원 가입 시 권한 부여
+	//author:구영모 회원 가입 시 권한 부여
 	public void memberAuthJoin(String mid) throws Exception;
 }

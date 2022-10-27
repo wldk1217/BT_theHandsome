@@ -6,10 +6,11 @@
  *****************************************************/
  -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
 <%@ include file="/WEB-INF/views/common/header.jsp"%>
 <head>
 
@@ -23,13 +24,14 @@
 
 <body oncontextmenu='return false'>
 
-<form id="join_form" action="/order/orderlistinsert" method="POST">
-	<!-- bodyWrap -->
-	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-	<div id="bodyWrap">
-		<h3 class="cnts_title">
-			<span>배송&amp;결제정보 입력</span>
-		</h3>
+	<form id="join_form" action="/order/orderlistinsert" method="POST">
+		<!-- bodyWrap -->
+		<input type="hidden" name="${_csrf.parameterName}"
+			value="${_csrf.token}" />
+		<div id="bodyWrap">
+			<h3 class="cnts_title">
+				<span>배송&amp;결제정보 입력</span>
+			</h3>
 			<!--sub_container-->
 			<div class="sub_container">
 				<!--orderwrap-->
@@ -49,40 +51,32 @@
 								<thead>
 									<tr>
 										<th scope="col">상품정보</th>
-										<th scope="col">수량</th>
+										<th scope="col"></th>
 										<th scope="col">상품 금액</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr class="al_middle">
-										<td class="frt" style="height: 200px;">
+										<td class="frt" style="height: 120px;">
 											<!-- pt_list_all -->
 											<div class="pt_list_all"
 												style="width: 700px; height: 150px; padding: 0px;">
-												<img style="height: 150px; width: 150px;"
-													src="${colorVO.cimage2}" alt="" />
 
 												<div class="tlt_wrap" style="font-size: 20px; width: 500px;">
 													<a class="basket_tlt"> <span class="tlt"
-														style="font-size: 20px; margin-bottom: 60px; padding-left: 200px; height: 50px;">${productVO.bname}</span>
-														<span class="sb_tlt"
-														style="font-size: 20px; padding-left: 200px; height: 40px; margin-top: 10px;">${productVO.pname}</span>
+														style="font-size: 20px; margin-bottom: 60px; padding-left: 80px;height: 50px; margin-top: 30px;">${productVO.bname}</span>
+														<span 	class="sb_tlt"
+														style="font-size: 20px;  height: 40px; padding-left: 80px; margin-top: 30px;">${productVO.pname}</span>
 
 													</a>
-													<p class="color_op"
-														style="font-size: 20px; padding-left: 200px; width: 300px;">
-
-														color : ${curColorCode} <span class="and_line"
-															style="font-size: 20px;">/</span> size : ${size}
-													</p>
 												</div>
 											</div> <!-- //pt_list_all -->
 										</td>
-										<td style="font-size: 20px;">${txtqty}</td>
+										<td style="border-left: none; font-size: 20px;"></td>
 										<td>
 											<!-- price_wrap -->
 											<div class="price_wrap ">
-												<span style="font-size: 20px;"> ₩${productVO.pprice}</span>
+												<span style="border-left: none; font-size: 20px;"> ₩${productVO.pprice}</span>
 											</div> <!-- //price_wrap -->
 										</td>
 									</tr>
@@ -107,13 +101,13 @@
 								</colgroup>
 								<tbody>
 									<tr>
-										<th scope="row" class="th_space" >주문자</th>
-										<td><sec:authentication property="principal.member.mname"/></td>
+										<th scope="row" class="th_space">주문자</th>
+										<td><sec:authentication property="principal.member.mname" /></td>
 										<input type="hidden" id="mid" name="mid" value="${memid}">
 									</tr>
 									<tr>
 										<th scope="row" class="th_space">휴대폰</th>
-										<td><sec:authentication property="principal.member.mtel"/></td>
+										<td><sec:authentication property="principal.member.mtel" /></td>
 									</tr>
 
 								</tbody>
@@ -142,7 +136,7 @@
 											class="reqd">*</strong> <label for="adress">배송지 주소</label></th>
 										<td>
 											<!-- address --> <input value="" title="우편번호" id="adress"
-											name= "ozipcode" class="post" type="text" placeholder="우편번호" />
+											name="ozipcode" class="post" type="text" placeholder="우편번호" />
 											<br />
 											<div id="basis_bk_flag">
 												<input value="" title="주소1" name="oaddress1" id="line1"
@@ -163,11 +157,9 @@
 									<tr>
 										<th scope="row"><strong class="reqd">*</strong><label
 											for="hp">휴대폰 번호</label></th>
-										<td>
-											<input title="휴대폰 번호 " style="width: 120px"
-											id="mtel" name='otel' class="hp_num2" type="text"
-											numberOnly="true" />
-											
+										<td><input title="휴대폰 번호 " style="width: 120px" id="mtel"
+											name='otel' class="hp_num2" type="text" numberOnly="true" />
+
 										</td>
 									</tr>
 
@@ -230,20 +222,18 @@
 								<tbody>
 									<tr>
 										<th scope="row" class="th_space">할인 금액</th>
-										<td>
-											<span class="beforebtn">₩ 0</span> 
-											<input type="hidden" id ="sale" value="<%=session.getAttribute("cupto")%>" />
-											<span class="afterbtn">₩</span>
-											<div class="afterbtn" id ="sale_price"> </div>
-										</td>
+										<td><span class="beforebtn">₩ 0</span> <input
+											type="hidden" id="sale"
+											value="<%=session.getAttribute("cupto")%>" /> <span
+											class="afterbtn">₩</span>
+											<div class="afterbtn" id="sale_price"></div></td>
 									</tr>
 									<tr>
 										<th scope="row" class="th_space">총 합계</th>
-										<td>
-											<span class="beforebtn">₩ ${productVO.pprice}</span> 
-											<input type="hidden" id ="totalPrice" value="${productVO.pprice}" />
-											<span class="afterbtn">₩</span><div class="afterbtn" id ="total_price">  </div>
-										</td>
+										<td><span class="beforebtn">₩ ${productVO.pprice}</span>
+											<input type="hidden" id="totalPrice"
+											value="${productVO.pprice}" /> <span class="afterbtn">₩</span>
+										<div class="afterbtn" id="total_price"></div></td>
 									</tr>
 
 								</tbody>
@@ -255,10 +245,10 @@
 						</div>
 						<!--//final payment sum box-->
 						<!--point & agreement box-->
-						
+
 						<div style="display: flex; justify-content: center;">
-							<button  id="doOrderBtn" type="submit" >결제하기</button>
-							
+							<button type="submit" style="width: 473px; height: 60px; font-size:30px;">결제하기</button>
+
 						</div>
 					</div>
 					<!--//orderwrap right-->
@@ -266,29 +256,30 @@
 				<!--//orderwrap-->
 			</div>
 			<!--//sub_container-->
-</form>
+	</form>
 
 
-<script>
-	// 상품 금액에서 쿠폰 적용시 할인율 적용
-	var price = document.getElementById("totalPrice").value
-	var sale = <%=session.getAttribute("cupto")%>;
-	var sale_price = (price * sale)/100;
-	var total_price = (price * (100 - sale))/100;
-	console.log(price);	
-	console.log(sale);
-	console.log(sale_price);
-	console.log(total_price);
-	document.getElementById("sale_price").innerHTML=sale_price;
-	document.getElementById("total_price").innerHTML=total_price;
-	
-	// 쿠폰적용 버튼 동작
-function redeemVoucher(){
-	$('.afterbtn ').css("display", 
-			"inline");
-	$('.beforebtn').css("display", "none");
-}
-</script>
+	<script>
+		// 상품 금액에서 쿠폰 적용시 할인율 적용
+		var price = document.getElementById("totalPrice").value
+		var sale =
+	<%=session.getAttribute("cupto")%>
+		;
+		var sale_price = (price * sale) / 100;
+		var total_price = (price * (100 - sale)) / 100;
+		console.log(price);
+		console.log(sale);
+		console.log(sale_price);
+		console.log(total_price);
+		document.getElementById("sale_price").innerHTML = sale_price;
+		document.getElementById("total_price").innerHTML = total_price;
+
+		// 쿠폰적용 버튼 동작
+		function redeemVoucher() {
+			$('.afterbtn ').css("display", "inline");
+			$('.beforebtn').css("display", "none");
+		}
+	</script>
 
 
 	<!-- footerWrap -->
