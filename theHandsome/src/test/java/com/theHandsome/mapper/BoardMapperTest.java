@@ -15,14 +15,21 @@ import com.thehandsome.mapper.BoardMapper;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
-
+/*****************************************************
+ * @function : BoradMapperTest
+ * @author : 구영모
+ * @Date : 2022.10.20
+ *****************************************************/
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
+@ContextConfiguration({
+	"file:src/main/webapp/WEB-INF/spring/root-context.xml",
+	 "file:src/main/webapp/WEB-INF/spring/security-context.xml"})
 @Log4j
 public class BoardMapperTest {
+	//게시판 Mapper 사용
 	@Setter(onMethod_ = @Autowired)
 	private BoardMapper mapper;
-	
+	//게시판 삽입 테스트
 	@Test
 	public void testInsert() {
 		Date day = new Date();
@@ -34,15 +41,18 @@ public class BoardMapperTest {
 		mapper.insert(board);
 		log.info(board);
 	}
+	//게시판 조회 테스트
 	@Test
 	public void testRead() {
 		BoardVO board = mapper.read(3L); 
 		log.info(board);
 	}
+	//게시판 삭제 테스트
 	@Test
 	public void testDelete() {
 		log.info("delete count : "+mapper.delete(3L));
 	}
+	//게시판 수정 테스트
 	@Test
 	public void testUpdate() {
 		Date day = new Date();
@@ -55,6 +65,7 @@ public class BoardMapperTest {
 		boolean count = mapper.update(board);
 		log.info("update count : " + count);
 	}
+	//게시판 페이징 테스트
 	@Test
 	public void testPaging() {
 		BoardCriteria cri = new BoardCriteria();
