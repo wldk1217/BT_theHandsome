@@ -1,4 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<!-- 
+/*****************************************************
+ * @function : login.jsp
+ * @author : 구영모, 심지연 공동작업
+ * 1차 작업: 심지연 login.jsp 최초 생성
+ * 2차 작업: 구영모 시큐리티 적용
+ * @Date : 2022.10.18
+ *****************************************************/
+ -->
+ <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 <%@ include file="/WEB-INF/views/common/header.jsp"%>
@@ -48,6 +57,7 @@
 						<!-- 폼 끝 -->
 						<form id="login_form" method="post">
 							<input type="hidden" name="inputId" id="inputId" value="">
+							 <!-- 구영모: 시큐리티 적용 -->
 							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 							<fieldset>
 								<legend>로그인 입력항목</legend>
