@@ -56,9 +56,12 @@ public class ProductListController {
 		int total = service.getTotal(clarge, cmedium, csmall);
 		log.info("total = " + total);
 		
+		// 페이징 처리를 위해 view로 넘김
 		model.addAttribute("pager", new ProductPageDTO(cri, total));
+		// 총 상품 개수 처리를 위해 view로 넘김
 		model.addAttribute("totalProducts", total);
 
+		// 컬러와 사이즈 받아 저장
 		for (int i = 0; i < list.size(); i++) {
 			colorList = service.productGetColor(list.get(i).getPid());
 			sizeList = service.getSize(list.get(i).getPid());
