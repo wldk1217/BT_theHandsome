@@ -1,10 +1,16 @@
+<!-- 
+/*****************************************************
+ * @function : productDatail.jsp
+ * @author : 심지연
+ * @Date : 2022.10.21
+ *****************************************************/
+ -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@include file="/WEB-INF/views/common/header.jsp"%>
 <script src="/jquery-3.4.1.min.js"></script>
-
 
 
 <div id="bodyWrap" class="item_detail">
@@ -710,7 +716,7 @@
 											alt="닫기"></a>
 									</div>
 									<ul class="size_chip clearfix sizeChipKo1901">
-										<c:forEach items="${sizelist}" var="size">
+										<c:forEach items="${sizeList}" var="size">
 											<li value="${size}"><a href="javascript:void(0);"
 												class="sizeBtn">${size}</a></li>
 										</c:forEach>

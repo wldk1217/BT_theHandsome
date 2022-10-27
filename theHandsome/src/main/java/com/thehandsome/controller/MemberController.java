@@ -2,7 +2,6 @@ package com.thehandsome.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,24 +13,35 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import com.thehandsome.domain.MemberVO;
 import com.thehandsome.service.MemberService;
-
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
+
+/*****************************************************
+ * @function : MemberController
+ * @author : 구영모, 김민선, 심지연 공동작업
+ * 1차 작업: 심지연 로그인/로그아웃 구현
+ * 2차 작업: 김민선 회원가입 구현
+ * 3차 작업: 구영모 시큐리티 적용
+ * @Date :  2022.10.18(1차 작업 완료)
+ * 		    2022.10.19(2차 작업 완료)
+ * 			2022.10.26(3차 작업 완료)
+ *****************************************************/
 
 @Log4j
 @Controller
 @RequestMapping(value = "/member")
 @AllArgsConstructor
 public class MemberController {
+	
 	private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
 	//비밀번호를 암호화 하기 위한 모듈 불러오기
 	BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+	
 	@Autowired
 	private MemberService memberservice;
+	
 	// 로그인 뷰로 이동
 	@GetMapping("/login")
 	public void loginGet(String error, String logout, Model model) {
@@ -44,42 +54,6 @@ public class MemberController {
 			model.addAttribute("logout", "Logout");
 		}
 	}
-
-	// 뷰에서 전달받은 데이터로 로그인 기능이 동작하도록 함
-//	@PostMapping("/login")
-//	public String loginPost(HttpServletRequest request, MemberVO member, RedirectAttributes rttr) throws Exception {
-//		String password="";//
-//		String encodedPassword="";
-//		
-//		HttpSession session = request.getSession();
-//		MemberVO memberVO = memberservice.memberLogin(member); // 아이디와 비밀번호 매핑 확인		
-//		
-//		if(memberVO != null) {
-//			password = member.getMpassword();
-//			log.info("----------------------password : "+password);
-//			encodedPassword = memberVO.getMpassword();
-//			log.info("----------------------memvopassword : "+encodedPassword);
-//			if(passwordEncoder.matches(password, encodedPassword)) {//비밀번호가 같을 시에
-//				//비밀번호를 숨기기 위해 set메소드를 통해 지움
-//				memberVO.setMpassword("");
-//				String mid="";
-//				mid = member.getMid();
-//				session.setAttribute("memid", mid); // member 변수에 id값 저장
-//				// 로그인 성공 시 세션에 VO 객체를 저장
-//				session.setAttribute("member", memberVO); // 일치하는 아이디, 비밀번호 경우 (로그인 성공)
-//				log.info("member : " + session.getAttribute("member"));
-//				return "redirect:/"; // 로그인 성공 시 메인페이지로 이동
-//			}
-//			else {//비밀번호가 같지 않을 시에
-//				rttr.addFlashAttribute("result", 0);
-//				return "redirect:/member/login";
-//			}
-//		}
-//		else {
-//			rttr.addFlashAttribute("result", 0);
-//			return "redirect:/member/login";
-//		}
-//	}
 
 	// 로그아웃 기능
 	@GetMapping("/logout")
@@ -128,8 +102,6 @@ public class MemberController {
 		} else { 
 			String result = "impossible";
 			return result;
-		} 
-		
+		} 	
 	}
-
 }
