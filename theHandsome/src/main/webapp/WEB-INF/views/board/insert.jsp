@@ -1,3 +1,11 @@
+<!-- 
+/*****************************************************
+ * @function : insert.jsp
+ * @author : 구영모
+ * 설명: 게시판 등록 페이지
+ * @Date : 2022.10.22
+ *****************************************************/
+ -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/views/common/header.jsp" %>
@@ -8,7 +16,6 @@
 	href="http://cdn.thehandsome.com/_ui/desktop/common/images/common/thehandsome_ic_16x16.ico" />
 <link rel="stylesheet" type="text/css"
 	href="../../../resources/css/font_80.css" media="all" />
-
 <link rel="stylesheet" type="text/css"
 	href="../../../resources/css/common.css" media="all" />
 <link rel="stylesheet" type="text/css"
@@ -17,7 +24,6 @@
 	href="../../../resources/css/popup.css" media="all" />
 <link rel="stylesheet" type="text/css"
 	href="../../../resources/css/jquery-ui.min.css" media="all" />
-
 <link rel="stylesheet" type="text/css"
 	href="../../../resources/css/brand.css" media="all" />
 <link rel="stylesheet" type="text/css"
@@ -33,6 +39,8 @@
 	src="../../../resources/js/jquery-1.11.2.min.js"></script>
 <script type="text/javascript"
 	src="../../../resources/js/jquery.vticker.js"></script>
+
+
 
 <div id="bodyWrap">
     <div id="subMainPopwrap1"></div>

@@ -11,7 +11,12 @@ import com.thehandsome.domain.MemberVO;
 
 import lombok.Data;
 import lombok.extern.log4j.Log4j;
-
+/*****************************************************
+ * @function : CustomUser
+ * @author : 구영모
+ * @Date : 2022.10.25
+ * User를 커스텀 하여 CustomUser클래스 작성
+ *****************************************************/
 @Log4j
 @Data
 public class CustomUser  extends User{
@@ -20,14 +25,13 @@ public class CustomUser  extends User{
 	private static final long serialVersionUID = 1L;
 	
 	private MemberVO member;
-	
+	//회원 id, password, 권한을 가져온다 
 	public CustomUser(String username, String password, Collection<? extends GrantedAuthority> authorities) {
 		super(username, password, authorities);
 	}//end CustomUser...
 	
-	
-	public CustomUser(MemberVO vo) {
-		
+	//MemberVO를 불러와 회원 id, password, 권한을 가져온다.
+	public CustomUser(MemberVO vo) {		
 		super(vo.getMid()
 	         ,vo.getMpassword()
 			 ,vo.getAuthList().stream()
@@ -35,7 +39,7 @@ public class CustomUser  extends User{
 			  .collect(Collectors.toList()));//end super
 		
 		this.member = vo;
-		log.info(vo);
+		log.info("이건가:"+vo);
 	}//end CustomUser
 	
 }//end class
