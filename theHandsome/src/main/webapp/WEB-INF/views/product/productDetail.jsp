@@ -710,7 +710,7 @@
 											alt="닫기"></a>
 									</div>
 									<ul class="size_chip clearfix sizeChipKo1901">
-										<c:forEach items="${sizelist}" var="size">
+										<c:forEach items="${sizeList}" var="size">
 											<li value="${size}"><a href="javascript:void(0);"
 												class="sizeBtn">${size}</a></li>
 										</c:forEach>

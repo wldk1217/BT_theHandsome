@@ -15,17 +15,18 @@ import com.thehandsome.mapper.ProductMapper;
  ******************************************************/
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
+@ContextConfiguration({ "file:src/main/webapp/WEB-INF/spring/root-context.xml",
+		"file:src/main/webapp/WEB-INF/spring/security-context.xml" })
 public class ProductMapperTest {
-	
+
 	@Autowired
 	private ProductMapper productmapper;
-	
+
 	@Test
 	public void productGetDetailTest() {
-		
-		String pid = "YN2CAFOT063W"; // 여성-아우터-재킷의 리버시블 램스 퍼 재킷 상품	
-		ProductVO result = productmapper.productGetDetail(pid);	
+
+		String pid = "YN2CAFOT063W"; // 여성-아우터-재킷의 리버시블 램스 퍼 재킷 상품
+		ProductVO result = productmapper.productGetDetail(pid);
 		System.out.println("상품 조회 데이터 : " + result);
 	}
 }
