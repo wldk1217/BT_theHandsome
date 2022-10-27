@@ -6,9 +6,9 @@ import com.thehandsome.domain.BoardCriteria;
 import com.thehandsome.domain.BoardVO;
 
 /*****************************************************
- * @function : ReplyVO
+ * @function : BoardMapper
  * @author : 구영모
- * @Date : 2022.10.23
+ * @Date : 2022.10.20
  * 게시물의 삽입, 삭제, 수정, 조회를 위한 Mapper클래스
  *****************************************************/
 

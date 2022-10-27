@@ -15,7 +15,11 @@ import com.thehandsome.mapper.ReplyMapper;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
-
+/*****************************************************
+ * @function : ReplyMapperTest
+ * @author : 구영모
+ * @Date : 2022.10.22
+ *****************************************************/
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
 @Log4j

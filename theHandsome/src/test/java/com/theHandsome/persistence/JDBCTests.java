@@ -7,6 +7,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/*****************************************************
+ * @function : DataSourceTests
+ * @author : 구영모, 김민선, 심지연
+ * @Date : 2022.10.17
+ *****************************************************/
+
 @Log4j
 public class JDBCTests {
 	static {

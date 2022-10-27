@@ -5,6 +5,14 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
 http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+<!-- 
+/*****************************************************
+ * @function : security-context.xml
+ * @author : 구영모
+ * 설명: 스프링 시큐리티 적용
+ * @Date : 2022.10.24 ~ 2022.10.26
+ *****************************************************/
+ -->
 
 	<!-- 빈 등록 -->
 	<!-- BCryptPasswordEncoder 클래스 빈 추가 -->
@@ -14,12 +22,16 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
 	<bean id="customAccessDenied"
 		class="com.thehandsome.security.CustomAccessDeniedHandler">
 	</bean>
+	<!-- com.thehandsome.security.CustomLoginSuccessHandler 빈 추가 -->
 	<bean id="customLoginSuccess"
 		class="com.thehandsome.security.CustomLoginSuccessHandler">
 	</bean>
+	<!-- com.thehandsome.security.CustomUserDetailsService 빈 추가 -->
 	<bean id="customUserDetailsService"
 		class="com.thehandsome.security.CustomUserDetailsService">
 	</bean>
+	<!-- 빈 등록 끝 -->
+	
 	<!-- URL 설정 -->
 	<security:http auto-config="true" use-expressions="true">		
 		<security:intercept-url pattern="/board/**" access="hasRole('ROLE_USER')" />
@@ -28,9 +40,9 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
 		<security:intercept-url pattern="/**" access="permitAll" />
 		<!-- 엑세스 거부 -->
 		<security:access-denied-handler error-page="/accessError" />
-		<!-- 로그인 기능 -->
 		
 		
+		<!-- 로그인 폼 기능 -->
 		<security:form-login
 			username-parameter="username"
 			password-parameter="password"
@@ -38,23 +50,24 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
 			login-processing-url="/member/login"
 			default-target-url="/"
 			authentication-success-handler-ref="customLoginSuccess"/>
+		<!-- 로그인 폼 기능 끝-->
 		
 		<!-- 로그아웃 기능 -->
 		<security:logout logout-url="/member/logout"
 						invalidate-session="true" delete-cookies="JSESSION_ID" />
 		
 		<security:csrf disabled="true"/>
+		<!-- 로그아웃 기능 끝 -->
 	</security:http>
 	
 	<!-- provider -->		
 	<security:authentication-manager>
+	
 		<security:authentication-provider
 			user-service-ref="customUserDetailsService">
 			<security:password-encoder
 				ref="bcryptPasswordEncoder"/>
 		</security:authentication-provider>
-<!-- 		<security:authentication-provider> <security:user-service> <security:user 
-			name="mid" password="mpassword" authorities="ROLE_USER" /> </security:user-service> 
-		</security:authentication-provider> -->
+
 	</security:authentication-manager>
 </beans>

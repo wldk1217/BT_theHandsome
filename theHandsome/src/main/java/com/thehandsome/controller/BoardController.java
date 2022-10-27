@@ -18,7 +18,6 @@ import com.thehandsome.service.BoardService;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
 
-
 /*****************************************************
  * @function : BoardController
  * @author : 구영모

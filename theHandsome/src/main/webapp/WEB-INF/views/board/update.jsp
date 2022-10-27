@@ -1,3 +1,11 @@
+<!-- 
+/*****************************************************
+ * @function : update.jsp
+ * @author : 구영모
+ * 설명: 게시판 수정 페이지
+ * @Date : 2022.10.22
+ *****************************************************/
+ -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -78,7 +86,7 @@
             <div class="title_wrap mt30 clearfix">
                 <h4 class="float_left">문의 조회</h4>
             </div>
-            <!-- enctype="multipart/form-data" -->
+
             <form id="manToManInquiryForm" name="manToManInquiryForm" method="post" >
                 <input type="hidden" id="qid" name="qid" value="${board.qid}">
                 <input type="hidden" id="pageNum" name="pageNum" value="${cri.pageNum}">
@@ -100,12 +108,6 @@
                                         <p>더한섬닷컴 문의</p>
                                     </td>
                                 </tr>
-                                <!-- 작성자 start -->
-
-                                <!-- 작성자 end -->
-                                <!-- 작성 날짜 start -->
-
-                                <!-- 작성 날짜 end -->
                                 <!-- 문의 제목 start-->
                                 <tr>
                                     <th scope="row"><strong class="reqd">*</strong>문의제목</th>
@@ -178,7 +180,6 @@
     </div>
 </div>
 <script>
-
 	/* 등록 버튼 클릭시 동작하는 method*/
 		$("#btn_modify").click(function(e) {
 			/* insert 요청 */
