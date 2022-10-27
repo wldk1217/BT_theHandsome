@@ -1,39 +1,38 @@
-package com.theHandsome.mapper;
+package com.theHandsome.service;
 
-import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import com.thehandsome.domain.ColorVO;
-import com.thehandsome.mapper.ProductMapper;
-import lombok.Setter;
+import com.thehandsome.domain.ProductCriteria;
+import com.thehandsome.service.ProductService;
 import lombok.extern.log4j.Log4j;
 
 /*****************************************************
- * @function : ProductMapper 테스트2
+ * @function : ProductServiceTests
  * @author : 심지연
  * @Date : 2022.10.20
- ******************************************************/
+ *****************************************************/
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration({ "file:src/main/webapp/WEB-INF/spring/root-context.xml",
 		"file:src/main/webapp/WEB-INF/spring/security-context.xml" })
-public class ProductMapperTest2 {
+@Log4j
+public class ProductServiceTests {
 
 	@Autowired
-	private ProductMapper productmapper;
+	private ProductService productservice;
 
 	@Test
-	public void productGetColorTest() {
+	public void getListTest() {
+		productservice.getList(new ProductCriteria(2, 12), "WOMEN", "Top", "T-Shirts")
+		.forEach(product -> log.info(product));
+	}
 
+	@Test
+	public void produdctDetailTest() throws Exception {
 		String pid = "YN2CAFOT063W";
-
-		List<ColorVO> result = productmapper.productGetColor(pid);
-
-		for (ColorVO vo : result) {
-			System.out.println("상품 컬러 데이터 : " + vo);
-		}
+		log.info(productservice.productGetDetail(pid));
 	}
 }

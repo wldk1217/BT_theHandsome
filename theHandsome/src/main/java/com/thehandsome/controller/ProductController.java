@@ -39,7 +39,7 @@ public class ProductController {
 		log.info("product detail 컨트롤러 들어옴");
 		System.out.println(product.getPsize());
 		String[] sizelist = product.getPsize().split(",");
-		model.addAttribute("sizelist", sizelist);
+		model.addAttribute("sizeList", sizelist);
 		model.addAttribute("productVO", service.productGetDetail(pid));
 		model.addAttribute("colorList", service.productGetColor(pid));
 		model.addAttribute("ccolor",ccolorcode);
