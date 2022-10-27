@@ -3,7 +3,7 @@ package com.thehandsome.mapper;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import com.thehandsome.domain.ColorVO;
-import com.thehandsome.domain.Criteria;
+import com.thehandsome.domain.ProductCriteria;
 import com.thehandsome.domain.ProductVO;
 
 /*****************************************************
@@ -20,7 +20,7 @@ public interface ProductMapper {
 
 	public List<ProductVO> getList(); // 상품리스트
 
-	public List<ProductVO> getListWithPaging(Criteria cri, @Param("clarge") String clarge,
+	public List<ProductVO> getListWithPaging(ProductCriteria cri, @Param("clarge") String clarge,
 			@Param("cmedium") String cmedium, @Param("csmall") String csmall); // 상품 리스트 페이징
 
 	public int getTotal(@Param("clarge") String clarge, @Param("cmedium") String cmedium,
