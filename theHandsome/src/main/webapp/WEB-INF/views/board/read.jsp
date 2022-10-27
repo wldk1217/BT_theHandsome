@@ -81,7 +81,7 @@
             <!-- enctype="multipart/form-data" -->
             <form id="manToManInquiryForm" name="manToManInquiryForm" method="post" >
             	<!-- mid 부분 -->
-                <input type="hidden" id="mid" name="mid" value="${member.mid}">               
+                <input type="hidden" id="mid" name="mid" value="${memid}">               
                 <input type="hidden" id="qid" name="qid" value="${board.qid}">
                 <fieldset>
                     <legend>1:1 문의 입력</legend>
@@ -167,7 +167,7 @@ ${board.qcontent}
                     <!-- btn -->
                     <div class="btnwrap">
                         <input type="button" id="btn_cancle" value="취소" class="btn wt">
-                        <c:if test="${member.mid eq board.mid}">
+                        <c:if test="${memid eq board.mid}">
                         	<input type="button" id="btn_modify" value="수정" class="btn gray mr0">
                         	<input type="button" id="btn_delete" value="삭제" class="btn wt">
                         </c:if>

@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 <%@ include file="/WEB-INF/views/common/header.jsp" %>
 <!DOCTYPE html>
@@ -31,16 +33,8 @@
                     <p><a href="/ko/svcenter/notice">공지사항
                             <!-- 공지사항 -->
                         </a></p>
-                    <p><a href="/ko/svcenter/mantomaninquiry">1:1 문의 등록
-                            <!-- 1:1 문의하기 -->
-                        </a></p>
-                    <p><a href="/ko/svcenter/faq">FAQ
-                            <!-- FAQ; -->
-                        </a></p>
-                    <p><a href="/ko/svcenter/mending">수선진행조회
-                            <!-- 수선진행조회; -->
-                        </a></p>
-                    <p><a href="/ko/footer/vocProvision">고객의 소리</a></p>
+					<!--  -->
+                    <p><a href="/board/insert">게시물 등록</a></p>
                     <!-- <p><a href="#;">APP 다운로드 소개</a></p> -->
                     <dl>
                         <dt>쇼핑 가이드</dt>
@@ -157,7 +151,14 @@
         		</div>
         		<input type='hidden' id='pagenum' value='${pageMaker.cri.pageNum}'>
     </div>
+         <sec:authorize access="isAnonymous()">
+         	asdfasdfasdfasdfsadf
+         </sec:authorize>
+         <sec:authorize access="isAuthenticated()">
+         	로그인되있농${memid}        	
+         	
          
+         </sec:authorize>
 </div>
 <script>
 	//조회 페이지 링크 처리

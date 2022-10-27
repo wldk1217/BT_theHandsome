@@ -16,5 +16,6 @@ public interface MemberMapper {
 	public int modifyInfo(MemberVO member); // 회원정보 변경
 	
 	public int memberWithdrawal(MemberVO member); // 회원 탈퇴
-
+	//구영모 추가
+	public MemberVO read(String mid);//회원 정보 및 권한 불러오기
 }
