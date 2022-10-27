@@ -101,13 +101,17 @@ public class MemberController {
 	@PostMapping("/join")
 	public String joinPOST(MemberVO member) throws Exception {
 		log.info("----------회원가입 페이지 진입 ---------- member : " + member);
+		//비밀번호 보안을 위해 인코딩 사용
 		String encoderPassword = passwordEncoder.encode(member.getMpassword());
+		//인코딩 된 비밀번호로 변경
 		member.setMpassword(encoderPassword);
+		String mid = member.getMid();
 		//회원 정보를 DB에 insert
 		memberservice.memberJoin(member);
+		//회원 정보를 member_auth테이블에 insert
+		memberservice.memberAuthJoin(mid);
 		//로그인 페이지로 이동
 		return "redirect:/member/login";
-
 	}
 
 	// 회원가입아이디 중복체크
