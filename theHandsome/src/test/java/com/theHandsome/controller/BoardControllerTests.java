@@ -22,6 +22,12 @@ import com.thehandsome.mapper.BoardMapper;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 
+
+/*****************************************************
+ * @function : BoardControllerTests
+ * @author : 구영모
+ * @Date : 2022.10.20
+ *****************************************************/
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
 @ContextConfiguration({"file:src/main/webapp/WEB-INF/spring/root-context.xml",
@@ -30,14 +36,14 @@ import lombok.extern.log4j.Log4j;
 public class BoardControllerTests {	
 	@Setter(onMethod_ = {@Autowired})
 	private WebApplicationContext ctx;
-	
+	//MockMvc를 사용한 가짜 객체 테스트
 	private MockMvc mockMvc;
-	
+	//테스트 세팅
 	@Before
 	public void setUp() {
 		this.mockMvc = MockMvcBuilders.webAppContextSetup(ctx).build();		
 	}//end setup
-	
+	//게시판 리스트 불러오기 테스트
 	@Test
 	public void testList() throws Exception {
 		log.info(
@@ -47,7 +53,7 @@ public class BoardControllerTests {
 				.andReturn().getModelAndView().getModelMap());
 		
 	}//end testList
-	
+	//게시판 등록 테스트
 	@Test
 	public void testInsert() throws Exception {
 		DateFormat sdFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -61,7 +67,7 @@ public class BoardControllerTests {
 				).andReturn().getModelAndView().getViewName();
 		log.info(resultPage);		
 	}//end testInsert
-	
+	//게시판 조회 테스트
 	@Test
 	public void testRead() throws Exception {
 		log.info(
@@ -73,6 +79,7 @@ public class BoardControllerTests {
 				.getModelMap()
 				);		
 	}//end testList
+	//게시판 수정 테스트
 	@Test
 	public void testUpdate() throws Exception{
 		DateFormat sdFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -87,7 +94,7 @@ public class BoardControllerTests {
 				).andReturn().getModelAndView().getViewName();
 		log.info(resultPage);	
 	}
-	
+	//게시판 삭제 테스트
 	@Test
 	public void testDelete()throws Exception{
 		String resultPage = mockMvc.perform(MockMvcRequestBuilders.post("/board/delete")
