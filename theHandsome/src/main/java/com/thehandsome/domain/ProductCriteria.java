@@ -9,18 +9,18 @@ import lombok.Data;
  ******************************************************/
 
 @Data
-public class Criteria {
+public class ProductCriteria {
 
 	private int pageNum; // 페이지번호
 
 	private int amount; // 한 페이지에 띄울 상품 개수
 
-	public Criteria(int pageNum, int amount) {
+	public ProductCriteria(int pageNum, int amount) {
 		this.pageNum = pageNum;
 		this.amount = amount;
 	}
 
-	public Criteria() {
+	public ProductCriteria() {
 		this(1, 12); // 1페이지 당 상품 12개
 	}
 

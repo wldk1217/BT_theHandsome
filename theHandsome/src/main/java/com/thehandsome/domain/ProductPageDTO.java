@@ -9,15 +9,15 @@ import lombok.Data;
  ******************************************************/
 
 @Data
-public class PageDTO {
+public class ProductPageDTO {
 	private int startPage; // 페이지 시작번호
 	private int endPage; // 페이지 끝 번호 
 	private boolean prev, next; // (이전, 다음) 버튼 유무 확인
 	private int realEnd; // 총 페이지 중 마지막 페이지 번호
 	private int total; // 전체 행 개수
-	private Criteria cri;
+	private ProductCriteria cri;
 
-	public PageDTO(Criteria cri, int total) {
+	public ProductPageDTO(ProductCriteria cri, int total) {
 		this.cri = cri;
 		this.total = total;
 		this.endPage = (int) (Math.ceil(cri.getPageNum() / 10.0)) * 10;
