@@ -89,7 +89,7 @@
             </div>
             <!-- enctype="multipart/form-data" -->
             <form id="manToManInquiryForm" name="manToManInquiryForm" method="post" >
-                <input type="hidden" id="mid" name="mid" value="${member.mid}">
+                <input type="hidden" id="mid" name="mid" value="${memid}">
                 <fieldset>
                     <legend>1:1 문의 입력</legend>
                     <div class="tblwrap">
@@ -205,7 +205,7 @@
     </div>
 </div>
 <script>
-	/* 등록 버튼 클릭시 동작하는 method*/
+		/* 등록 버튼 클릭시 동작하는 method*/
 		$("#btn_submit").click(function() {
 			/* insert 요청 */
 			console.log("버튼클릭");
@@ -214,8 +214,8 @@
 		});
 	
 		$("#btn_cancle").click(function() {
-			/* insert 요청 */
-			location.href = "/board/list";
+			/* 게시판으로 돌아가는  요청 */
+			location.href = "/board/list?pageNum=1&amount=10";
 		});
 </script>
 </html>

@@ -746,6 +746,7 @@
 					</div>
 					<!-- //st_store_wrap -->
 					<form action="/order/order" method="post" name="order_form">
+						<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 						<div class="btnwrap clearfix"
 							style="position: absolute; width: 473px; margin-bottom: 153.979px;">
 							<!--//190508 추가 -->
