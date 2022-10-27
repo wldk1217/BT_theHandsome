@@ -47,7 +47,8 @@ public class CouponController {
 	@PostMapping("/makecoupon")
 	public String makeCoupon(HttpServletRequest request, MemberVO member, CouponVO coupon) throws Exception {
 		HttpSession session = request.getSession();
-		MemberVO loginUser = (MemberVO) session.getAttribute("member");
+		String loginUser = (String)session.getAttribute("memid");
+		log.info("쿠폰 발급시 mid값 확인 : "+loginUser);
 		 if (loginUser == null) {
 			 log.info("로그인하고 쿠폰을 발급하세요");
 	       	 return "redirect:/member/login";

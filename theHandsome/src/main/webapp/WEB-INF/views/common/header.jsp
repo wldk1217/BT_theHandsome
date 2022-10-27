@@ -1957,8 +1957,6 @@ deg
 							+ $("#CSRFForm [name='CSRFToken']").first().val();
 				}
 
-				function setLog 
-
 				//START OF 메인 검색창////////////////////////
 				// #1067 - 201803 메인 개편
 				$(function() {
@@ -2630,7 +2628,7 @@ deg
 					<div class="util_menu" style="display: block;">
 						<ul class="clearfix">
 							<%
-								if (session.getAttribute("member") == null) {
+								if (session.getAttribute("memid") == null) {
 							%>
 							<li><a href="/member/login"
 								onclick="GA_Event('공통','헤더_메뉴','로그인')"> 로그인</a></li>

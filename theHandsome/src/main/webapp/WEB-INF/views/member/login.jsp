@@ -48,6 +48,7 @@
 						<!-- 폼 끝 -->
 						<form id="login_form" method="post">
 							<input type="hidden" name="inputId" id="inputId" value="">
+							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 							<fieldset>
 								<legend>로그인 입력항목</legend>
 								<div class="login_section">
@@ -55,23 +56,23 @@
 										style="margin-left: 0px; margin-bottom: 35px;"></p>
 									<div>
 										<div> 
-											<input class="id_input" name="mid" type="text"
+											<input class="id_input" name="username" type="text"
 												id="j_username" placeholder="아이디 입력하세요." title="아이디"
 												value="" style="width: 410px; height: 35px; ">
 										</div>
 										<div>
-											<input class="pw_iput" name="mpassword" type="password"
+											<input class="pw_iput" name="password" type="password"
 												id="j_password" placeholder="비밀번호를 입력하세요." title="비밀번호" style="width: 410px; height: 35px; margin-top: 5px;">
 										</div>
 									</div>
-									
+
 									<div class="login_button_wrap" style="width: 410px; height: 35px; padding-top: 25px;">
 										<input type="button" class="login_button btn add_ss join " value="로그인" style="width: 410px; height: 35px; ">
 									</div>
 									
 								</div>
 							</fieldset>
-
+				
 						</form>
 					</div>
 					<div class="section_bottom">
@@ -132,6 +133,7 @@
 		<!--//login wrap-->
 	</div>
 	<!--//sub_container-->
+
 </div>
 <script>
 	/* 로그인 버튼 클릭 메서드 */

@@ -1,7 +1,9 @@
 package com.thehandsome.domain;
 
-import lombok.Data;
+import java.util.List;
 
+import lombok.Data;
+//test
 /*****************************************************
  * @function : MemberVO
  * @author : 구영모, 김민선, 심지연 공동작업
@@ -22,4 +24,5 @@ public class MemberVO {
 	private String mdate;
 	private String msumprice;
 	private String menabled;
+	private List<AuthVO> authList;
 }
