@@ -2,64 +2,57 @@ package com.thehandsome.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import com.thehandsome.domain.MemberVO;
 import com.thehandsome.service.MemberService;
-
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
+
+/*****************************************************
+ * @function : MemberController
+ * @author : 구영모, 김민선, 심지연 공동작업
+ * 1차 작업: 심지연 로그인/로그아웃 구현
+ * 2차 작업: 김민선 회원가입 구현
+ * 3차 작업: 구영모 시큐리티 적용
+ * @Date :  2022.10.18(1차 작업 완료)
+ * 		    2022.10.19(2차 작업 완료)
+ * 			2022.10.26(3차 작업 완료)
+ *****************************************************/
 
 @Log4j
 @Controller
 @RequestMapping(value = "/member")
 @AllArgsConstructor
 public class MemberController {
-
+	
 	private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
-
+	//비밀번호를 암호화 하기 위한 모듈 불러오기
+	BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+	
 	@Autowired
 	private MemberService memberservice;
+	
 	// 로그인 뷰로 이동
 	@GetMapping("/login")
-	public void loginGet() {
-		log.info("로그인 페이지 진입");
-	}
-
-	// 뷰에서 전달받은 데이터로 로그인 기능이 동작하도록 함
-	@PostMapping("/login")
-	public String loginPost(HttpServletRequest request, MemberVO member, RedirectAttributes rttr) throws Exception {
-		log.info("전달된 데이터 : " + member);
-		HttpSession session = request.getSession();
-		MemberVO memberVO = memberservice.memberLogin(member); // 아이디와 비밀번호 매핑 확인
-		
-		String mid = "";
-		mid = member.getMid(); // 사용자 입력값 저장
-		session.setAttribute("memid", mid); // member 변수에 id값 저장
-
-		if (memberVO == null) { // 일치하지 않는 아이디 또는 비밀번호를 입력한 경우
-
-			int result = 0;
-			rttr.addFlashAttribute("result", result);
-			return "redirect:/member/login";
-
+	public void loginGet(String error, String logout, Model model) {
+		log.info("error"+error);
+		log.info("logout"+logout);
+		if(error != null) {
+			model.addAttribute("error", "Login error");
 		}
-
-		// 로그인 성공 시 세션에 VO 객체를 저장
-		session.setAttribute("member", memberVO); // 일치하는 아이디, 비밀번호 경우 (로그인 성공)
-		log.info("member : " + session.getAttribute("member"));
-
-		return "redirect:/"; // 로그인 성공 시 메인페이지로 이동
+		if(logout != null) {
+			model.addAttribute("logout", "Logout");
+		}
 	}
 
 	// 로그아웃 기능
@@ -70,8 +63,7 @@ public class MemberController {
 
 		return "redirect:/"; // 로그아웃 후 메인페이지로 이동
 	}
-		
-
+	
 	// 회원가입 페이지 이동
 	@GetMapping("/join")
 	public void loginGET() {
@@ -82,13 +74,18 @@ public class MemberController {
 	// 회원가입
 	@PostMapping("/join")
 	public String joinPOST(MemberVO member) throws Exception {
-
-		log.info("join 진입 " + member);
-		// 회원가입 서비스 실행
+		log.info("----------회원가입 페이지 진입 ---------- member : " + member);
+		//비밀번호 보안을 위해 인코딩 사용
+		String encoderPassword = passwordEncoder.encode(member.getMpassword());
+		//인코딩 된 비밀번호로 변경
+		member.setMpassword(encoderPassword);
+		String mid = member.getMid();
+		//회원 정보를 DB에 insert
 		memberservice.memberJoin(member);
-		// 로그인 페이지로 이동
+		//회원 정보를 member_auth테이블에 insert
+		memberservice.memberAuthJoin(mid);
+		//로그인 페이지로 이동
 		return "redirect:/member/login";
-
 	}
 
 	// 회원가입아이디 중복체크
@@ -105,8 +102,6 @@ public class MemberController {
 		} else { 
 			String result = "impossible";
 			return result;
-		} 
-		
+		} 	
 	}
-
 }

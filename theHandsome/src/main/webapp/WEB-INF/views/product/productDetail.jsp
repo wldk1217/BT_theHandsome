@@ -16,7 +16,7 @@
 			<div class="clearfix image_view3">
 				<a href="javascript:imageZoom()" id="btn_zoom" class="btn_zoom"
 					onclick="GA_Event('상품_상세','크게보기','클릭')">크게보기</a>
-				<c:forEach items="${colorVOList}" var="colorVO">
+				<c:forEach items="${colorList}" var="colorVO">
 					<div class="image_view_${colorVO.ccolorcode}"
 						id="image_view_${colorVO.ccolorcode}" style="display: none">
 						<div class="item_visual" id="imageDiv"
@@ -80,7 +80,7 @@
 						<!-- 20200914이후 추가 상품설명 (신) -->
 						<div class="prod-detail-con-box">
 
-							<strong class="number-code">상품품번 : <span id="pcscode">${curColorCode}</span></strong>
+							<strong class="number-code">상품품번 : <span id="pcscode">${ccolor}</span></strong>
 
 							<div class="round-style">
 								<p>${productVO.pdetail}</p>
@@ -143,7 +143,7 @@
 							<li><span class="title">색상</span>
 								<div class="txt">
 									<ul class="color_chip clearfix">
-										<c:forEach items="${colorVOList}" var="colorVO">
+										<c:forEach items="${colorList}" var="colorVO">
 											<input type="hidden" id="colorName" value="${colorVO.cname}">
 											<li id="${colorVO.ccolorcode}"><input type="hidden"
 												class="colorNameVal"> <a href="javascript:void(0);"
@@ -710,7 +710,7 @@
 											alt="닫기"></a>
 									</div>
 									<ul class="size_chip clearfix sizeChipKo1901">
-										<c:forEach items="${sizelist}" var="size">
+										<c:forEach items="${sizeList}" var="size">
 											<li value="${size}"><a href="javascript:void(0);"
 												class="sizeBtn">${size}</a></li>
 										</c:forEach>
@@ -746,6 +746,7 @@
 					</div>
 					<!-- //st_store_wrap -->
 					<form action="/order/order" method="post" name="order_form">
+						<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 						<div class="btnwrap clearfix"
 							style="position: absolute; width: 473px; margin-bottom: 153.979px;">
 							<!--//190508 추가 -->
@@ -753,8 +754,8 @@
 								value="${colorVO.cimage2}" /> <input type="hidden" name="bname"
 								id="bname" value="${productVO.bname}" /> <input type="hidden"
 								name="pname" id="pname" value="${productVO.pname}" /> <input
-								type="hidden" name="curColorCode" id="curColorCode"
-								value="${curColorCode}" /> <input type="hidden" name="size"
+								type="hidden" name="ccolor" id="ccolor"
+								value="${ccolor}" /> <input type="hidden" name="size"
 								id="size" value="${size}" /> <input type="hidden" name="txtqty"
 								id="txtqty" value="txtqty" /> <input type="hidden"
 								name="pprice" id="pprice" value="${productVO.pprice}" />
@@ -874,10 +875,10 @@
 	$(document).ready(
 			function() {
 				//페이지 로드할때 선택된 이미지로 상세보기이미지가 띄워지고 
-				let prev_colorcode = "${curColorCode}";
+				let prev_colorcode = "${ccolor}";
 				$(".image_view_" + prev_colorcode).css('display', 'block');
 				// 선택된 컬러버튼 클릭된 상태로 만들기
-				$('a[colorcode=${curColorCode}]').addClass('on');
+				$('a[colorcode=${ccolor}]').addClass('on');
 				selectColor = $('a[colorcode=' + prev_colorcode + ']').attr(
 						'value');
 

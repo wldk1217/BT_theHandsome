@@ -34,7 +34,7 @@ public class OrderController {
 	@PostMapping("/order")
 	public String orderGet(HttpServletRequest request, ProductVO product, MemberVO member, CouponVO coupon) throws Exception {
 		HttpSession session = request.getSession();
-		MemberVO loginUser = (MemberVO) session.getAttribute("member");
+		String loginUser = (String) session.getAttribute("memid");
 		log.info(loginUser);
 
 		if (loginUser == null) {
@@ -43,7 +43,7 @@ public class OrderController {
 			log.info("order page 2차 진입");
 			
 			// 로그인한 회원의 쿠폰 가져오기
-			CouponVO couponVO = couponservice.getCoupon(loginUser.getMid());
+			CouponVO couponVO = couponservice.getCoupon(loginUser);
 			log.info(couponVO);
 			
 			String cname = ""; // 쿠폰 이름
@@ -62,6 +62,6 @@ public class OrderController {
 	public String orderlistisnsert(HttpServletRequest request, OrderListVO orderlist) throws Exception {
 		orderservice.orderlistinsert(orderlist);
 		log.info("orderlistinsert 완료");
-		return "/";
+		return "redirect:/";
 	}
 }

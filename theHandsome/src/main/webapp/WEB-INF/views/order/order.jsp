@@ -6,7 +6,10 @@
  *****************************************************/
  -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ include file="/WEB-INF/views/common/header.jsp"%>
 <head>
 
@@ -22,6 +25,7 @@
 
 <form id="join_form" action="/order/orderlistinsert" method="POST">
 	<!-- bodyWrap -->
+	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 	<div id="bodyWrap">
 		<h3 class="cnts_title">
 			<span>배송&amp;결제정보 입력</span>
@@ -104,12 +108,12 @@
 								<tbody>
 									<tr>
 										<th scope="row" class="th_space" >주문자</th>
-										<td>${member.mname}</td>
-										<input type="hidden" id="mid" name="mid" value="${member.mid}">
+										<td><sec:authentication property="principal.member.mname"/></td>
+										<input type="hidden" id="mid" name="mid" value="${memid}">
 									</tr>
 									<tr>
 										<th scope="row" class="th_space">휴대폰</th>
-										<td>${member.mtel}</td>
+										<td><sec:authentication property="principal.member.mtel"/></td>
 									</tr>
 
 								</tbody>

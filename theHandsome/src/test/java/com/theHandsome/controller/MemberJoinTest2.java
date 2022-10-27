@@ -1,4 +1,4 @@
-package com.theHandsome.persistence;
+package com.theHandsome.controller;
 
 import org.junit.Before;
 import org.junit.Test;

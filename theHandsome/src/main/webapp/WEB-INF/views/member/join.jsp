@@ -1,17 +1,22 @@
 <!-- 
 /*****************************************************
  * @function : join.jsp
- * @author : 김민선
+ * @author : 구영모, 김민선 공동작업
  * @Date : 2022.10.18
  *****************************************************/
  -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/views/common/header.jsp"%>
+<!-- author:구영모 checkid의 Ajax안에서 csrf토큰을 사용하기 위한 meta 태그 추가 -->
+<meta id="_csrf" name="_csrf" th:content="${_csrf.token}"/>
+<meta id="_csrf_header" name="_csrf_header" th:content="${_csrf.headerName}"/>
+ <!-- meta 태그 끝 -->
 <head>
 <script src="/jquery-3.4.1.min.js"></script>
 
-<!-- id 중복체크 css -->
+
+
 <style>
 .id_ok {
 	color: #008000;
@@ -37,7 +42,8 @@
 </head>
 
 <form id="join_form" action="/member/join" method="POST">
-
+	<!-- post값 전송을 위한 csrf token 값 추가 -->
+	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 	<div id="bodyWrap">
 		<!--title-->
 		<h3 class="cnts_title">
@@ -65,8 +71,8 @@
 							</colgroup>
 							<tbody>
 								<tr>
-									<th scope="row"><strong class="reqd">*</strong><label
-										for="mid">아이디</label></th>
+									<th scope="row"><strong class="reqd">*</strong>
+									<label for="mid">아이디</label></th>
 									<td><input type="text" style="width: 120px" id="id"
 										name='mid' oninput="checkId()" required /> <span class="id_ok">사용
 											가능한 아이디입니다.</span> <span class="id_already">이미 사용중인 아이디입니다.</span></td>
@@ -117,7 +123,7 @@
 								<tr>
 									<th scope="row"><strong class="reqd">*</strong><label
 										for="mtel">전화번호</label></th>
-									<td><input type="text" style="width: 120px" id="mtel"
+									<td><input type="text" style="width: 120px" id="name"
 										name='mtel' required /></td>
 								</tr>
 								<tr>
@@ -154,8 +160,14 @@
 </form>
 
 
+<!-- footerWrap -->
 
 <script>
+	//구영모 추가 작성
+	// 스프링 시큐리티에서 idCheck를 할때 post방식으로 넘겨주어서 생기는 엑세스 거부를 해결하기 위한 코드
+	var token = $("meta[name='_csrf']").attr("content");
+	var header = $("meta[name='_csrf_header']").attr("content");
+	
 	//이메일주소 합쳐서 한번에 저장하기
 	$("#email_address").blur(function() {
 		email();
@@ -188,6 +200,11 @@
 				id : $("#id").val()
 			},
 			dataType : 'text',
+			
+			/*데이터를 전송하기 전에 헤더에 csrf값을 설정한다*/
+			beforeSend : function(xhr){
+				xhr.setRequestHeader(header, token);
+			},
 			success : function(result) {
 				console.log(result);
 				//컨트롤러에서 넘어온 cnt값을 받는다 
@@ -202,8 +219,8 @@
 					$('.id_ok').css("display", "none");
 				}
 			},
-			error : function() {
-				alert("에러입니다");
+			error : function(request, status, error) {
+				alert("status : " + request.status + ", message : " + request.responseText + ", error : " + error);
 			}
 		});
 	};

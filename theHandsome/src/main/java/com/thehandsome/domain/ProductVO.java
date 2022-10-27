@@ -13,7 +13,7 @@ import oracle.sql.DATE;
 public class ProductVO {
 	private String pid; // 상품품번
 	private String ccolorcode; // 색상코드
-	private String bname; // 브랜드 이름
+	private String bname; // 브랜드이름
 	private String clarge; // 대분류
 	private String cmedium; // 중분류
 	private String csmall; // 소분류
@@ -21,14 +21,8 @@ public class ProductVO {
 	private int pprice; // 상품가격
 	private String pdetail; // 상품상세
 	private String pinfo; // 상품정보
-	private String pitem;
-	private String pmaterial;
-	private String pcolor;
-	private String psize;
-	private String pcountry;
-	private String pmanufacturer;
-	private DATE pmadedate;
-	private DATE pdate;
+	private String pcolor; // 상품색상
+	private String psize; // 상품사이즈
 	
 	public ProductVO() {
 		super();

@@ -1,7 +1,6 @@
 package com.thehandsome.controller;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -10,13 +9,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import com.thehandsome.domain.ColorVO;
-
 import com.thehandsome.domain.ProductVO;
 import com.thehandsome.service.ProductService;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
+
+/*****************************************************
+ * @function : ProductController
+ * @author : 심지연
+ * @Date : 2022.10.19
+ *****************************************************/
 
 @Log4j
 @Controller
@@ -33,13 +36,13 @@ public class ProductController {
 			Model model) {
 
 		ProductVO product = service.productGetDetail(pid);
-		log.info("디테일 컨트롤러 들어옴");
+		log.info("product detail 컨트롤러 들어옴");
 		System.out.println(product.getPsize());
 		String[] sizelist = product.getPsize().split(",");
-		model.addAttribute("sizelist", sizelist);
+		model.addAttribute("sizeList", sizelist);
 		model.addAttribute("productVO", service.productGetDetail(pid));
-		model.addAttribute("colorVOList", service.productGetColor(pid));
-		model.addAttribute("curColorCode",ccolorcode);
+		model.addAttribute("colorList", service.productGetColor(pid));
+		model.addAttribute("ccolor",ccolorcode);
 		return "/product/productDetail";
 	}
 

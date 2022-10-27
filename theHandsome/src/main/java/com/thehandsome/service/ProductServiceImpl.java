@@ -4,7 +4,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.thehandsome.domain.ColorVO;
-import com.thehandsome.domain.Criteria;
+import com.thehandsome.domain.ProductCriteria;
 import com.thehandsome.domain.ProductVO;
 import com.thehandsome.mapper.ProductMapper;
 import lombok.AllArgsConstructor;
@@ -47,7 +47,7 @@ public class ProductServiceImpl implements ProductService {
 
 	// 대, 중, 소 분류에 해당하는 상품 리스트 조회
 	@Override
-	public List<ProductVO> getList(Criteria cri, String clarge, String cmedium, String csmall) {
+	public List<ProductVO> getList(ProductCriteria cri, String clarge, String cmedium, String csmall) {
 		log.info("get List with criteria: " + cri);
 		return mapper.getListWithPaging(cri, clarge, cmedium, csmall);
 	}

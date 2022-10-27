@@ -2,10 +2,18 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <!-- 
+ /*****************************************************
+ * @function : ProductMapper
+ * @author : 심지연
+ * @Date : 2022.10.19
+ *****************************************************/
+  -->
 
 <mapper namespace="com.thehandsome.mapper.ProductMapper">
 
-	<!-- 상품 상세 조회 쿼리-->
+	<!-- 상품 상세 조회 쿼리 -->
 	<select id="productGetDetail"
 		resultType="com.thehandsome.domain.ProductVO">
 		select * from product where pid=#{pid}
@@ -41,7 +49,7 @@
 		where bname = #{bname}
 	</select>
 
-	<!-- 페이징된 상품 리스트 조회 쿼리  -->
+	<!-- 페이징된 상품 리스트 조회 쿼리 -->
 	<select id="getListWithPaging"
 		resultType="com.thehandsome.domain.ProductVO">
 		SELECT p.*
@@ -59,7 +67,8 @@
 		</if>
 		)) p
 			<![CDATA[
-			WHERE p.rn > (#{param1.pageNum} -1) * #{param1.amount} and p.rn <= #{param1.pageNum} * #{param1.amount}
+			WHERE p.rn > (#{param1.pageNum} -1) * #{param1.amount} and
+			p.rn <= #{param1.pageNum} * #{param1.amount}
     		]]>
 	</select>
 

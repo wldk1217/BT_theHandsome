@@ -44,7 +44,8 @@
 				
 				<div style= "height: 200px;">
 				<form action="/event/makecoupon" method ="POST"  name="coupon_form">
-					<input type="hidden" id="mid" name="mid" value="${member.mid}">
+					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+					<input type="hidden" id="mid" name="mid" value="${memid}">
 					<button
 						type ="submit" 
 						style="border: 2px black dot; border-radius: 40%; background-color: ivory; width: 160px; heigth: 200px; font-size: 20px; font-weight: bold;">

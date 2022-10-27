@@ -598,7 +598,15 @@ transform
 
 
 
+
+
+
+
 :
+
+
+
+
 
 
 
@@ -616,8 +624,16 @@ rotate
 
 
 
+
+
+
+
 (9
 deg
+
+
+
+
 
 
 
@@ -639,7 +655,15 @@ transform
 
 
 
+
+
+
+
 :
+
+
+
+
 
 
 
@@ -657,8 +681,16 @@ rotate
 
 
 
+
+
+
+
 (-1
 deg
+
+
+
+
 
 
 
@@ -1925,8 +1957,6 @@ deg
 							+ $("#CSRFForm [name='CSRFToken']").first().val();
 				}
 
-				function setLog 
-
 				//START OF 메인 검색창////////////////////////
 				// #1067 - 201803 메인 개편
 				$(function() {
@@ -2598,9 +2628,9 @@ deg
 					<div class="util_menu" style="display: block;">
 						<ul class="clearfix">
 							<%
-								if (session.getAttribute("member") == null) {
+								if (session.getAttribute("memid") == null) {
 							%>
-							<li ><a href="/member/login"
+							<li><a href="/member/login"
 								onclick="GA_Event('공통','헤더_메뉴','로그인')"> 로그인</a></li>
 							<%
 								} else {
@@ -2657,88 +2687,102 @@ deg
 							<div class="sub_back">
 								<div class="sub_menu clearfix">
 									<ul class="al_frt1">
-										<!-- 대분류_여성  -->
-										<li><a href="/list?clarge=여성&cmedium=&csmall=" class="">여성<span
-												class="arr">arrow</span></a>
-											<div class="sub_back"
-												style="height: 0px; border-bottom: 0px;">
-												<div class="sub_menu clearfix" style="display: none;">
-													<ul class="al_frt1 sm_dep1"
-														style="margin-left: 165px; margin-bottom: 25px;">
-														<li><a href="/list?clarge=여성&cmedium=&csmall=">전체보기<!-- 전체보기 --></a>
-														</li>
-														<li><a href="/list?clarge=여성&cmedium=아우터&csmall=">아우터</a>
-															<ul class="clearfix sm_dep2">
-																<li><a href="/list?clarge=여성&cmedium=아우터&csmall=재킷">재킷</a>
-																</li>
-																<li><a href="/list?clarge=여성&cmedium=아우터&csmall=점퍼">점퍼</a>
-																</li>
-																<li><a
-																	href="/list?clarge=여성&cmedium=아우터&csmall=가디건/베스트">가디건/베스트</a>
-																</li>
-																<li><a
-																	href="/list?clarge=여성&cmedium=아우터&csmall=트렌치 코트">트렌치
-																		코트</a></li>
-																<li><a href="/list?clarge=여성&cmedium=아우터&csmall=코트">코트</a>
-																</li>
-																<li><a
-																	href="/list?clarge=여성&cmedium=아우터&csmall=다운/패딩">다운/패딩</a>
-																</li>
-															</ul></li>
-														<li><a href="/list?clarge=여성&cmedium=탑&csmall=">탑</a>
-															<ul class="clearfix sm_dep2">
-																<li><a href="/list?clarge=여성&cmedium=탑&csmall=티셔츠">티셔츠</a>
-																</li>
-																<li><a href="/list?clarge=여성&cmedium=탑&csmall=블라우스">블라우스</a>
-																</li>
-																<li><a href="/list?clarge=여성&cmedium=탑&csmall=셔츠">셔츠</a>
-																</li>
-																<li><a href="/list?clarge=여성&cmedium=탑&csmall=니트">니트</a>
-																</li>
-															</ul></li>
-														<li><a href="/list?clarge=여성&cmedium=드레스&csmall=">드레스</a>
-															<ul class="clearfix sm_dep2">
-																<li><a
-																	href="/list?clarge=여성&cmedium=드레스&csmall=미니 드레스">미니
-																		드레스</a></li>
-																<li><a
-																	href="/list?clarge=여성&cmedium=드레스&csmall=미디 드레스">미디
-																		드레스</a></li>
-																<li><a
-																	href="/list?clarge=여성&cmedium=드레스&csmall=롱/맥시 드레스">롱/맥시
-																		드레스</a></li>
-															</ul></li>
-														<li><a href="/list?clarge=여성&cmedium=팬츠&csmall=">팬츠</a>
-															<ul class="clearfix sm_dep2">
-																<li><a href="/list?clarge=여성&cmedium=팬츠&csmall=캐주얼">캐주얼</a>
-																</li>
-																<li><a href="/list?clarge=여성&cmedium=팬츠&csmall=포멀">포멀</a>
-																</li>
-																<li><a href="/list?clarge=여성&cmedium=팬츠&csmall=데님">데님</a>
-																</li>
-																<li><a href="/list?clarge=여성&cmedium=팬츠&csmall=쇼츠">쇼츠</a>
-																</li>
-															</ul></li>
-														<li style="margin-right: 0px"><a
-															href="/list?clarge=여성&cmedium=스커트&csmall=">스커트</a>
-															<ul class="clearfix sm_dep2">
-																<li><a
-																	href="/list?clarge=여성&cmedium=스커트&csmall=미니 스커트">미니
-																		스커트</a></li>
-																<li><a
-																	href="/list?clarge=여성&cmedium=스커트&csmall=펜슬 스커트">펜슬
-																		스커트</a></li>
-																<li><a
-																	href="/list?clarge=여성&cmedium=스커트&csmall=플레어 스커트">플레어
-																		스커트</a></li>
-																<li><a
-																	href="/list?clarge=여성&cmedium=스커트&csmall=롱/맥시 스커트">롱/맥시
-																		스커트</a></li>
-															</ul></li>
-													</ul>
-													<div class="gnb_banner float_right"></div>
-												</div>
-											</div></li>
+										<li><strong>여성 브랜드</strong>
+											<ul class="clearfix">
+												<li><input id="gnb_br_NEW_NORMAL_BRANDS_WE_BR01"
+													name="gnb_br_ch" type="checkbox" class="checkboxEvent"
+													title="TIME" onclick="GA_Common('WE_brandLike',$(this));"
+													value="NEW_NORMAL_BRANDS_WE#BR01#1"> <label
+													for="gnb_br_NEW_NORMAL_BRANDS_WE_BR01"></label> <a
+													href="/ko/b/br01"
+													onclick="GA_Common('WE_commonBrand',$(this));">TIME</a></li>
+												<li><input id="gnb_br_NEW_NORMAL_BRANDS_WE_BR02"
+													name="gnb_br_ch" type="checkbox" class="checkboxEvent"
+													title="MINE" onclick="GA_Common('WE_brandLike',$(this));"
+													value="NEW_NORMAL_BRANDS_WE#BR02#2"> <label
+													for="gnb_br_NEW_NORMAL_BRANDS_WE_BR02"></label> <a
+													href="/ko/b/br02"
+													onclick="GA_Common('WE_commonBrand',$(this));">MINE</a></li>
+												<li><input id="gnb_br_NEW_NORMAL_BRANDS_WE_BR19"
+													name="gnb_br_ch" type="checkbox" class="checkboxEvent"
+													title="LANVIN COLLECTION"
+													onclick="GA_Common('WE_brandLike',$(this));"
+													value="NEW_NORMAL_BRANDS_WE#BR19#3"> <label
+													for="gnb_br_NEW_NORMAL_BRANDS_WE_BR19"></label> <a
+													href="/ko/b/br19"
+													onclick="GA_Common('WE_commonBrand',$(this));">LANVIN
+														COLLECTION</a></li>
+												<li><input id="gnb_br_NEW_NORMAL_BRANDS_WE_BR03"
+													name="gnb_br_ch" type="checkbox" class="checkboxEvent"
+													title="SYSTEM" onclick="GA_Common('WE_brandLike',$(this));"
+													value="NEW_NORMAL_BRANDS_WE#BR03#4"> <label
+													for="gnb_br_NEW_NORMAL_BRANDS_WE_BR03"></label> <a
+													href="/ko/b/br03"
+													onclick="GA_Common('WE_commonBrand',$(this));">SYSTEM</a></li>
+												<li><input id="gnb_br_NEW_NORMAL_BRANDS_WE_BR04"
+													name="gnb_br_ch" type="checkbox" class="checkboxEvent"
+													title="SJSJ" onclick="GA_Common('WE_brandLike',$(this));"
+													value="NEW_NORMAL_BRANDS_WE#BR04#5"> <label
+													for="gnb_br_NEW_NORMAL_BRANDS_WE_BR04"></label> <a
+													href="/ko/b/br04"
+													onclick="GA_Common('WE_commonBrand',$(this));">SJSJ</a></li>
+												<li><input id="gnb_br_NEW_NORMAL_BRANDS_WE_BR08"
+													name="gnb_br_ch" type="checkbox" class="checkboxEvent"
+													title="the CASHMERE"
+													onclick="GA_Common('WE_brandLike',$(this));"
+													value="NEW_NORMAL_BRANDS_WE#BR08#6"> <label
+													for="gnb_br_NEW_NORMAL_BRANDS_WE_BR08"></label> <a
+													href="/ko/b/br08"
+													onclick="GA_Common('WE_commonBrand',$(this));">the
+														CASHMERE</a></li>
+												<li><input id="gnb_br_NEW_NORMAL_BRANDS_WE_BR44"
+													name="gnb_br_ch" type="checkbox" class="checkboxEvent"
+													title="CLUB MONACO"
+													onclick="GA_Common('WE_brandLike',$(this));"
+													value="NEW_NORMAL_BRANDS_WE#BR44#7"> <label
+													for="gnb_br_NEW_NORMAL_BRANDS_WE_BR44"></label> <a
+													href="/ko/b/br44"
+													onclick="GA_Common('WE_commonBrand',$(this));">CLUB
+														MONACO</a></li>
+												<li><input id="gnb_br_NEW_NORMAL_BRANDS_WE_BR43"
+													name="gnb_br_ch" type="checkbox" class="checkboxEvent"
+													title="OBZEE" onclick="GA_Common('WE_brandLike',$(this));"
+													value="NEW_NORMAL_BRANDS_WE#BR43#8"> <label
+													for="gnb_br_NEW_NORMAL_BRANDS_WE_BR43"></label> <a
+													href="/ko/b/br43"
+													onclick="GA_Common('WE_commonBrand',$(this));">OBZEE</a></li>
+												<li><input id="gnb_br_NEW_NORMAL_BRANDS_WE_BR31"
+													name="gnb_br_ch" type="checkbox" class="checkboxEvent"
+													title="LÄTT" onclick="GA_Common('WE_brandLike',$(this));"
+													value="NEW_NORMAL_BRANDS_WE#BR31#9"> <label
+													for="gnb_br_NEW_NORMAL_BRANDS_WE_BR31"></label> <a
+													href="/ko/b/br31"
+													onclick="GA_Common('WE_commonBrand',$(this));">LÄTT</a></li>
+												<li class="oera"><input
+													id="gnb_br_NEW_NORMAL_BRANDS_WE_BR63" name="gnb_br_ch"
+													type="checkbox" class="checkboxEvent" title="LANVIN BLANC"
+													onclick="GA_Common('WE_brandLike',$(this));"
+													value="NEW_NORMAL_BRANDS_WE#BR63#10"> <label
+													for="gnb_br_NEW_NORMAL_BRANDS_WE_BR63"></label> <a
+													href="/ko/b/br63"
+													onclick="GA_Common('WE_commonBrand',$(this));"> LANVIN
+														BLANC <i class="ico-new">new</i>
+												</a></li>
+												<li><input id="gnb_br_NEW_NORMAL_BRANDS_WE_BR45"
+													name="gnb_br_ch" type="checkbox" class="checkboxEvent"
+													title="O'2nd" onclick="GA_Common('WE_brandLike',$(this));"
+													value="NEW_NORMAL_BRANDS_WE#BR45#11"> <label
+													for="gnb_br_NEW_NORMAL_BRANDS_WE_BR45"></label> <a
+													href="/ko/b/br45"
+													onclick="GA_Common('WE_commonBrand',$(this));">O'2nd</a></li>
+												<li><input id="gnb_br_NEW_NORMAL_BRANDS_WE_BR61"
+													name="gnb_br_ch" type="checkbox" class="checkboxEvent"
+													title="oera" onclick="GA_Common('WE_brandLike',$(this));"
+													value="NEW_NORMAL_BRANDS_WE#BR61#12"> <label
+													for="gnb_br_NEW_NORMAL_BRANDS_WE_BR61"></label> <a
+													href="/ko/b/br61"
+													onclick="GA_Common('WE_commonBrand',$(this));">oera</a></li>
+											</ul></li>
 										<!-- //대분류_여성 -->
 										<li><strong>남성 브랜드</strong>
 											<ul class="clearfix">
@@ -2911,41 +2955,6 @@ deg
 									<ul class="al_frt1">
 										<li><a href="/list?clarge=여성&cmedium=&csmall=">전체보기<!-- 전체보기 --></a>
 										</li>
-										<li><a href="/ko/c/we09/"
-											onclick="GA_Event('공통_카테고리','2DEPTH','여성_SPECIAL SHOP*');">SPECIAL
-												SHOP*</a>
-											<ul class="clearfix">
-												<li><a href="/ko/c/we09n/"
-													onclick="GA_Event('공통_카테고리','3DEPTH','여성_SPECIAL SHOP*_SJSJ : SIGNATURE JEANS');">SJSJ
-														: SIGNATURE JEANS</a></li>
-												<li><a href="/ko/c/we09b/"
-													onclick="GA_Event('공통_카테고리','3DEPTH','여성_SPECIAL SHOP*_O&amp;#039;2ND : MIDNIGHT IN PARIS');">O'2ND
-														: MIDNIGHT IN PARIS</a></li>
-												<li><a href="/ko/c/we09q/"
-													onclick="GA_Event('공통_카테고리','3DEPTH','여성_SPECIAL SHOP*_LATT : RIDING INTO THE CLASSIC');">LATT
-														: RIDING INTO THE CLASSIC</a></li>
-												<li><a href="/ko/c/we098/"
-													onclick="GA_Event('공통_카테고리','3DEPTH','여성_SPECIAL SHOP*_SYSTEM : PARIS PRESENTATION');">SYSTEM
-														: PARIS PRESENTATION</a></li>
-												<li><a href="/ko/c/we09x/"
-													onclick="GA_Event('공통_카테고리','3DEPTH','여성_SPECIAL SHOP*_TIME : 22 FALL CAPSULE COLLECTION');">TIME
-														: 22 FALL CAPSULE COLLECTION</a></li>
-												<li><a href="/ko/c/we091/"
-													onclick="GA_Event('공통_카테고리','3DEPTH','여성_SPECIAL SHOP*_OBZEE : ICONIC OBZEE');">OBZEE
-														: ICONIC OBZEE</a></li>
-												<li><a href="/ko/c/we09j/"
-													onclick="GA_Event('공통_카테고리','3DEPTH','여성_SPECIAL SHOP*_TOMGREYHOUND: EXCLUSIVE');">TOMGREYHOUND:
-														EXCLUSIVE</a></li>
-												<li><a href="/ko/c/we095/"
-													onclick="GA_Event('공통_카테고리','3DEPTH','여성_SPECIAL SHOP*_FOURM THE STORE: EXCLUSIVE');">FOURM
-														THE STORE: EXCLUSIVE</a></li>
-												<li><a href="/ko/c/we09r/"
-													onclick="GA_Event('공통_카테고리','3DEPTH','여성_SPECIAL SHOP*_LATT : THE FIRST');">LATT
-														: THE FIRST</a></li>
-												<li><a href="/ko/c/we09y/"
-													onclick="GA_Event('공통_카테고리','3DEPTH','여성_SPECIAL SHOP*_MINE : CODE MINE ATELIER');">MINE
-														: CODE MINE ATELIER</a></li>
-											</ul></li>
 										<!--  status2.last end -->
 										<li><a href="/list?clarge=여성&cmedium=아우터&csmall=">아우터</a>
 											<ul class="clearfix sm_dep2">
@@ -3022,23 +3031,6 @@ deg
 										<li><a href="/ko/c/me"
 											onclick="GA_Event('공통_카테고리','2DEPTH','남성_전체보기');"> 전체보기 <!-- 전체보기 -->
 										</a></li>
-										<li><a href="/ko/c/me09/"
-											onclick="GA_Event('공통_카테고리','2DEPTH','남성_SPECIAL SHOP*');">SPECIAL
-												SHOP*</a>
-											<ul class="clearfix">
-												<li><a href="/ko/c/me09f/"
-													onclick="GA_Event('공통_카테고리','3DEPTH','남성_SPECIAL SHOP*_SYSTEM HOMME : ONLINE EXCLUSIVE');">SYSTEM
-														HOMME : ONLINE EXCLUSIVE</a></li>
-												<li><a href="/ko/c/me094/"
-													onclick="GA_Event('공통_카테고리','3DEPTH','남성_SPECIAL SHOP*_SYSTEM HOMME : PARIS PRESENTATION');">SYSTEM
-														HOMME : PARIS PRESENTATION</a></li>
-												<li><a href="/ko/c/me091/"
-													onclick="GA_Event('공통_카테고리','3DEPTH','남성_SPECIAL SHOP*_CLUB MONACO : PANTS ARCHIVE');">CLUB
-														MONACO : PANTS ARCHIVE</a></li>
-												<li><a href="/ko/c/me095/"
-													onclick="GA_Event('공통_카테고리','3DEPTH','남성_SPECIAL SHOP*_TIME HOMME : ONLINE EXCLUSIVE');">TIME
-														HOMME : ONLINE EXCLUSIVE</a></li>
-											</ul></li>
 										<!--  status2.last end -->
 										<li><a href="/list?clarge=남성&cmedium=아우터&csmall=">아우터</a>
 											<ul class="clearfix sm_dep2">
