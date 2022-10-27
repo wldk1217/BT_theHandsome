@@ -36,13 +36,13 @@ public class ProductController {
 			Model model) {
 
 		ProductVO product = service.productGetDetail(pid);
-		log.info("디테일 컨트롤러 들어옴");
+		log.info("product detail 컨트롤러 들어옴");
 		System.out.println(product.getPsize());
 		String[] sizelist = product.getPsize().split(",");
 		model.addAttribute("sizelist", sizelist);
 		model.addAttribute("productVO", service.productGetDetail(pid));
-		model.addAttribute("colorVOList", service.productGetColor(pid));
-		model.addAttribute("curColorCode",ccolorcode);
+		model.addAttribute("colorList", service.productGetColor(pid));
+		model.addAttribute("ccolor",ccolorcode);
 		return "/product/productDetail";
 	}
 
