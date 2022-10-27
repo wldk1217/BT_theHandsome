@@ -1,4 +1,4 @@
-package com.theHandsome.persistence;
+package com.theHandsome.service;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

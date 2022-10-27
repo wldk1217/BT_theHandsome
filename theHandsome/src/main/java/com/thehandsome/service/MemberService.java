@@ -17,4 +17,7 @@ public interface MemberService {
 	
 	// 회원 탈퇴
 	public int memberWithdrawal(MemberVO member) throws Exception;
+	
+	// 회원 가입 시 권한 부여
+	public void memberAuthJoin(String mid) throws Exception;
 }

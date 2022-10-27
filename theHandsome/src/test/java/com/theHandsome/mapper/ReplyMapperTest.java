@@ -1,4 +1,4 @@
-package com.theHandsome.persistence;
+package com.theHandsome.mapper;
 
 import java.util.Date;
 import java.util.List;

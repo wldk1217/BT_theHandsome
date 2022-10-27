@@ -3,7 +3,7 @@ package com.thehandsome.domain;
 import java.util.List;
 
 import lombok.Data;
-//test
+
 /*****************************************************
  * @function : MemberVO
  * @author : 구영모, 김민선, 심지연 공동작업

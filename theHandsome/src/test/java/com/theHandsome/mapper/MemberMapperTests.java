@@ -10,6 +10,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import com.thehandsome.domain.MemberVO;
 import com.thehandsome.mapper.MemberMapper;
 
+
 import lombok.extern.log4j.Log4j;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -31,4 +32,11 @@ public class MemberMapperTests {
 		log.info(vo);		
 		vo.getAuthList().forEach(authVO -> log.info(authVO));			
 	}//end testRead()
+	
+	
+	@Test
+	public void testinsertAuth() {
+		String mid = "asd";
+		mapper.memberAuthJoin(mid);		
+	}
 }//end class

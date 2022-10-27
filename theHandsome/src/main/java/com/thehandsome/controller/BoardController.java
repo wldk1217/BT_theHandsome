@@ -18,12 +18,19 @@ import com.thehandsome.service.BoardService;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
 
+
+/*****************************************************
+ * @function : BoardController
+ * @author : 구영모
+ * @Date : 2022.10.22
+ *****************************************************/
+
 @Controller
 @Log4j
 @RequestMapping("/board/*")
 @AllArgsConstructor
 public class BoardController {
-	
+	//BoardService
 	@Autowired
 	private BoardService service;
 	 

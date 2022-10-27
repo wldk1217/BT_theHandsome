@@ -6,9 +6,13 @@
 <mapper namespace="com.thehandsome.mapper.MemberMapper">
 
 	<insert id="memberJoin">
-		insert into member values (#{mid}, #{mpassword}, #{mname}, #{memail}, #{mtel}, #{mzipcode}, #{maddress1},#{maddress2},'MEMBER',sysdate,0,1)
+		insert into member values 
+		(#{mid}, #{mpassword}, #{mname}, #{memail}, #{mtel}, #{mzipcode}, #{maddress1},#{maddress2},'MEMBER',sysdate,0,1)
 	</insert>
-
+	<insert id="memberAuthJoin">
+		INSERT INTO member_auth
+		values (#{mid}, 'ROLE_USER')
+	</insert>
 	<select id="idCheck" parameterType="String" resultType="int">
 		select
 		count(mid) from member where mid=#{mid}
