@@ -1,5 +1,6 @@
 package com.thehandsome.mapper;
 
+import com.thehandsome.domain.AuthVO;
 import com.thehandsome.domain.MemberVO;
 
 /* 
@@ -9,7 +10,7 @@ public interface MemberMapper {
 
 	public void memberJoin(MemberVO member); // 회원 가입
 	
-	 public int idCheck(String mid); // 아이디 중복 확인
+	public int idCheck(String mid); // 아이디 중복 확인
 	
 	public MemberVO memberLogin(MemberVO member); // 로그인
 	
@@ -18,4 +19,6 @@ public interface MemberMapper {
 	public int memberWithdrawal(MemberVO member); // 회원 탈퇴
 	//구영모 추가
 	public MemberVO read(String mid);//회원 정보 및 권한 불러오기
+	
+	public void memberAuthJoin(String mid); //회원 권한 테이블 불러오기
 }

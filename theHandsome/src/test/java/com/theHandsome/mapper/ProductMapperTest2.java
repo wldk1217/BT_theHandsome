@@ -1,4 +1,4 @@
-package com.theHandsome.persistence;
+package com.theHandsome.mapper;
 
 import java.util.List;
 import org.junit.Test;
