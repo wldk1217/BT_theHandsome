@@ -11,6 +11,13 @@ import com.thehandsome.security.domain.CustomUser;
 
 import lombok.extern.log4j.Log4j;
 
+/*****************************************************
+ * @function : CustomLoginSuccessHandler
+ * @author : 구영모
+ * @Date : 2022.10.25
+ * 사용자가 로그인에 성공하였을 시 발생하는 이벤트를 제어하는 클래스
+ *****************************************************/
+
 @Log4j
 public class CustomUserDetailsService implements UserDetailsService{
 	@Autowired

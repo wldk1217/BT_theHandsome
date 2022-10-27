@@ -17,21 +17,21 @@
 
 	<context:annotation-config></context:annotation-config>
 
-	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
+<!-- 	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
 		<property name="driverClassName"
 			value="oracle.jdbc.OracleDriver"></property>
 		<property name="jdbcUrl"
 			value="jdbc:oracle:thin:@localhost:1521/xepdb1"></property>
 		<property name="username" value="test"></property>
 		<property name="password" value="test"></property>
-	</bean>
+	</bean> -->
 
 
-<!-- 	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">  
+	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">  
 		<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property> 
 		<property name="jdbcUrl" value="jdbc:log4jdbc:oracle:thin:@hd_high?TNS_ADMIN=C:\\\\dev\\\\OracleWallet\\\\Wallet_hd"></property> 
 		<property name="username" value="handsome"></property> <property name="password" 
-		value="xxxxxxAt21cc"></property> </bean> -->
+		value="xxxxxxAt21cc"></property> </bean>
 
 	<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource"
 		destroy-method="close">

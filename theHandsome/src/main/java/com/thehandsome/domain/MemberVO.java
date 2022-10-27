@@ -36,6 +36,6 @@ public class MemberVO {
 	private String msumprice;
 	// 관리자 여부
 	private String menabled;
-	// 회원 권한 : security 
+	//회원 권한 리스트 AuthVO 객체 리스트 사용
 	private List<AuthVO> authList;
 }
