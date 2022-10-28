@@ -136,10 +136,10 @@
 		              <span class="paginate_button">		              
 		              	<c:choose>
 		              		<c:when test="${pageMaker.cri.pageNum eq num}">
-		              			<a style="font-weight:bold; margin:10px;" class="pageBtn" href="${num}">${num}</a>
+		              			<a style="font-weight:bold; margin:3px;" class="pageBtn" href="${num}">${num}</a>
 		              		</c:when>
 		              		<c:otherwise>
-		              			<a style="margin:10px;" class="pageBtn" href="${num}">${num}</a>
+		              			<a style="margin:3px;" class="pageBtn" href="${num}">${num}</a>
 		              		</c:otherwise>
 		              	</c:choose>
 		              </span>
@@ -159,14 +159,7 @@
         		</div>
         		<input type='hidden' id='pagenum' value='${pageMaker.cri.pageNum}'>
     </div>
-         <sec:authorize access="isAnonymous()">
-         	asdfasdfasdfasdfsadf
-         </sec:authorize>
-         <sec:authorize access="isAuthenticated()">
-         	로그인되있농${memid}        	
-         	
-         
-         </sec:authorize>
+     
 </div>
 <script>
 	//조회 페이지 링크 처리

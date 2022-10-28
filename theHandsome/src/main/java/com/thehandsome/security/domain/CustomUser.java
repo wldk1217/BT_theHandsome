@@ -39,7 +39,6 @@ public class CustomUser  extends User{
 			  .collect(Collectors.toList()));//end super
 		
 		this.member = vo;
-		log.info("이건가:"+vo);
 	}//end CustomUser
 	
 }//end class

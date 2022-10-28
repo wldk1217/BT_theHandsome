@@ -39,9 +39,7 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
 		<security:intercept-url pattern="/event/**" access="hasRole('ROLE_USER')" />
 		<security:intercept-url pattern="/**" access="permitAll" />
 		<!-- 엑세스 거부 -->
-		<security:access-denied-handler error-page="/accessError" />
-		
-		
+		<security:access-denied-handler error-page="/accessError" />		
 		<!-- 로그인 폼 기능 -->
 		<security:form-login
 			username-parameter="username"
@@ -54,9 +52,7 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
 		
 		<!-- 로그아웃 기능 -->
 		<security:logout logout-url="/member/logout"
-						invalidate-session="true" delete-cookies="JSESSION_ID" />
-		
-		<security:csrf disabled="true"/>
+						invalidate-session="true" delete-cookies="JSESSION_ID" />		
 		<!-- 로그아웃 기능 끝 -->
 	</security:http>
 	

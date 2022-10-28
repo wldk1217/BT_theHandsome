@@ -37,40 +37,12 @@
 <div id="bodyWrap">
     <div id="subMainPopwrap1"></div>
     <h3 class="cnts_title">
-        <span>게시물 조회</span>
+        <span>게시물 수정</span>
     </h3>
     <div class="sub_container clearfix">
         <div class="iframe_lnb">
             <div class="lnb_wrap">
-                <h4><a href="/svcenter/submain">고객센터
-                        <!-- 고객센터 -->
-                    </a></h4>
-                <div class="lnb">
-                    <p><a href="/ko/svcenter/notice">공지사항
-                            <!-- 공지사항 -->
-                        </a></p>
-                    <p><a href="/ko/svcenter/mantomaninquiry">1:1 문의 등록
-                            <!-- 1:1 문의하기 -->
-                        </a></p>
-                    <p><a href="/ko/svcenter/faq">FAQ
-                            <!-- FAQ; -->
-                        </a></p>
-                    <p><a href="/ko/svcenter/mending">수선진행조회
-                            <!-- 수선진행조회; -->
-                        </a></p>
-                    <p><a href="/ko/footer/vocProvision">고객의 소리</a></p>
-                    <!-- <p><a href="#;">APP 다운로드 소개</a></p> -->
-                    <dl>
-                        <dt>쇼핑 가이드</dt>
-                        <dd><a href="/ko/svcenter/memberjoinguide">회원 가입</a></dd>
-                        <dd><a href="/ko/svcenter/theClubInfo">온라인 멤버십</a></dd>
-                        <dd><a href="/ko/svcenter/memberbenefitguide">한섬 VVIP 혜택</a></dd>
-                        <dd><a href="/ko/svcenter/pointguide">한섬마일리지 혜택</a></dd>
-                        <dd><a href="/ko/svcenter/couponguide">쿠폰</a></dd>
-                        <dd><a href="/ko/svcenter/paymentguide">주문/결제</a></dd>
-                        <dd><a href="/ko/svcenter/asguide">배송/교환/반품/AS</a></dd>
-                    </dl>
-                </div>
+
                 <!-- ph_guide -->
                 <div class="ph_guide">
                     <p class="tlt">고객센터 운영 안내</p>
@@ -84,17 +56,19 @@
         </div>
         <div class="sub_cnts">
             <div class="title_wrap mt30 clearfix">
-                <h4 class="float_left">문의 조회</h4>
+                <h4 class="float_left">문의 수정</h4>
             </div>
 
             <form id="manToManInquiryForm" name="manToManInquiryForm" method="post" >
+            	<!-- 구영모: 시큐리티 적용 -->
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                 <input type="hidden" id="qid" name="qid" value="${board.qid}">
                 <input type="hidden" id="pageNum" name="pageNum" value="${cri.pageNum}">
                 <fieldset>
-                    <legend>1:1 문의 입력</legend>
+                    <legend>문의 입력</legend>
                     <div class="tblwrap">
                         <table class="tbl_wtype1">
-                            <caption>1:1 문의 입력</caption>
+                            <caption>문의 입력</caption>
                             <colgroup>
                                 <col style="width:140px">
                                 <col>

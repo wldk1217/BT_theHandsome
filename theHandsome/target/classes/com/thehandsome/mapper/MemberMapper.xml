@@ -17,10 +17,7 @@
 		insert into member values 
 		(#{mid}, #{mpassword}, #{mname}, #{memail}, #{mtel}, #{mzipcode}, #{maddress1},#{maddress2},'MEMBER',sysdate,0,1)
 	</insert>
-	<insert id="memberAuthJoin">
-		INSERT INTO member_auth
-		values (#{mid}, 'ROLE_USER')
-	</insert>
+
 	<select id="idCheck" parameterType="String" resultType="int">
 		select
 		count(mid) from member where mid=#{mid}
@@ -45,8 +42,7 @@
 	</update>
 
 	<!--작성자 : 구영모 
-		스프링 시큐리티를 사용하기 위한 코드 추가 -->
-		
+		스프링 시큐리티를 사용하기 위한 코드 추가 -->		
 	<resultMap type="com.thehandsome.domain.MemberVO" id="memberMap">
 		<id property="mid" column="mid" />
 		<result property="mid" column="mid" />
@@ -69,4 +65,8 @@
 		on mem.mid = auth.userid
 		where mem.mid = #{userid}
 	</select>
+	<insert id="memberAuthJoin">
+		INSERT INTO member_auth
+		values (#{mid}, 'ROLE_USER')
+	</insert>
 </mapper>
