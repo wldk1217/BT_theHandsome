@@ -52,6 +52,5 @@ public class ReplyServiceImpl implements ReplyService{
 	public List<ReplyVO> getList(BoardCriteria cri, Long qid)throws Exception{
 		log.info("get Reply List of a Board "+qid);
 		return mapper.getListWithPage(cri, qid);
-	}
-	
+	}	
 }

@@ -52,7 +52,8 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
 		
 		<!-- 로그아웃 기능 -->
 		<security:logout logout-url="/member/logout"
-						invalidate-session="true" delete-cookies="JSESSION_ID" />		
+						invalidate-session="true" delete-cookies="JSESSION_ID" />
+		<!--  <security:csrf disabled="true"/> -->		
 		<!-- 로그아웃 기능 끝 -->
 	</security:http>
 	
