@@ -23,7 +23,6 @@ import lombok.extern.log4j.Log4j;
  * @author : 구영모
  * @Date : 2022.10.22
  *****************************************************/
-
 @Controller
 @Log4j
 @RequestMapping("/board/*")
@@ -92,7 +91,5 @@ public class BoardController {
 		}
 		//삭제 후 게시판 초기 화면으로 이동
 		return "redirect:/board/list?pageNum=1&amount=10";
-	}
-	
-	
+	}	
 }
