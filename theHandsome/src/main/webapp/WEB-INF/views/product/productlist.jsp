@@ -29,10 +29,10 @@
 							src="http://cdn.thehandsome.com/_ui/desktop/common/images/products/ou_location_arr.png"
 							alt="location arr">
 						<a
-							href="/list?clarge=${product.clarge}&cmedium=${product.cmedium}&csmall=${product.csmall}">${product.csmall}</a>
+							href="/list?clarge=${product.clarge}&cmedium=${product.cmedium}
+							&csmall=${product.csmall}">${product.csmall}</a>
 					</c:if>
 				</c:if>
-
 			</span>
 		</h3>
 		<!--  카테고리 개편 아울렛 -->
@@ -411,6 +411,7 @@
 			</div>
 </body>
 
+<!-- start Paging -->
 <div class="paging" style="display: block;">
 	<input type="hidden" class="clarge" value="${product.clarge}">
 	<input type="hidden" class="cmedium" value="${product.cmedium}">
@@ -418,30 +419,33 @@
 	<input type="hidden" class="realEnd" value="${pager.realEnd}">
 	<a class="prev2" href="#"></a>
 	<c:if test="${pager.prev}">
-		<!-- 이전 버튼 -->
+		<!-- 이전 버튼 클릭 시 -->
 		<a class="prev"
-			href="/list?clarge=${product.clarge}&cmedium=${product.cmedium}&csmall=${product.csmall}&pageNum=${pager.startPage - 1}">Previous</a>
+			href="/list?clarge=${product.clarge}&cmedium=${product.cmedium}
+			&csmall=${product.csmall}&pageNum=${pager.startPage - 1}">Previous</a>
 	</c:if>
 
-	<!-- 1~10 버튼 -->
+	<!-- 1~10 버튼 클릭 시 -->
 	<span class="num"> <c:forEach var="num"
 			begin="${pager.startPage}" end="${pager.endPage}">
 			<c:if test="${(pager.startPage+i) <= pager.endPage}">
 				<a
-					href="/list?clarge=${product.clarge}&cmedium=${product.cmedium}&csmall=${product.csmall}&pageNum=${num}"
+					href="/list?clarge=${product.clarge}&cmedium=${product.cmedium}
+					&csmall=${product.csmall}&pageNum=${num}"
 					class="pageBtn">${num}</a>
 			</c:if>
 		</c:forEach>
 	</span>  
 	<c:if test="${pager.next}">
-		<!-- 다음 버튼 -->
+		<!-- 다음 버튼 클릭 시 -->
 		<a
-			href="/list?clarge=${product.clarge}&cmedium=${product.cmedium}&csmall=${product.csmall}&pageNum=${pager.endPage +1}"
+			href="/list?clarge=${product.clarge}&cmedium=${product.cmedium}
+			&csmall=${product.csmall}&pageNum=${pager.endPage +1}"
 			class="next">Next</a>
 	</c:if>
 	<a class="next2" href="#"></a>
 </div>
-<!--  end Pagination -->
+<!-- end Paging -->
 
 <form id='actionForm' action="/list" method='get'>
 	<input type='hidden' name='pageNum' value='${pager.cri.pageNum}'>
