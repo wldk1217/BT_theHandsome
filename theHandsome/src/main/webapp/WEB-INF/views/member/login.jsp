@@ -72,14 +72,14 @@
 										</div>
 										<div>
 											<input class="pw_iput" name="password" type="password"
-												id="j_password" placeholder="비밀번호를 입력하세요." title="비밀번호" style="width: 410px; height: 35px; margin-top: 5px;">
+												id="j_password" placeholder="비밀번호를 입력하세요." title="비밀번호"
+												style="width: 410px; height: 35px; margin-top: 5px;">
 										</div>
 									</div>
 
 									<div class="login_button_wrap" style="width: 410px; height: 35px; padding-top: 25px;">
 										<input type="button" class="login_button btn add_ss join " value="로그인" style="width: 410px; height: 35px; ">
 									</div>
-									
 								</div>
 							</fieldset>
 				
