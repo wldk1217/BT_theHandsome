@@ -32,13 +32,15 @@ public class ProductController {
 
 	// 상품 상세 정보 보기
 	@GetMapping("/productDetail")
-	public String product_detail(@RequestParam("pid") String pid, @RequestParam("ccolorcode") String ccolorcode,
-			Model model) {
+	public String product_detail(@RequestParam("pid") String pid,
+			@RequestParam("ccolorcode") String ccolorcode, Model model) {
 
 		ProductVO product = service.productGetDetail(pid);
 		log.info("product detail 컨트롤러 들어옴");
+		
 		System.out.println(product.getPsize());
 		String[] sizelist = product.getPsize().split(",");
+		
 		model.addAttribute("sizeList", sizelist);
 		model.addAttribute("productVO", service.productGetDetail(pid));
 		model.addAttribute("colorList", service.productGetColor(pid));

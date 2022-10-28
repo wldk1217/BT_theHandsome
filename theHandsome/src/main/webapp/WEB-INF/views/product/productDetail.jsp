@@ -157,7 +157,7 @@
 												colorcode="${colorVO.ccolorcode}"
 												style="background: #000000 url('${colorVO.ccolorimage})"
 												onmouseover="setColorName('${colorVO.cname}');"
-												onmouseout="setColorName('');"> </a> <!-- secColroName이라는 js 함수 만들어줘야할듯 -->
+												onmouseout="setColorName('');"> </a> 
 											</li>
 										</c:forEach>
 									</ul>
