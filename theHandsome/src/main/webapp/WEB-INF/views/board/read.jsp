@@ -48,16 +48,8 @@
                     <p><a href="/ko/svcenter/notice">공지사항
                             <!-- 공지사항 -->
                         </a></p>
-                    <p><a href="/ko/svcenter/mantomaninquiry">1:1 문의 등록
-                            <!-- 1:1 문의하기 -->
-                        </a></p>
-                    <p><a href="/ko/svcenter/faq">FAQ
-                            <!-- FAQ; -->
-                        </a></p>
-                    <p><a href="/ko/svcenter/mending">수선진행조회
-                            <!-- 수선진행조회; -->
-                        </a></p>
-                    <p><a href="/ko/footer/vocProvision">고객의 소리</a></p>
+					<!--  -->
+                    <p><a href="/board/insert">게시물 등록</a></p>
                     <!-- <p><a href="#;">APP 다운로드 소개</a></p> -->
                     <dl>
                         <dt>쇼핑 가이드</dt>
@@ -78,7 +70,6 @@
                     <a href="mailto:shophelp@thehandsome.com">shophelp<br>@thehandsome.com</a>
                 </div>
                 <!-- //ph_guide -->
-
             </div>
         </div>
         <div class="sub_cnts">
@@ -91,6 +82,8 @@
             	<!-- mid 부분 -->
                 <input type="hidden" id="mid" name="mid" value="${memid}">               
                 <input type="hidden" id="qid" name="qid" value="${board.qid}">
+                <!-- 구영모: 시큐리티 적용 -->
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                 <fieldset>
                     <legend>1:1 문의 입력</legend>
                     <div class="tblwrap">

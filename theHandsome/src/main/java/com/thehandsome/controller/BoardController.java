@@ -44,6 +44,8 @@ public class BoardController {
 		model.addAttribute("list", service.getListWithPaging(cri));
 		//게시글의 총 개수를 표시하기 위해 service의 getTotal함수 사용		
 		int total = service.getTotal(cri);
+		//게시물의 총 개수
+		model.addAttribute("count", total);
 		//페이징 처리한 정보를 pageMaker attribute값에 전달
 		model.addAttribute("pageMaker",new BoardPageDTO(cri, total));
 	}

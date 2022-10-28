@@ -26,7 +26,6 @@ import lombok.extern.log4j.Log4j;
  * @Date : 2022.10.25
  * 사용자가 로그인에 성공하였을 시 발생하는 이벤트를 제어하는 클래스
  *****************************************************/
-
 @Log4j
 public class CustomLoginSuccessHandler implements AuthenticationSuccessHandler {
 	@Autowired
