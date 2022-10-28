@@ -72,6 +72,7 @@ public class MemberController {
 	}
 
 	// author:김민선 회원가입
+	// author: 구영모 비밀번호 인코딩 추가 작업
 	@PostMapping("/join")
 	public String joinPOST(MemberVO member) throws Exception {
 		log.info("----------회원가입 페이지 진입 ---------- member : " + member);
